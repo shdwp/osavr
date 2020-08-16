@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
 using Interactor;
 using Osa;
+using Osa.ViewControllers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,6 +30,7 @@ namespace Osa
                 var skip_prefix = "@Skip:";
                 var intr_prefix = "@Intr:";
                 var view_prefix = "@View:";
+                
 
                 GameObject item = null;
                 if (name.StartsWith(intr_prefix))
@@ -40,12 +43,7 @@ namespace Osa
                 {
                     var description = name.Substring(intr_prefix.Length);
                     var components = description.Split(':');
-                    Destroy(processing.GetComponent<MeshRenderer>());
-                    Destroy(processing.GetComponent<MeshFilter>());
-                    item = Instantiate(Resources.Load<GameObject>("Controls/scope"), current.transform);
-                    item.AddComponent<ScopeController>();
-                    
-                    item.transform.localRotation = Quaternion.identity;
+                    item = _processViewPlaceholder(current, processing, components);
                 }
                 else if (name.StartsWith(skip_prefix))
                 {
@@ -83,7 +81,8 @@ namespace Osa
             var interactor_prefab_name = components[1];
             Debug.Log(String.Format("Interactor from {0} - control {1}", placeholder.name, interactor_prefab_name));
 
-            var item = Instantiate(Resources.Load<GameObject>("Controls/" + interactor_prefab_name), parent.transform);
+            var path = Path.Combine("Controls", interactor_prefab_name, interactor_prefab_name);
+            var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
             var animator = item.AddComponent<Animator>();
             animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Controls/" + interactor_prefab_name + "_animctrl");
             
@@ -91,6 +90,21 @@ namespace Osa
 
             var interaction_controller = AInteractorController.AddControllerForInteractorId(item, interactor_identifier);
             InteractorControllerBinding.Bind(placeholder, interaction_controller);
+            return item;
+        }
+
+        GameObject _processViewPlaceholder(GameObject parent, GameObject placeholder, string[] components)
+        {
+            var interactor_identifier = components[0];
+            var interactor_prefab_name = components[1];
+            
+            Destroy(placeholder.GetComponent<MeshRenderer>());
+            Destroy(placeholder.GetComponent<MeshFilter>());
+            var path = Path.Combine("Controls", interactor_prefab_name, "prefab");
+            var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
+
+            var controller = AViewController.AddControllerForViewId(item, interactor_identifier);
+            item.transform.localRotation = Quaternion.identity;
             return item;
         }
 

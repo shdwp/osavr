@@ -6,6 +6,9 @@
     <e p="D:\UnityProjects\osavr" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Playground" t="Include">
+          <e p="test_shader.hlsl" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Input" t="Include">
             <e p="MouseController.cs" t="Include" />
@@ -18,12 +21,16 @@
             <e p="InteractorControllers" t="Include">
               <e p="AInteractorController.cs" t="Include" />
               <e p="ButtonController.cs" t="Include" />
-              <e p="ScopeController.cs" t="Include" />
+              <e p="RadarScopeController.cs" t="Include" />
               <e p="SwitchController.cs" t="Include" />
             </e>
             <e p="OsaModel.cs" t="Include" />
             <e p="Prefab" t="Include">
               <e p="OsaPrefabController.cs" t="Include" />
+            </e>
+            <e p="ViewControllers" t="Include">
+              <e p="AViewController.cs" t="Include" />
+              <e p="ScopeController.cs" t="Include" />
             </e>
           </e>
           <e p="Utils" t="Include">
@@ -59,20 +66,10 @@
           </e>
         </e>
       </e>
-      <e p="LocalPackages" t="Include">
-        <e p="com.unity.render-pipelines.high-definition-config" t="Include">
-          <e p="Runtime" t="Include">
-            <e p="ShaderConfig.cs" t="Include" />
-            <e p="ShaderConfig.cs.hlsl" t="Include" />
-            <e p="Unity.RenderPipelines.HighDefinition.Config.Runtime.asmdef" t="Include" />
-          </e>
-        </e>
-      </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="osavr.sln" t="IncludeFlat" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
-      <e p="Unity.RenderPipelines.HighDefinition.Config.Runtime.csproj" t="IncludeRecursive" />
     </e>
   </component>
 </project>
