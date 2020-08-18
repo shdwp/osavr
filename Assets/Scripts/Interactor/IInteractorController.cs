@@ -3,6 +3,7 @@
     public enum InteractionType
     {
         Press,
+        Release,
         MoveUp,
         MoveDown,
         MoveRight,

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Osa
 {
-    public class ScopeController: AViewController
+    public class SignalScopeController: AViewController
     {
         protected new void Awake()
         {
@@ -21,6 +21,11 @@ namespace Osa
             }
             
             _dataTex.Apply();
+            _viewSurfaceMat.SetTexture("Texture2D_1F77D971", Resources.Load<Texture2D>("scope_input"));
+        }
+
+        protected void FixedUpdate()
+        {
         }
     }
 }

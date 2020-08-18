@@ -7,7 +7,7 @@ namespace Osa
     {
         public override InteractionType[] InteractionTypes()
         {
-            return new InteractionType[] {InteractionType.Press};
+            return new InteractionType[] {InteractionType.Press, InteractionType.Release};
         }
 
         public override void Handle(InteractionType type)

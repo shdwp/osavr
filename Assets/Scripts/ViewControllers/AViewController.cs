@@ -11,6 +11,7 @@ namespace Osa.ViewControllers
     public abstract class AViewController: MonoBehaviour, IViewController
     {
         protected Texture2D _dataTex;
+        protected Material _viewSurfaceMat;
 
         protected void Awake()
         {
@@ -22,12 +23,12 @@ namespace Osa.ViewControllers
             {
                 for (int y = 0; y < 10; y++)
                 {
-                    _dataTex.SetPixel(x, y, y == 5 ? Color.white : Color.black);
+                    _dataTex.SetPixel(x, y, Color.black);
                 }
             }
             _dataTex.Apply();
             
-            renderer.material.SetTexture("Texture2D_1F77D971", _dataTex);
+            _viewSurfaceMat = renderer.material;
         }
 
         public static IViewController AddControllerForViewId(GameObject o, string id)
@@ -35,7 +36,7 @@ namespace Osa.ViewControllers
             switch (id)
             {
                 case "signal_scope":
-                    return o.AddComponent<ScopeController>();
+                    return o.AddComponent<SignalScopeController>();
                 
                 case "radar_scope":
                     return o.AddComponent<RadarScopeController>();

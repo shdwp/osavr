@@ -41,9 +41,10 @@ float RadarScope_AzimuthOffset(float2 Pos, float Azimuth) {
     return abs(angle);
 }
 
-float RadarScope_ScanlineFade(float2 Pos, float Azimuth) {
+void RadarScope_ScanlineFade_float(float4 In, float2 Pos, float Azimuth, out float4 Out) {
     const float pi = 3.141592653589793238462;
-    return clamp(pow(RadarScope_AzimuthOffset(Pos, Azimuth) / pi * 2, 3), 0.f, 1.f);
+    float factor = 3;
+    Out = In * smoothstep(0.f, pow(pi * 2, factor), pow(RadarScope_AzimuthOffset(Pos, Azimuth), factor));
 }
 
 void RadarScope_RangeCircles_float(float2 UV, float Scanline_Azimuth, out float4 Out) {
@@ -51,12 +52,10 @@ void RadarScope_RangeCircles_float(float2 UV, float Scanline_Azimuth, out float4
     Out = float4(0.f, 0.f, 0.f, 1.f);
     
     for (float i = 0.1f; i < 1.f; i += 1.f / 5.f) {
-        if (dist > i && dist < i + 0.02f) {
+        if (dist > i && dist < i + 0.01f) {
             Out.rgb = float3(1.f, 1.f, 1.f);
         }
     }
-    
-    Out.rgb *= RadarScope_ScanlineFade(UV, Scanline_Azimuth);
 }
 
 void RadarScope_Sightline_float(float2 UV, float Azimuth, float Distance, out float4 Out) {
@@ -69,8 +68,4 @@ void RadarScope_Sightline_float(float2 UV, float Azimuth, float Distance, out fl
     } else {
         Out = float4(0.f, 0.f, 0.f, 1.f);
     }
-}
-
-void RadarReturns_float(Texture2D Tex, SamplerState SS, float2 UV, out float4 Out) {
-
 }

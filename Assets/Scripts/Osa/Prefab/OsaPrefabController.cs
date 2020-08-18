@@ -84,7 +84,7 @@ namespace Osa
             var path = Path.Combine("Controls", interactor_prefab_name, interactor_prefab_name);
             var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
             var animator = item.AddComponent<Animator>();
-            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Controls/" + interactor_prefab_name + "_animctrl");
+            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(path + "_animctrl");
             
             item.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
 

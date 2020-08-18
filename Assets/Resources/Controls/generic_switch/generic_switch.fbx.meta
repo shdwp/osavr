@@ -7,11 +7,20 @@ ModelImporter:
       74: -1178627440930985474
     second: Cube.001|Down
   - first:
+      74: 4823172331675836435
+    second: Cube.001|Left
+  - first:
+      74: 2003050453007028512
+    second: Cube.001|Neut
+  - first:
+      74: 1093614136327318112
+    second: Cube.001|Right
+  - first:
       74: -8591112872423905634
     second: Cube.001|Up
   - first:
-      74: 9049632832628079103
-    second: Cube.001|Up.001
+      74: 5866532360917812791
+    second: Cube.001|Neutral
   externalObjects: {}
   materials:
     materialImportMode: 1
