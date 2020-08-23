@@ -11,7 +11,13 @@ using UnityEngine.UI;
 public class MouseController: MonoBehaviour
 {
     private IInteractorController _lastMouseInteractor = null;
-    
+    private Camera _camera;
+
+    private void Start()
+    {
+        _camera = Camera.main;
+    }
+
     private void Update()
     {
         var primaryClick = Input.GetMouseButtonDown(0);
@@ -34,6 +40,17 @@ public class MouseController: MonoBehaviour
             }
         }
 
+        if (Input.GetMouseButton(1) && _lastMouseInteractor == null)
+        {
+            var rot = _camera.transform.eulerAngles;
+            var speed = 70f;
+
+            rot.y += Input.GetAxis("Mouse X") * speed * Time.deltaTime;
+            rot.x += -Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
+
+            _camera.transform.eulerAngles = rot;
+        }
+
         if (_lastMouseInteractor != null && (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)))
         {
             SendFirstApplicableInteraction(_lastMouseInteractor, new InteractionType[] {InteractionType.Release});
@@ -51,7 +68,10 @@ public class MouseController: MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             var interactor = hit.transform.gameObject.GetComponent<InteractorControllerBinding>();
-            return interactor.Controller;
+            if (interactor)
+            {
+                return interactor.Controller;
+            }
         }
 
         return null;

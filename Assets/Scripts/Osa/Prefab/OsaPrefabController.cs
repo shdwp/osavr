@@ -30,7 +30,7 @@ namespace Osa
                 var skip_prefix = "@Skip:";
                 var intr_prefix = "@Intr:";
                 var view_prefix = "@View:";
-                
+                var utility_cam_prefix = "@UtilityCamera:";
 
                 GameObject item = null;
                 if (name.StartsWith(intr_prefix))
@@ -44,6 +44,12 @@ namespace Osa
                     var description = name.Substring(intr_prefix.Length);
                     var components = description.Split(':');
                     item = _processViewPlaceholder(current, processing, components);
+                }
+                else if (name.StartsWith(utility_cam_prefix))
+                {
+                    var description = name.Substring(utility_cam_prefix.Length);
+                    var components = description.Split(':');
+                    _processUtilityCamera(current, processing, components);
                 }
                 else if (name.StartsWith(skip_prefix))
                 {
@@ -106,6 +112,20 @@ namespace Osa
             var controller = AViewController.AddControllerForViewId(item, interactor_identifier);
             item.transform.localRotation = Quaternion.identity;
             return item;
+        }
+
+        void _processUtilityCamera(GameObject parent, GameObject placeholder, string[] components)
+        {
+            var identifier = components[0];
+            var camera = placeholder.GetComponent<Camera>();
+
+            camera.depthTextureMode = DepthTextureMode.Depth;
+            camera.enabled = identifier == "SOC_3Beam";
+            if (camera.enabled)
+            {
+                var shader = Shader.Find("Shader Graphs/radar_return_shader");
+                camera.SetReplacementShader(shader, "Opaque");
+            }
         }
 
         void Update()

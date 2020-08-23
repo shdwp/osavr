@@ -2,44 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4dcd6e9-22a0-4a92-b4e2-b3a60f0631b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactor/SwitchController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HDRPDefaultResources/Sky and Fog Settings Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/Sky and Fog Settings Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Osa/osa.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Osa/osa.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/radar_input.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/radar_input.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/scope_input.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/scope_input.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch_animctrl.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch_animctrl.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope_shader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope_shader.shadergraph" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/AInteractorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactor/AInteractorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/AInteractorController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactor/AInteractorController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/ButtonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactor/ButtonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/ButtonController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactor/ButtonController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/RadarScopeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/RadarScopeController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/SwitchController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/SwitchController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactor/SwitchController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/OsaModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/OsaModel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/AViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/AViewController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/ScopeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/ScopeController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testscene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/testscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testscene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testscene/Insides Volume Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testscene/Insides Volume Profile.asset.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +40,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/049BE2AF-E36F-487E-B06E-F49D51A0BAB6/bc/d290ce13/RuntimeAnimatorController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/SwitchController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/c4/4b542b4d/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/e8/d1bc2530/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HDRPDefaultResources/Sky and Fog Settings Profile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/06/ddaaf4c2/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/69/1d4d6eac/Physics.cs" root0="SKIP_HIGHLIGHTING" />
@@ -78,11 +54,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Simulation/SimulationRunloop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/d9/30ed7633/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Simulation/MagneticField.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/CommonExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/InteractorControllerBinding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EModules/Auto-Save/AutoSave.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/AInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Simulation/ReflectiveObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D1422B3F-C937-4601-8C92-EDA852993B93/49/cc94f6d3/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -94,7 +74,6 @@
         <option value="$PROJECT_DIR$/Assets/Osa/ScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScopeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/CommonExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaPrefabController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InteractorControllerBinding.cs" />
@@ -114,15 +93,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Model/SimulationRunloop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Trig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/MathUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/ButtonController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/SwitchController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/CommonExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/L.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/ReflectiveObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/MagneticField.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" />
       </list>
     </option>
   </component>
@@ -139,7 +123,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -161,10 +145,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10104">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="24208">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10104" />
+      <option name="pid" value="24208" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -182,7 +166,10 @@
       <workItem from="1594656224780" duration="6528000" />
       <workItem from="1595344641159" duration="6274000" />
       <workItem from="1597533301791" duration="5588000" />
-      <workItem from="1597541002682" duration="62415000" />
+      <workItem from="1597541002682" duration="63411000" />
+      <workItem from="1598075205267" duration="2074000" />
+      <workItem from="1598168276622" duration="14154000" />
+      <workItem from="1598197845095" duration="2892000" />
     </task>
     <servers />
   </component>
@@ -196,7 +183,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -215,14 +204,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Interactor/AInteractorController.cs</url>
           <line>32</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/AInteractorController.cs" initialLine="32">
-            <startOffsets>
-              <option value="893" />
-            </startOffsets>
-            <endOffsets>
-              <option value="929" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/AInteractorController.cs" initialLine="32" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

@@ -7,35 +7,62 @@ namespace Osa.Model
     public class OsaState: MonoBehaviour
     {
         /// <summary>
-        /// Scanline azimuth in degrees
+        /// SOC azimuth in degrees
         /// </summary>
-        public float Scanline_Azimuth = 0;
+        public float SOCAzimuth = 0;
         
         /// <summary>
-        /// Signalscope azimuth in degrees
+        /// SSC azimuth in degrees
         /// </summary>
-        public float Signalscope_Azimuth = 0;
+        public float SSCAzimuth = 0;
+
+        /// <summary>
+        /// Whether search radar is currently turning
+        /// </summary>
+        public bool SOCTurning = true;
+
+        /// <summary>
+        /// Whether search radar is currently emitting and receiving returns
+        /// </summary>
+        public bool SOCEmitting = true;
         
         /// <summary>
-        /// Signalscope distance in degrees
+        /// SSC distance in degrees
         /// </summary>
-        public float Signalscope_Distance = 0;
+        public float SSCDistance = 0;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Vector3 WorldPosition;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Vector3 ForwardVector;
 
         private SimulationRunloop _runloop;
 
         private void Start()
         {
             _runloop = FindObjectOfType<SimulationRunloop>();
-            _runloop.Add(new SimulationProcess(0, ScanlineRotationProcess()));
-            Signalscope_Distance = 15f;
+            _runloop.Add(new SimulationProcess(0, SOC_Process()));
+            SSCDistance = 15f;
         }
 
-        public IEnumerator ScanlineRotationProcess()
+        public IEnumerator SOC_Process()
         {
             while (true)
             {
-                Scanline_Azimuth = MathUtils.NormalizeAzimuth(Scanline_Azimuth + 1.5f);
-                Signalscope_Azimuth = MathUtils.NormalizeAzimuth( Signalscope_Azimuth + 0.3f);
+                if (SOCTurning)
+                {
+                    SOCAzimuth = MathUtils.NormalizeAzimuth(SOCAzimuth + 1.5f);
+                }
+
+                if (SOCEmitting)
+                {
+                }
+
                 yield return _runloop.Delay(10f);
             }
         }

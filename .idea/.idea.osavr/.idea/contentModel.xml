@@ -6,6 +6,11 @@
     <e p="D:\UnityProjects\osavr" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="EModules" t="Include">
+          <e p="Auto-Save" t="Include">
+            <e p="AutoSave.cs" t="Include" />
+          </e>
+        </e>
         <e p="Playground" t="Include">
           <e p="test_shader.hlsl" t="Include" />
         </e>
@@ -24,6 +29,7 @@
             <e p="Model" t="Include">
               <e p="OsaState.cs" t="Include" />
             </e>
+            <e p="OsaController.cs" t="Include" />
             <e p="Prefab" t="Include">
               <e p="OsaPrefabController.cs" t="Include" />
             </e>
@@ -33,6 +39,8 @@
             </e>
           </e>
           <e p="Simulation" t="Include">
+            <e p="MagneticField.cs" t="Include" />
+            <e p="ReflectiveObject.cs" t="Include" />
             <e p="SimulationRunloop.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">

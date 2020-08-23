@@ -9,11 +9,16 @@ namespace Osa
     public class RadarScopeController: AViewController
     {
         private OsaState _state;
+        private static readonly int _shaderidInput = Shader.PropertyToID("Texture2D_43292419");
+        private static readonly int _shaderidSOCAzimuth = Shader.PropertyToID("Vector1_FC501ECE");
+        private static readonly int _shaderidSSCAzimuth = Shader.PropertyToID("Vector1_7BFDD6BB");
+        private static readonly int _shaderidSSCDistance = Shader.PropertyToID("Vector1_6C640CCF");
 
         protected new void Awake()
         {
             base.Awake();
-            _viewSurfaceMat.SetTexture("Texture2D_43292419", Resources.Load<Texture2D>("radar_input"));
+            
+            _viewSurfaceMat.SetTexture(_shaderidInput, Resources.Load<Texture2D>("radar_input"));
         }
         
         private void Start()
@@ -23,9 +28,9 @@ namespace Osa
 
         private void Update()
         {
-            _viewSurfaceMat.SetFloat("Vector1_FC501ECE", _state.Scanline_Azimuth * Mathf.Deg2Rad);
-            _viewSurfaceMat.SetFloat("Vector1_7BFDD6BB", _state.Signalscope_Azimuth * Mathf.Deg2Rad);
-            _viewSurfaceMat.SetFloat("Vector1_6C640CCF", _state.Signalscope_Distance / 30f);
+            _viewSurfaceMat.SetFloat(_shaderidSOCAzimuth, _state.SOCAzimuth * Mathf.Deg2Rad);
+            _viewSurfaceMat.SetFloat(_shaderidSSCAzimuth, _state.SSCAzimuth * Mathf.Deg2Rad);
+            _viewSurfaceMat.SetFloat(_shaderidSSCDistance, _state.SSCDistance / 30f);
         }
     }
 }

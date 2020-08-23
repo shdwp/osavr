@@ -8,6 +8,8 @@ namespace Osa
 {
     public class SignalScopeController: AViewController
     {
+        private static readonly int _shaderidInput = Shader.PropertyToID("Texture2D_1F77D971");
+        
         protected new void Awake()
         {
             base.Awake();
@@ -21,7 +23,7 @@ namespace Osa
             }
             
             _dataTex.Apply();
-            _viewSurfaceMat.SetTexture("Texture2D_1F77D971", Resources.Load<Texture2D>("scope_input"));
+            _viewSurfaceMat.SetTexture(_shaderidInput, Resources.Load<Texture2D>("scope_input"));
         }
 
         protected void FixedUpdate()
