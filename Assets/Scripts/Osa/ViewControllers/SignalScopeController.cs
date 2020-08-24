@@ -12,6 +12,7 @@ namespace Osa
         
         protected new void Awake()
         {
+            _viewSurfaceMat = Resources.Load<Material>("Controls/scope/scope_mat");
             base.Awake();
             
             for (int x = 0; x < 10; x++)

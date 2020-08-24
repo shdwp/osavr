@@ -1,8 +1,53 @@
 fileFormatVersion: 2
 guid: 5b5ed8277e7ecca49bc1244350474efb
 ModelImporter:
-  serializedVersion: 19301
+  serializedVersion: 20101
   internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Cube.001
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      4: 400000
+    second: Cube.001
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      21: 2100000
+    second: No Name
+  - first:
+      23: 2300000
+    second: Cube.001
+  - first:
+      23: 2300002
+    second: //RootNode
+  - first:
+      33: 3300000
+    second: Cube.001
+  - first:
+      33: 3300002
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: Cube
+  - first:
+      43: 4300002
+    second: Cube.001
+  - first:
+      74: 7400000
+    second: Cube.001|Cube.001Action
+  - first:
+      74: 7400002
+    second: Cube.001|Press
+  - first:
+      74: 7400004
+    second: Cube.001|Press.001
+  - first:
+      95: 9500000
+    second: //RootNode
   - first:
       74: -623603649343465320
     second: Scene
@@ -46,12 +91,13 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    fileIdsGeneration: 2
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -61,6 +107,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -93,7 +142,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

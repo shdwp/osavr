@@ -89,7 +89,7 @@ namespace Osa
 
             var path = Path.Combine("Controls", interactor_prefab_name, interactor_prefab_name);
             var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
-            var animator = item.AddComponent<Animator>();
+            var animator = item.GetComponent<Animator>();
             animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(path + "_animctrl");
             
             item.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
@@ -106,7 +106,7 @@ namespace Osa
             
             Destroy(placeholder.GetComponent<MeshRenderer>());
             Destroy(placeholder.GetComponent<MeshFilter>());
-            var path = Path.Combine("Controls", interactor_prefab_name, "prefab");
+            var path = Path.Combine("Controls", interactor_prefab_name, interactor_prefab_name);
             var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
 
             var controller = AViewController.AddControllerForViewId(item, interactor_identifier);
@@ -120,12 +120,7 @@ namespace Osa
             var camera = placeholder.GetComponent<Camera>();
 
             camera.depthTextureMode = DepthTextureMode.Depth;
-            camera.enabled = identifier == "SOC_3Beam";
-            if (camera.enabled)
-            {
-                var shader = Shader.Find("Shader Graphs/radar_return_shader");
-                camera.SetReplacementShader(shader, "Opaque");
-            }
+            //camera.enabled = identifier == "SOC_3Beam";
         }
 
         void Update()

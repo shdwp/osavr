@@ -16,6 +16,7 @@ namespace Osa
 
         protected new void Awake()
         {
+            _viewSurfaceMat = Resources.Load<Material>("Controls/radar_scope/radar_display_mat");
             base.Awake();
             
             _viewSurfaceMat.SetTexture(_shaderidInput, Resources.Load<Texture2D>("radar_input"));

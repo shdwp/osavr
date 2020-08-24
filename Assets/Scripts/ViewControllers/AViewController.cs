@@ -27,8 +27,8 @@ namespace Osa.ViewControllers
                 }
             }
             _dataTex.Apply();
-            
-            _viewSurfaceMat = renderer.material;
+
+            renderer.material = _viewSurfaceMat;
         }
 
         public static IViewController AddControllerForViewId(GameObject o, string id)

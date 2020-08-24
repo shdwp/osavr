@@ -1,11 +1,86 @@
 fileFormatVersion: 2
 guid: 31321e929a3742349bf5caaf5cbb36a5
 ModelImporter:
-  serializedVersion: 19301
-  internalIDToNameTable: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: '@Intr_Test1'
+    100002: '@Intr_Test2'
+    100004: '@Skip_IntrSphere'
+    100006: '@View_Scope'
+    100008: Inner
+    100010: Left_Eq_Blade_0
+    100012: Left_Eq_Blade_1
+    100014: Left_Eq_Blade_2
+    100016: Left_Eq_Blade_3
+    100018: Left_Eq_Blade_4
+    100020: Left_Eq_Blade_5
+    100022: Left_Eq_Tower
+    100024: //RootNode
+    100026: Outer
+    100028: Point
+    400000: '@Intr_Test1'
+    400002: '@Intr_Test2'
+    400004: '@Skip_IntrSphere'
+    400006: '@View_Scope'
+    400008: Inner
+    400010: Left_Eq_Blade_0
+    400012: Left_Eq_Blade_1
+    400014: Left_Eq_Blade_2
+    400016: Left_Eq_Blade_3
+    400018: Left_Eq_Blade_4
+    400020: Left_Eq_Blade_5
+    400022: Left_Eq_Tower
+    400024: //RootNode
+    400026: Outer
+    400028: Point
+    2100000: No Name
+    2100002: Eq_Tower_Material
+    2100004: Eq_Blade_Mat
+    2300000: '@Intr_Test1'
+    2300002: '@Intr_Test2'
+    2300004: '@Skip_IntrSphere'
+    2300006: '@View_Scope'
+    2300008: Inner
+    2300010: Left_Eq_Blade_0
+    2300012: Left_Eq_Blade_1
+    2300014: Left_Eq_Blade_2
+    2300016: Left_Eq_Blade_3
+    2300018: Left_Eq_Blade_4
+    2300020: Left_Eq_Blade_5
+    2300022: Left_Eq_Tower
+    2300024: Outer
+    3300000: '@Intr_Test1'
+    3300002: '@Intr_Test2'
+    3300004: '@Skip_IntrSphere'
+    3300006: '@View_Scope'
+    3300008: Inner
+    3300010: Left_Eq_Blade_0
+    3300012: Left_Eq_Blade_1
+    3300014: Left_Eq_Blade_2
+    3300016: Left_Eq_Blade_3
+    3300018: Left_Eq_Blade_4
+    3300020: Left_Eq_Blade_5
+    3300022: Left_Eq_Tower
+    3300024: Outer
+    4300000: Outer
+    4300002: Inner
+    4300004: Left_Eq_Tower
+    4300006: Left_Eq_Blade_1
+    4300008: '@View_Scope'
+    4300010: Left_Eq_Blade_0
+    4300012: Left_Eq_Blade_2
+    4300014: Left_Eq_Blade_3
+    4300016: '@Intr_Test1'
+    4300018: '@Intr_Test2'
+    4300020: Left_Eq_Blade_4
+    4300022: Left_Eq_Blade_5
+    4300024: '@Skip_IntrSphere'
+    9500000: //RootNode
+    10800000: Point
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -38,28 +113,25 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -68,10 +140,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -81,16 +153,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

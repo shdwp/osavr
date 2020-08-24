@@ -12,6 +12,7 @@
           </e>
         </e>
         <e p="Playground" t="Include">
+          <e p="PropertyBlockTestScript.cs" t="Include" />
           <e p="test_shader.hlsl" t="Include" />
         </e>
         <e p="Scripts" t="Include">
@@ -43,6 +44,7 @@
             <e p="ReflectiveObject.cs" t="Include" />
             <e p="SimulationRunloop.cs" t="Include" />
           </e>
+          <e p="TestPass.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="CommonExtensions.cs" t="Include" />
             <e p="MathUtils.cs" t="Include" />

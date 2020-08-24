@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Interactor;
-using TMPro;
-using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Rendering.HighDefinition;
 
 public class MouseController: MonoBehaviour
 {
