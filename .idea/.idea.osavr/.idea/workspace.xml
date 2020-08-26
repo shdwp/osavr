@@ -15,34 +15,135 @@
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Osa/osa.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Osa/osa.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/radar_return_shader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Playground/radar_return_shader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/test_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Playground/test_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_display_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_display_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/scope.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/terrain_data.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/Eq_Blade_Albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/Eq_Blade_Albedo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/Eq_Tower_Albedo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/Eq_Tower_Albedo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/Insides Volume Profile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/Insides Volume Profile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Osa/osa.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playground/PropertyBlockTestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Playground/PropertyBlockTestScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playground/radar_return_shader.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playground/radar_return_shader.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playground/rtextest.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Playground/rtextest.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button_animctrl.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_button/generic_button_animctrl.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch_animctrl.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/generic_switch/generic_switch_animctrl.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/prefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/prefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_display.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_display.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_display_mat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_display_mat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope_shader.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/radar_scope/radar_scope_shader.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/prefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/prefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope_display.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope_display.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope_display_shader.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope_display_shader.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope_mat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Controls/scope/scope_mat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Planes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Planes/f4.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Planes/f4.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Planes/f4.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Planes/f4.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NewLayer.terrainlayer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NewLayer.terrainlayer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_data.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_data.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_mat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_mat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_phys_mat.physicMaterial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_phys_mat.physicMaterial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/terrain_tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/AInteractorController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/AInteractorController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/ButtonController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/ButtonController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/InteractorControllerBinding.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/InteractorControllerBinding.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/SwitchController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactor/SwitchController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Model.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Simulation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Simulation/SimulationRunloop.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Simulation/SimulationRunloop.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestPass.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestPass.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/CommonExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/CommonExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/MathUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/MathUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewControllers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/testscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testscene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,68 +171,46 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/049BE2AF-E36F-487E-B06E-F49D51A0BAB6/bc/d290ce13/RuntimeAnimatorController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Utilities/CoreUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/SwitchController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/c5/60e05bb4/ScriptableRenderContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HDRPDefaultResources/Sky and Fog Settings Profile.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/ShaderLibrary.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/06/ddaaf4c2/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/69/1d4d6eac/Physics.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestPass.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/RendererList/RendererList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Simulation/SimulationRunloop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/d9/30ed7633/Array.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Playground/PropertyBlockTestScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/CommonExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/EModules/Auto-Save/AutoSave.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/Utility/HDUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/SwitchController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/InteractorControllerBinding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/IInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D1422B3F-C937-4601-8C92-EDA852993B93/49/cc94f6d3/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPass.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/c4/4b542b4d/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/e8/d1bc2530/Camera.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPassVolume.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Textures/RTHandles.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Simulation/MagneticField.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/InteractorControllerBinding.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/RadarRendering/RadarCameraRenderingPass.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Shader/SSScopeShaderLib.hlsl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/NativeUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/CommonExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/84/452e5c97/CullingResults.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Input/MouseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactor/AInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Simulation/ReflectiveObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/MouseController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Osa/OsaPrefabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Osa/ScopeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ScopeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaPrefabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InteractorControllerBinding.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interactor/InteractorControllerBinding.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/SwitchController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Playground/ScopeTestNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Playground/test_shader.glsl" />
         <option value="$PROJECT_DIR$/Assets/Playground/test_shader.txt" />
@@ -144,24 +223,45 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Model/SimulationRunloop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Trig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/MathUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/ButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/SwitchController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/CommonExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/L.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/ReflectiveObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/MagneticField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Playground/PropertyBlockTestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TestPass.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/SimulationRunloop.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/ButtonController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/IInteractorController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/InteractorControllerBinding.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/SwitchController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Input/MouseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SignalScopeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/CommonExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/MathUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/NativeUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Playground/PropertyBlockTestScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarRendering/RadarCameraRenderingPass.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScopeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Prefabs/Resources/Controls/radar_scope/Shader/Library.hlsl" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/ShaderLibrary.hlsl" />
+        <option value="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Shader/SSScopeShaderLib.hlsl" />
       </list>
     </option>
   </component>
@@ -178,7 +278,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -200,10 +300,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="21336">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="19960">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21336" />
+      <option name="pid" value="19960" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -225,7 +325,9 @@
       <workItem from="1598075205267" duration="2074000" />
       <workItem from="1598168276622" duration="14154000" />
       <workItem from="1598197845095" duration="2892000" />
-      <workItem from="1598265114569" duration="15677000" />
+      <workItem from="1598265114569" duration="19707000" />
+      <workItem from="1598294215866" duration="14826000" />
+      <workItem from="1598428543823" duration="5932000" />
     </task>
     <servers />
   </component>
@@ -278,5 +380,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="distance" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

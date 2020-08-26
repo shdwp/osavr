@@ -1,0 +1,49 @@
+The system is: Windows - 10.0.18363 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.24.28314/bin/Hostx64/x64/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) C/C++ Optimizing Compiler Version 19.24.28315 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.24.28315.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+
+The C compiler identification is MSVC, found in "D:/UnityProjects/osavr/native_plugin/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/CMakeCCompilerId.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: D:/UnityProjects/osavr/native_plugin/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_9d737\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_9d737.dir\build.make /nologo -L                  CMakeFiles\cmTC_9d737.dir\build
+Building C object CMakeFiles/cmTC_9d737.dir/testCCompiler.c.obj
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\cl.exe @C:\Users\shdwp\AppData\Local\Temp\nm48CF.tmp
+testCCompiler.c
+Linking C executable cmTC_9d737.exe
+	"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_9d737.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_9d737.dir\objects1.rsp @C:\Users\shdwp\AppData\Local\Temp\nm48FF.tmp
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: D:/UnityProjects/osavr/native_plugin/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_f54f9\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\bin\HostX64\x64\nmake.exe" -f CMakeFiles\cmTC_f54f9.dir\build.make /nologo -L                  CMakeFiles\cmTC_f54f9.dir\build
+Building C object CMakeFiles/cmTC_f54f9.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\cl.exe @C:\Users\shdwp\AppData\Local\Temp\nm4A36.tmp
+CMakeCCompilerABI.c
+Linking C executable cmTC_f54f9.exe
+	"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_f54f9.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_f54f9.dir\objects1.rsp @C:\Users\shdwp\AppData\Local\Temp\nm4A76.tmp
+
+
+

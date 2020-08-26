@@ -26,12 +26,14 @@
       <Path>.git</Path>
       <Path>.idea</Path>
       <Path>.vs</Path>
+      <Path>Build</Path>
       <Path>Library</Path>
       <Path>LocalPackages</Path>
       <Path>Logs</Path>
       <Path>References</Path>
       <Path>Temp</Path>
       <Path>UserSettings</Path>
+      <Path>native_plugin</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>

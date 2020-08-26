@@ -1,0 +1,3 @@
+D:/UnityProjects/osavr/native_plugin/cmake-build-debug/CMakeFiles/native_plugin.dir
+D:/UnityProjects/osavr/native_plugin/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/UnityProjects/osavr/native_plugin/cmake-build-debug/CMakeFiles/rebuild_cache.dir
