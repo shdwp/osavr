@@ -2,9 +2,9 @@
 using OsaVR.Osa.Model;
 using UnityEngine;
 
-namespace OsaVR.Osa.ViewControllers
+namespace OsaVR.Osa.ViewControllers.SOCScope
 {
-    public class RadarScopeController: AViewController
+    public class SOCScopeController: AViewController
     {
         private OsaState _state;
         private static readonly int _shaderidInput = Shader.PropertyToID("Texture2D_43292419");
@@ -14,7 +14,7 @@ namespace OsaVR.Osa.ViewControllers
 
         protected new void Awake()
         {
-            _viewSurfaceMat = Resources.Load<Material>("Controls/radar_scope/Mat/RadarScopeMat");
+            _viewSurfaceMat = Resources.Load<Material>("Controls/radar_scope/RadarScopeMat");
             base.Awake();
             
             _viewSurfaceMat.SetTexture(_shaderidInput, Resources.Load<Texture2D>("radar_input"));

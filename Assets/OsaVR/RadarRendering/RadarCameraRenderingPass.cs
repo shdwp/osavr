@@ -7,12 +7,12 @@ namespace OsaVR.RadarRendering
 {
     class RadarCameraRenderingPass : CustomPass
     {
-        public RenderTexture targetTex;
+        public Camera TargetCamera;
+        public RenderTexture RT;
     
         private Shader _shader;
         private Material _material;
         private MaterialPropertyBlock _materialPropertyBlock;
-        private RTHandle _rt;
         private ShaderTagId[] _shaderTags;
     
         protected override void Setup(ScriptableRenderContext renderContext, CommandBuffer cmd)
@@ -20,11 +20,6 @@ namespace OsaVR.RadarRendering
             _shader = Shader.Find("Shader Graphs/RadarViewShader");
             _material = CoreUtils.CreateEngineMaterial(_shader);
             _materialPropertyBlock = new MaterialPropertyBlock();
-            _rt = RTHandles.Alloc(
-                Vector2.one, TextureXR.slices, dimension: TextureXR.dimension,
-                colorFormat: GraphicsFormat.B10G11R11_UFloatPack32,
-                useDynamicScale: true, name: "TestPassBuf"
-            );
             _shaderTags = new ShaderTagId[]
             {
                 new ShaderTagId("Forward"),
@@ -33,7 +28,7 @@ namespace OsaVR.RadarRendering
     
         void DrawMeshses(ScriptableRenderContext renderContext, CommandBuffer cmd, HDCamera hdCamera, CullingResults cullingResult)
         {
-            if (!hdCamera.camera.name.StartsWith("@UtilityCamera:SOC_2"))
+            if (!hdCamera.camera.Equals(TargetCamera))
             {
                 return;
             }
@@ -49,7 +44,7 @@ namespace OsaVR.RadarRendering
                 overrideMaterialPassIndex = 5,
             };
 
-            CoreUtils.SetRenderTarget(cmd, targetTex.colorBuffer, ClearFlag.All);
+            CoreUtils.SetRenderTarget(cmd, RT.colorBuffer, ClearFlag.All);
             HDUtils.DrawRendererList(renderContext, cmd, RendererList.Create(result));
         }
 
@@ -61,7 +56,6 @@ namespace OsaVR.RadarRendering
         protected override void Cleanup()
         {
             CoreUtils.Destroy(_material);
-            _rt.Release();
         }
     }
 }

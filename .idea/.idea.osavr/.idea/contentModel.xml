@@ -24,7 +24,7 @@
               <e p="AViewController.cs" t="Include" />
             </e>
           </e>
-          <e p="Input" t="Include">
+          <e p="InputControllers" t="Include">
             <e p="MouseController.cs" t="Include" />
           </e>
           <e p="Osa" t="Include">
@@ -32,18 +32,19 @@
               <e p="OsaState.cs" t="Include" />
             </e>
             <e p="OsaController.cs" t="Include" />
+            <e p="SOCRadarCameraController.cs" t="Include" />
             <e p="ViewControllers" t="Include">
-              <e p="RadarScope" t="Include">
-                <e p="RadarScopeController.cs" t="Include" />
+              <e p="SOCScope" t="Include">
                 <e p="Shader" t="Include">
                   <e p="RadarScopeShaderLib.hlsl" t="Include" />
                 </e>
+                <e p="SOCScopeController.cs" t="Include" />
               </e>
               <e p="SSCScope" t="Include">
                 <e p="Shader" t="Include">
                   <e p="SSScopeShaderLib.hlsl" t="Include" />
                 </e>
-                <e p="SignalScopeController.cs" t="Include" />
+                <e p="SSCScopeController.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -55,19 +56,19 @@
           </e>
           <e p="Utils" t="Include">
             <e p="CommonExtensions.cs" t="Include" />
+            <e p="DebugUtils" t="Include">
+              <e p="DebugPaneController.cs" t="Include" />
+            </e>
             <e p="MathUtils.cs" t="Include" />
             <e p="NativeUtils.cs" t="Include" />
             <e p="ShaderLibrary.hlsl" t="Include" />
           </e>
           <e p="World" t="Include">
             <e p="Simulation" t="Include">
+              <e p="SimulationController.cs" t="Include" />
               <e p="SimulationRunloop.cs" t="Include" />
             </e>
           </e>
-        </e>
-        <e p="Playground" t="Include">
-          <e p="PropertyBlockTestScript.cs" t="Include" />
-          <e p="test_shader.hlsl" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

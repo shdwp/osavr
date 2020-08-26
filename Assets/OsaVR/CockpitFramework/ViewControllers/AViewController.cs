@@ -1,5 +1,7 @@
 ﻿using System;
 using OsaVR.Osa.ViewControllers;
+using OsaVR.Osa.ViewControllers.SOCScope;
+using OsaVR.Osa.ViewControllers.SSCScope;
 using OsaVR.Utils;
 using UnityEngine;
 
@@ -38,10 +40,10 @@ namespace OsaVR.CockpitFramework.ViewControllers
             switch (id)
             {
                 case "signal_scope":
-                    return o.AddComponent<SignalScopeController>();
+                    return o.AddComponent<SSCScopeController>();
                 
                 case "radar_scope":
-                    return o.AddComponent<RadarScopeController>();
+                    return o.AddComponent<SOCScopeController>();
             }
 
             throw new NotImplementedException();

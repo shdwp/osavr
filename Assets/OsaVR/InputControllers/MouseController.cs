@@ -2,7 +2,7 @@
 using OsaVR.CockpitFramework.Interactor;
 using UnityEngine;
 
-namespace OsaVR.Input
+namespace OsaVR.InputControllers
 {
     public class MouseController: MonoBehaviour
     {

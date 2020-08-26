@@ -2,6 +2,7 @@
 using System.IO;
 using OsaVR.CockpitFramework.Interactor;
 using OsaVR.CockpitFramework.ViewControllers;
+using OsaVR.Osa;
 using TMPro;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
@@ -80,7 +81,7 @@ namespace OsaVR.Prefabs
 
             var interactor_identifier = components[0];
             var interactor_prefab_name = components[1];
-            Debug.Log(String.Format("Interactor from {0} - control {1}", placeholder.name, interactor_prefab_name));
+            // Debug.Log(String.Format("Interactor from {0} - control {1}", placeholder.name, interactor_prefab_name));
 
             var path = Path.Combine("Controls", interactor_prefab_name, interactor_prefab_name);
             var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
@@ -112,10 +113,10 @@ namespace OsaVR.Prefabs
         void _processUtilityCamera(GameObject parent, GameObject placeholder, string[] components)
         {
             var identifier = components[0];
-            var camera = placeholder.GetComponent<Camera>();
-
-            camera.depthTextureMode = DepthTextureMode.Depth;
-            //camera.enabled = identifier == "SOC_3Beam";
+            if (identifier.StartsWith("SOC_"))
+            {
+                placeholder.AddComponent<SOCRadarCameraController>();
+            }
         }
 
         void Update()

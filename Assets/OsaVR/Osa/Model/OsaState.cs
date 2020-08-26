@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Threading;
 using OsaVR.Utils;
 using OsaVR.World.Simulation;
 using UnityEngine;
@@ -7,6 +10,9 @@ namespace OsaVR.Osa.Model
 {
     public class OsaState: MonoBehaviour
     {
+        public static readonly uint SOCTurnTick = 2;
+        public static readonly uint SOCReceiveTick = 1;
+        
         /// <summary>
         /// SOC azimuth in degrees
         /// </summary>
@@ -42,12 +48,16 @@ namespace OsaVR.Osa.Model
         /// </summary>
         public Vector3 ForwardVector;
 
-        private SimulationRunloop _runloop;
+        private SimulationController _sim;
+
+        private void Awake()
+        {
+            _sim = FindObjectOfType<SimulationController>();
+        }
 
         private void Start()
         {
-            _runloop = FindObjectOfType<SimulationRunloop>();
-            _runloop.Add(new SimulationProcess(0, SOC_Process()));
+            _sim.Add(new SimulationProcess(0, SOC_Process()));
             SSCDistance = 15f;
         }
 
@@ -57,14 +67,17 @@ namespace OsaVR.Osa.Model
             {
                 if (SOCTurning)
                 {
-                    SOCAzimuth = MathUtils.NormalizeAzimuth(SOCAzimuth + 1.5f);
+                    SOCAzimuth = MathUtils.NormalizeAzimuth(SOCAzimuth + 3f);
                 }
+                
+                yield return new SimulationEvent(SOCTurnTick);
 
                 if (SOCEmitting)
                 {
                 }
-
-                yield return _runloop.Delay(10f);
+                
+                yield return new SimulationEvent(SOCReceiveTick);
+                yield return _sim.Delay(TimeSpan.FromMilliseconds(15.5));
             }
         }
     }

@@ -1,15 +1,15 @@
 ﻿using OsaVR.CockpitFramework.ViewControllers;
 using UnityEngine;
 
-namespace OsaVR.Osa.ViewControllers
+namespace OsaVR.Osa.ViewControllers.SSCScope
 {
-    public class SignalScopeController: AViewController
+    public class SSCScopeController: AViewController
     {
         private static readonly int _shaderidInput = Shader.PropertyToID("Texture2D_1F77D971");
         
         protected new void Awake()
         {
-            _viewSurfaceMat = Resources.Load<Material>("Controls/scope/scope_mat");
+            _viewSurfaceMat = Resources.Load<Material>("Controls/scope/SSCScopeMat");
             base.Awake();
             
             for (int x = 0; x < 10; x++)
