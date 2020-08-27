@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\shdwp\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\shdwp\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_osavr.327378621.00" t="ExcludeRecursive" />
+    <e p="C:\Users\shdwp\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\shdwp\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_osavr.327378621.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\osavr" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -51,8 +51,9 @@
           <e p="Prefabs" t="Include">
             <e p="OsaPrefabController.cs" t="Include" />
           </e>
-          <e p="RadarRendering" t="Include">
+          <e p="RadarSimulation" t="Include">
             <e p="RadarCameraRenderingPass.cs" t="Include" />
+            <e p="RadarProcessingJob.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="CommonExtensions.cs" t="Include" />
@@ -66,6 +67,7 @@
           <e p="World" t="Include">
             <e p="Simulation" t="Include">
               <e p="SimulationController.cs" t="Include" />
+              <e p="SimulationProcess.cs" t="Include" />
               <e p="SimulationRunloop.cs" t="Include" />
             </e>
           </e>

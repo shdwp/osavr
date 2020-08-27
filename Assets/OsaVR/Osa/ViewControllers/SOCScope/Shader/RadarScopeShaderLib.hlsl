@@ -2,7 +2,7 @@
     const float pi = 3.141592653589793238462;
     
     float2 dir = normalize(float2(Pos.x - 0.5f, Pos.y - 0.5f));
-    float angle = acos(dot(normalize(float2(1.f, 0.f)), dir));
+    float angle = acos(dot(normalize(float2(-1.f, 0.f)), dir));
     
     if (dir.y > 0) {
         angle = pi * 2 - angle;

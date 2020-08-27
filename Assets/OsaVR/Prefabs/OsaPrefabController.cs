@@ -113,10 +113,6 @@ namespace OsaVR.Prefabs
         void _processUtilityCamera(GameObject parent, GameObject placeholder, string[] components)
         {
             var identifier = components[0];
-            if (identifier.StartsWith("SOC_"))
-            {
-                placeholder.AddComponent<SOCRadarCameraController>();
-            }
         }
 
         void Update()

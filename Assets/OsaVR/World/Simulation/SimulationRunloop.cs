@@ -4,68 +4,40 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using Debug = UnityEngine.Debug;
 
 namespace OsaVR.World.Simulation
 {
     
-    public class SimulationProcess
-    {
-        public bool Running = false;
-        public IEnumerator Enumerator;
-        public uint Id;
-
-        public SimulationProcess(uint id, IEnumerator enumerator)
-        {
-            Enumerator = enumerator;
-            Id = id;
-        }
-    }
-
-    public class SimulationDelay
-    {
-        public DateTime DelayUntil;
-        
-        public SimulationDelay(DateTime delayUntil)
-        {
-            DelayUntil = delayUntil;
-        }
-    }
-
-    public class SimulationEvent
-    {
-        public uint Id;
-
-        public SimulationEvent(uint id)
-        {
-            Id = id;
-        }
-    }
-    
     public class SimulationRunloop
     {
         public bool Run = true;
-        public TimeSpan LastLagTimespan;
-        public TimeSpan LastSleepTimespan;
-        
+
+        public double AverageLag;
+        public double AverageSleep;
+
+        private uint _autoPidCounter = 1000;
         private Thread _thread;
         private List<SimulationProcess> _processes = new List<SimulationProcess>();
         private Dictionary<uint, SimulationProcess> _processIds = new Dictionary<uint, SimulationProcess>();
         private Dictionary<uint, List<Action<SimulationEvent>>> _eventListeners = new Dictionary<uint, List<Action<SimulationEvent>>>();
-        private DateTime _currentTime;
+        private DateTime _currentTime = DateTime.Now;
         
         public void AddProcess(SimulationProcess e)
         {
             lock (this)
             {
+                if (e.Id == 0)
+                {
+                    _autoPidCounter++;
+                    e.Id = _autoPidCounter;
+                }
                 _processes.Add(e);
                 _processIds.Add(e.Id, e);
-
-                if (_thread != null)
-                {
-                    _thread.Interrupt();
-                }
+                
+                // @TODO: figure out whether its viable to interrupt the thread
             }
         }
 
@@ -137,43 +109,48 @@ namespace OsaVR.World.Simulation
                         {
                             _processes.Remove(p);
                         }
-                    } else if (ts < sleepTimeSpan)
+                    } 
+                    else if (ts < sleepTimeSpan)
                     {
                         sleepTimeSpan = ts;
                     }
                 }
 
-                try
+                if (sleepTimeSpan == TimeSpan.MaxValue)
                 {
-                    if (sleepTimeSpan == TimeSpan.MaxValue)
-                    {
 #if DEBUG_LOGS
                         Debug.Log($"SimulationRunloop sleep indef");
 #endif
-                        Thread.Sleep(-1);
-                    }
-                    else if (sleepTimeSpan < frameSw.Elapsed)
-                    {
-                        LastSleepTimespan = TimeSpan.Zero;
-                    } 
-                    else 
-                    {
-                        var correlatedTimespan = sleepTimeSpan - frameSw.Elapsed;
+                    Thread.Sleep(32);
+                }
+                else
+                {
+                    var correlatedTimespan = sleepTimeSpan - frameSw.Elapsed;
 #if DEBUG_LOGS
                         Debug.Log($"SimulationRunloop sleep for {correlatedTimespan.TotalMilliseconds}");
 #endif
-                        LastSleepTimespan = correlatedTimespan;
-                        Thread.Sleep((int) correlatedTimespan.TotalMilliseconds);
+
+                    if (correlatedTimespan > TimeSpan.Zero)
+                    {
+                        _currentTime += sleepTimeSpan;
+                        AverageSleep = (AverageSleep + correlatedTimespan.TotalMilliseconds) / 2;
+                        
+                        try {
+                            Thread.Sleep((int) correlatedTimespan.TotalMilliseconds);
+                        }
+                        catch (ThreadInterruptedException)
+                        {
+#if DEBUG_LOGS
+                            Debug.Log("SimulationRunloop interrupted");
+#endif
+                        }
+                    }
+                    else
+                    {
+                        _currentTime += frameSw.Elapsed;
+                        AverageSleep /= 2;
                     }
                 }
-                catch (ThreadInterruptedException)
-                {
-#if DEBUG_LOGS
-                    Debug.Log("SimulationRunloop interrupted");
-#endif
-                }
-
-                _currentTime += frameSw.Elapsed;
             }
         }
 
@@ -194,7 +171,8 @@ namespace OsaVR.World.Simulation
 #if DEBUG_LOGS
                         Debug.Log($"Simulation lag {delta.TotalMilliseconds}");
 #endif
-                        LastLagTimespan = delta;
+                        // Debug.Log(delta.TotalMilliseconds);
+                        AverageLag = (AverageLag + -delta.TotalMilliseconds) / 2;
                         p.Enumerator.MoveNext();
                         return HandleProcess(p);
                     }

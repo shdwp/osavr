@@ -17,7 +17,8 @@ namespace OsaVR.Osa.ViewControllers.SOCScope
             _viewSurfaceMat = Resources.Load<Material>("Controls/radar_scope/RadarScopeMat");
             base.Awake();
             
-            _viewSurfaceMat.SetTexture(_shaderidInput, Resources.Load<Texture2D>("radar_input"));
+            //_viewSurfaceMat.SetTexture(_shaderidInput, Resources.Load<Texture2D>("radar_input"));
+            _viewSurfaceMat.SetTexture(_shaderidInput, DataTex);
         }
         
         private void Start()

@@ -7,9 +7,13 @@ namespace OsaVR.Utils
 
         public static float NormalizeAzimuth(float deg)
         {
-            if (deg < 360f)
+            if (deg < 360f && deg > 0f)
             {
                 return deg;
+            }
+            else if (deg < 0f)
+            {
+                return 360f - NormalizeAzimuth(Mathf.Abs(deg));
             }
             else
             {

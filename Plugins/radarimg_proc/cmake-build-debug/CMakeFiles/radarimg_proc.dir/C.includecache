@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/UnityProjects/osavr/Plugins/radarimg_proc/library.c
+library.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
+stdio.h
+-
+math.h
+-
+
+D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
+

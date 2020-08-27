@@ -16,13 +16,13 @@ namespace OsaVR.Osa.ViewControllers.SSCScope
             {
                 for (int y = 0; y < 10; y++)
                 {
-                    _dataTex.SetPixel(x, y, y == 5 ? Color.white : Color.black);
+                    DataTex.SetPixel(x, y, y == 5 ? Color.white : Color.black);
                 }
             }
             
-            _dataTex.Apply();
+            DataTex.Apply();
             //_viewSurfaceMat.SetTexture(_shaderidInput, Resources.Load<Texture2D>("scope_input"));
-            _viewSurfaceMat.SetTexture(_shaderidInput, _dataTex);
+            _viewSurfaceMat.SetTexture(_shaderidInput, DataTex);
         }
 
         protected void FixedUpdate()

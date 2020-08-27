@@ -28,7 +28,7 @@ namespace OsaVR.Utils.DebugUtils
             if (_frametimeStopwatch != null)
             {
                 var frametime = _frametimeStopwatch.ElapsedMilliseconds;
-                _textFrametime.text = $"FT: {frametime:F3}ms\nFPS:{1000f / frametime:F3}";
+                _textFrametime.text = $"FT: {frametime:F3}ms\nFPS:{1000f / frametime:F0}";
             }
 
             _textSimRate.text = $"SimLag: {_sim.AverageLag:F3}ms\nSimSleep: {_sim.AverageSleep:F3}ms";

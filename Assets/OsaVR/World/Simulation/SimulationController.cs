@@ -9,11 +9,9 @@ namespace OsaVR.World.Simulation
 {
     public class SimulationController : MonoBehaviour
     {
-        public double AverageLag => _lagTimespanQueue.Sum(t => t.TotalMilliseconds) / _lagTimespanQueue.Count;
-        public double AverageSleep => _sleepTimespanQueue.Sum(t => t.TotalMilliseconds) / _sleepTimespanQueue.Count;
+        public double AverageLag => _simRunloop.AverageLag;
+        public double AverageSleep => _simRunloop.AverageSleep;
         
-        private Queue<TimeSpan> _lagTimespanQueue = new Queue<TimeSpan>();
-        private Queue<TimeSpan> _sleepTimespanQueue = new Queue<TimeSpan>();
         private SimulationRunloop _simRunloop = new SimulationRunloop();
 
         private void Start()
@@ -24,6 +22,16 @@ namespace OsaVR.World.Simulation
         public void Add(SimulationProcess p)
         {
             _simRunloop.AddProcess(p);
+        }
+
+        public void Add(IEnumerator procEnumerator)
+        {
+            _simRunloop.AddProcess(new SimulationProcess(0, procEnumerator));
+        }
+
+        public void Add(uint procId, IEnumerator procEnumerator)
+        {
+            _simRunloop.AddProcess(new SimulationProcess(procId, procEnumerator)); 
         }
 
         public void Remove(uint id)
@@ -39,23 +47,6 @@ namespace OsaVR.World.Simulation
         public SimulationDelay Delay(TimeSpan ts)
         {
             return _simRunloop.Delay(ts);
-        }
-
-        private void Update()
-        {
-            if (_lagTimespanQueue.Count > 20)
-            {
-                _lagTimespanQueue.Dequeue();
-            }
-            
-            _lagTimespanQueue.Enqueue(_simRunloop.LastLagTimespan);
-
-            if (_sleepTimespanQueue.Count > 20)
-            {
-                _sleepTimespanQueue.Dequeue();
-            }
-            
-            _sleepTimespanQueue.Enqueue(_simRunloop.LastSleepTimespan);
         }
 
         private void OnApplicationQuit()

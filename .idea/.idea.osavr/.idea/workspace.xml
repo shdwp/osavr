@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b4dcd6e9-22a0-4a92-b4e2-b3a60f0631b1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.osavr/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_01.unity" afterDir="false" />
@@ -14,60 +18,13 @@
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Input.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/InputControllers.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Input/MouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/InputControllers/MouseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Input/MouseController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/InputControllers/MouseController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRenderTex.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRenderTex/Beam_1.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRenderTex/Beam_1.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRenderTex/Beam_2.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRenderTex/Beam_2.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRenderTex/Beam_3.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRenderTex/Beam_3.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/Mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/Mat/RadarScopeMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/Mat/RadarScopeMat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/RadarScopeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/RadarScopeController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/Shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/Shader/RadarScopeShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader/RadarScopeShader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/Shader/RadarScopeShader.shadergraph.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader/RadarScopeShader.shadergraph.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/Shader/RadarScopeShaderLib.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader/RadarScopeShaderLib.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/Shader/RadarScopeShaderLib.hlsl.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader/RadarScopeShaderLib.hlsl.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Mat/SSCScopeMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Mat/SSCScopeMat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SignalScopeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SSCScopeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SignalScopeController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SSCScopeController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/RadarRendering/RadarCameraRenderingPass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/RadarRendering/RadarCameraRenderingPass.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/Materials/rtextest.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/Materials/rtextest.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/Materials/rtextest2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/Materials/rtextest2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/PropertyBlockTestScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/PropertyBlockTestScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/plane_surf_mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/plane_surf_mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/rtextest.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/rtextest.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/rtextest2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/rtextest2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/test_mat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/test_mat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testscene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRadarCameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRadarCameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Prefabs/Resources/Controls/radar_scope/RadarScopeMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Prefabs/Resources/Controls/radar_scope/RadarScopeMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,68 +48,45 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/049BE2AF-E36F-487E-B06E-F49D51A0BAB6/bc/d290ce13/RuntimeAnimatorController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EModules/Auto-Save/AutoSave.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/Utility/HDUtils.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Utilities/CoreUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/c5/60e05bb4/ScriptableRenderContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SSCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Editor/RenderPipeline/Camera/HDCameraEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HDRPDefaultResources/Sky and Fog Settings Profile.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarCameraRenderingPass.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPass.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPassVolume.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/InteractorControllerBinding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/IInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SSCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Shader/SSScopeShaderLib.hlsl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/SwitchController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/HDRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/CommonExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/InputControllers/MouseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/ShaderLibrary.hlsl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/06/ddaaf4c2/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/69/1d4d6eac/Physics.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/b9/a99e2edb/TimeSpan.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/NativeUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AutoSave/AutoSave_05.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Editor/RenderPipeline/Camera/HDCameraEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/RendererList/RendererList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/87/5f63fcef/Thread.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/d9/30ed7633/Array.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/EModules/Auto-Save/AutoSave.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/Utility/HDUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/SwitchController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/InteractorControllerBinding.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRadarCameraController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/HDRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/IInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D1422B3F-C937-4601-8C92-EDA852993B93/49/cc94f6d3/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPass.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/c4/4b542b4d/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/e8/d1bc2530/Camera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPassVolume.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Textures/RTHandles.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0467F5C0-E463-4B2C-ACC5-F718CB71F056/82/979deaa1/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/415C8B0E-4A91-4E3A-AD9C-E31E01096A4F/df/4d7cb6ee/SimulationRunloop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/RadarRendering/RadarCameraRenderingPass.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Shader/SSScopeShaderLib.hlsl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/NativeUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/CommonExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/84/452e5c97/CullingResults.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/InputControllers/MouseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRadarCameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Interactor/IInteractorController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/ButtonController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/InteractorControllers/SwitchController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Model/OsaState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/CommonExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/L.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/ReflectiveObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/MagneticField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/MouseController.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" />
@@ -169,14 +103,10 @@
         <option value="$PROJECT_DIR$/Assets/OsaVR/Input/MouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SignalScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/CommonExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/MathUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/NativeUtils.cs" />
         <option value="$PROJECT_DIR$/Assets/Playground/PropertyBlockTestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Prefabs/Resources/Controls/radar_scope/Shader/Library.hlsl" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/ShaderLibrary.hlsl" />
         <option value="$PROJECT_DIR$/Assets/Playground/test_shader.hlsl" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Shader/SSScopeShaderLib.hlsl" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SignalScopeController.cs" />
@@ -190,11 +120,23 @@
         <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/Debug/DebugPaneController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationThread.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/MathUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarRendering/RadarImageProcessingComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarRendering/RadarProcessingJob.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/NativeUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarImageProcessingComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader/RadarScopeShaderLib.hlsl" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarCameraRenderingPass.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarProcessingJob.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationProcess.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/ShaderLibrary.hlsl" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRadarCameraController.cs" />
       </list>
     </option>
@@ -203,45 +145,46 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.2606569" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29979035" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.48118278" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="8828">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30220">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8828" />
-      <option name="userSelectedPid" value="false" />
+      <option name="pid" value="30220" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -262,12 +205,14 @@
       <workItem from="1598265114569" duration="19707000" />
       <workItem from="1598294215866" duration="14826000" />
       <workItem from="1598428543823" duration="6793000" />
-      <workItem from="1598442274903" duration="12206000" />
+      <workItem from="1598442274903" duration="22913000" />
+      <workItem from="1598520505226" duration="3113000" />
+      <workItem from="1598524008633" duration="19647000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -276,16 +221,101 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-3102" y="214" width="577" height="442" key="#Vim_Emulation" timestamp="1598521056871">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-3102" y="214" width="577" height="442" key="#Vim_Emulation/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598521056871" />
+    <state width="1462" height="384" key="GridCell.Tab.0.bottom" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.0.center" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.0.left" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.0.right" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.1.bottom" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.1.center" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.1.left" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.1.right" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.2.bottom" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.2.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.2.center" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.2.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.2.left" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.2.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.2.right" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.2.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.3.bottom" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.3.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.3.center" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.3.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.3.left" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.3.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state width="1462" height="384" key="GridCell.Tab.3.right" timestamp="1598566252031">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1462" height="384" key="GridCell.Tab.3.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598566252031" />
+    <state x="-2945" y="214" key="RiderGenerateDialog" timestamp="1598565111132">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-2945" y="214" key="RiderGenerateDialog/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598565111132" />
+    <state x="-3377" y="203" width="994" height="729" key="SettingsEditor" timestamp="1598525014575">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-3377" y="203" width="994" height="729" key="SettingsEditor/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598525014575" />
+    <state x="420" y="217" key="SettingsEditor/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1598520894869" />
+    <state x="-2990" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1598567453407">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-2990" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598567453407" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

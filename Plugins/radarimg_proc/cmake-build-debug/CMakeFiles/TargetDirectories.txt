@@ -1,0 +1,4 @@
+D:/UnityProjects/osavr/Plugins/radarimg_proc/cmake-build-debug/CMakeFiles/radarimg_proc.dir
+D:/UnityProjects/osavr/Plugins/radarimg_proc/cmake-build-debug/CMakeFiles/test_application.dir
+D:/UnityProjects/osavr/Plugins/radarimg_proc/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/UnityProjects/osavr/Plugins/radarimg_proc/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -19,8 +19,10 @@ namespace OsaVR.Utils
                 return default(T);
             }
  
-            var func = Marshal.GetDelegateForFunctionPointer(GetProcAddress(library, typeof(T2).Name), typeof(T2));
-            return (T)func.DynamicInvoke(pars);
+            var func = Marshal.GetDelegateForFunctionPointer(funcPtr, typeof(T2));
+            var result = func.DynamicInvoke(pars);
+
+            return (T) result;
         }
  
         public static void Invoke<T>(IntPtr library, params object[] pars)

@@ -5,6 +5,7 @@ using System.Threading;
 using OsaVR.Utils;
 using OsaVR.World.Simulation;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace OsaVR.Osa.Model
 {
@@ -57,7 +58,7 @@ namespace OsaVR.Osa.Model
 
         private void Start()
         {
-            _sim.Add(new SimulationProcess(0, SOC_Process()));
+             _sim.Add(new SimulationProcess(0, SOC_Process()));
             SSCDistance = 15f;
         }
 

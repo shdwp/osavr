@@ -1,2 +1,0 @@
-#pragma code_page(65001)
-2 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "D:/UnityProjects/osavr/native_plugin/cmake-build-debug/CMakeFiles/native_plugin.dir/embed.manifest"
