@@ -12,12 +12,19 @@ namespace OsaVR.Prefabs
 {
     public class OsaPrefabController : MonoBehaviour
     {
-        void Start()
+        private OsaController _controller;
+        
+        private void Awake()
         {
-            processChildrenOf(this.gameObject);
+            _controller = FindObjectOfType<OsaController>();
         }
 
-        void processChildrenOf(GameObject current)
+        private void Start()
+        {
+            ProcessChildrenOf(this.gameObject);
+        }
+
+        private void ProcessChildrenOf(GameObject current)
         {
             foreach (Transform t in current.transform)
             {
@@ -33,19 +40,19 @@ namespace OsaVR.Prefabs
                 {
                     var description = name.Substring(intr_prefix.Length);
                     var components = description.Split(':');
-                    item = _processInteractorPlaceholder(current, processing, components);
+                    item = ProcessInteractorPlaceholder(current, processing, components);
                 } 
                 else if (name.StartsWith(view_prefix))
                 {
                     var description = name.Substring(intr_prefix.Length);
                     var components = description.Split(':');
-                    item = _processViewPlaceholder(current, processing, components);
+                    item = ProcessViewPlaceholder(current, processing, components);
                 }
                 else if (name.StartsWith(utility_cam_prefix))
                 {
                     var description = name.Substring(utility_cam_prefix.Length);
                     var components = description.Split(':');
-                    _processUtilityCamera(current, processing, components);
+                    ProcessUtilityCamera(current, processing, components);
                 }
                 else if (name.StartsWith(skip_prefix))
                 {
@@ -58,16 +65,15 @@ namespace OsaVR.Prefabs
                     item.transform.localPosition = processing.transform.localPosition;
                 }
 
-                processChildrenOf(processing);
+                ProcessChildrenOf(processing);
             }
         }
 
-        GameObject _processInteractorPlaceholder(GameObject parent, GameObject placeholder, string[] components)
+        private GameObject ProcessInteractorPlaceholder(GameObject parent, GameObject placeholder, string[] components)
         {
             placeholder.AddComponent<SphereCollider>();
             Destroy(placeholder.GetComponent<MeshRenderer>());
             Destroy(placeholder.GetComponent<MeshFilter>());
-
 
             var textObject = new GameObject();
             textObject.transform.SetParent(parent.transform);
@@ -79,45 +85,39 @@ namespace OsaVR.Prefabs
             titleText.transform.localScale = new Vector3(0.0001f, 0.0001f, 0.0001f);
             titleText.transform.localRotation = Quaternion.Euler(180f, 90f, 90f);
 
-            var interactor_identifier = components[0];
-            var interactor_prefab_name = components[1];
-            // Debug.Log(String.Format("Interactor from {0} - control {1}", placeholder.name, interactor_prefab_name));
+            var interactorIdentifier = components[0];
+            var interactorPrefabName = components[1];
 
-            var path = Path.Combine("Controls", interactor_prefab_name, interactor_prefab_name);
+            var path = Path.Combine("Controls", interactorPrefabName, interactorPrefabName);
             var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
             var animator = item.GetComponent<Animator>();
             animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(path + "_animctrl");
-            
             item.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
-
-            var interaction_controller = AInteractorController.AddControllerForInteractorId(item, interactor_identifier);
-            InteractorControllerBinding.Bind(placeholder, interaction_controller);
+            
+            _controller.BindInteractor(interactorIdentifier, item, placeholder);
             return item;
         }
 
-        GameObject _processViewPlaceholder(GameObject parent, GameObject placeholder, string[] components)
+        private GameObject ProcessViewPlaceholder(GameObject parent, GameObject placeholder, string[] components)
         {
-            var interactor_identifier = components[0];
-            var interactor_prefab_name = components[1];
+            var interactorIdentifier = components[0];
+            var interactorPrefabName = components[1];
             
             Destroy(placeholder.GetComponent<MeshRenderer>());
             Destroy(placeholder.GetComponent<MeshFilter>());
-            var path = Path.Combine("Controls", interactor_prefab_name, interactor_prefab_name);
+            var path = Path.Combine("Controls", interactorPrefabName, interactorPrefabName);
+            
             var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
-
-            var controller = AViewController.AddControllerForViewId(item, interactor_identifier);
             item.transform.localRotation = Quaternion.identity;
+
+            _controller.BindView(interactorIdentifier, item);
             return item;
         }
 
-        void _processUtilityCamera(GameObject parent, GameObject placeholder, string[] components)
+        private void ProcessUtilityCamera(GameObject parent, GameObject placeholder, string[] components)
         {
             var identifier = components[0];
-        }
-
-        void Update()
-        {
-        
+            _controller.BindUtilityCamera(identifier, placeholder);
         }
     }
 }

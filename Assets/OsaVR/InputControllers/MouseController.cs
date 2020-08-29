@@ -1,23 +1,26 @@
 ﻿using System.Linq;
 using OsaVR.CockpitFramework.Interactor;
+using OsaVR.Osa;
 using UnityEngine;
 
 namespace OsaVR.InputControllers
 {
     public class MouseController: MonoBehaviour
     {
-        private IInteractorController _lastMouseInteractor = null;
+        private IInteractorController _lastMouseInteractor;
         private Camera _camera;
+        private OsaController _controller;
 
-        private void Start()
+        private void Awake()
         {
             _camera = Camera.main;
+            _controller = FindObjectOfType<OsaController>();
         }
 
         private void Update()
         {
-            var primaryClick = UnityEngine.Input.GetMouseButtonDown(0);
-            var secondaryClick = UnityEngine.Input.GetMouseButtonDown(1);
+            var primaryClick = Input.GetMouseButtonDown(0);
+            var secondaryClick = Input.GetMouseButtonDown(1);
 
             if (primaryClick || secondaryClick)
             {
@@ -36,18 +39,18 @@ namespace OsaVR.InputControllers
                 }
             }
 
-            if (UnityEngine.Input.GetMouseButton(1) && _lastMouseInteractor == null)
+            if (Input.GetMouseButton(1) && _lastMouseInteractor == null)
             {
                 var rot = _camera.transform.eulerAngles;
                 var speed = 70f;
 
-                rot.y += UnityEngine.Input.GetAxis("Mouse X") * speed * Time.deltaTime;
-                rot.x += -UnityEngine.Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
+                rot.y += Input.GetAxis("Mouse X") * speed * Time.deltaTime;
+                rot.x += -Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
 
                 _camera.transform.eulerAngles = rot;
             }
 
-            if (_lastMouseInteractor != null && (UnityEngine.Input.GetMouseButtonUp(0) || UnityEngine.Input.GetMouseButtonUp(1)))
+            if (_lastMouseInteractor != null && (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)))
             {
                 SendFirstApplicableInteraction(_lastMouseInteractor, new InteractionType[] {InteractionType.Release});
             
@@ -58,15 +61,14 @@ namespace OsaVR.InputControllers
         private IInteractorController InteractorUnderMouse()
         {
             RaycastHit hit;
-            var camera = Camera.main;
-            var ray = camera.ScreenPointToRay(UnityEngine.Input.mousePosition);
+            var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))
             {
-                var interactor = hit.transform.gameObject.GetComponent<InteractorControllerBinding>();
+                var interactor = _controller.InteractorFromCollider(hit.transform.gameObject);
                 if (interactor)
                 {
-                    return interactor.controller;
+                    return interactor.GetComponent<IInteractorController>();
                 }
             }
 

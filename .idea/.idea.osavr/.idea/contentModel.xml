@@ -32,7 +32,7 @@
               <e p="OsaState.cs" t="Include" />
             </e>
             <e p="OsaController.cs" t="Include" />
-            <e p="SOCRadarCameraController.cs" t="Include" />
+            <e p="RadarCameraProcessingController.cs" t="Include" />
             <e p="ViewControllers" t="Include">
               <e p="SOCScope" t="Include">
                 <e p="Shader" t="Include">

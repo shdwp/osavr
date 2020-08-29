@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using JetBrains.Annotations;
+using OsaVR.CockpitFramework.Interactor;
 using OsaVR.Osa.Model;
 using OsaVR.Osa.ViewControllers;
+using OsaVR.Osa.ViewControllers.SOCScope;
 using OsaVR.Osa.ViewControllers.SSCScope;
 using OsaVR.Utils;
 using OsaVR.World.Simulation;
+using TMPro;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -18,6 +22,9 @@ namespace OsaVR.Osa
         private OsaState _state;
         private GameObject _SOCRoot;
         private SSCScopeController _scope;
+
+        private Dictionary<string, Camera> _utilityCameras = new Dictionary<string, Camera>();
+        private Dictionary<GameObject, GameObject> _interactorColliders = new Dictionary<GameObject, GameObject>();
         
         private void Start()
         {
@@ -27,13 +34,69 @@ namespace OsaVR.Osa
             
             _state.worldPosition = transform.position;
             _state.worldForwardVector = transform.forward;
-            
-            /*
-            _sim.Listen(OsaState.SOCTurnTick, _ =>
+        }
+
+        public void BindView(string id, GameObject o)
+        {
+            switch (id)
             {
-                _SOCRoot.transform.eulerAngles = new Vector3(-90f, _state.SOCAzimuth, 0f);
-            });
-            */
+                case "signal_scope":
+                    o.AddComponent<SSCScopeController>();
+                    break;
+                
+                case "radar_scope":
+                    o.AddComponent<SOCScopeController>();
+                    break;
+                
+                default: 
+                    throw new NotImplementedException();
+            }
+        }
+
+        public void BindUtilityCamera(string id, GameObject o)
+        {
+            _utilityCameras[id] = o.GetComponent<Camera>();
+        }
+
+        public void BindInteractor(string id, GameObject interactorObject, GameObject colliderObject)
+        {
+            switch (id)
+            {
+                case "emissions_off":
+                case "emissions_on":
+                    InteractorControllerBinding.Bind(colliderObject, interactorObject.AddComponent<ButtonController>());
+                    break;
+                
+                case "test_1":
+                case "test_2":
+                    InteractorControllerBinding.Bind(colliderObject, interactorObject.AddComponent<SwitchController>());
+                    break;
+                
+                default:
+                    throw new NotImplementedException();
+            }
+        }
+
+        public Camera SOCUtilityCamera(int idx)
+        {
+            switch (idx)
+            {
+                case 1:
+                    return _utilityCameras["SOC_1Beam"];
+                case 2:
+                    return _utilityCameras["SOC_2Beam"];
+                case 3:
+                    return _utilityCameras["SOC_3Beam"];
+                default:
+                    throw new ArgumentException();
+            }
+        }
+
+        public GameObject InteractorFromCollider(GameObject collider)
+        {
+            GameObject value = null;
+            _interactorColliders.TryGetValue(collider, out value);
+            return value;
         }
     }
 }

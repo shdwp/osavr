@@ -7,28 +7,29 @@ namespace OsaVR.RadarSimulation
 {
     class RadarCameraRenderingPass : CustomPass
     {
-        public Camera TargetCamera;
         public RenderTexture RT;
+        public int Layer;
     
         private Shader _shader;
         private Material _material;
         private MaterialPropertyBlock _materialPropertyBlock;
         private ShaderTagId[] _shaderTags;
+
+        private int _radarReflectibleLayer;
     
         protected override void Setup(ScriptableRenderContext renderContext, CommandBuffer cmd)
         {
             _shader = Shader.Find("Shader Graphs/RadarViewShader");
             _material = CoreUtils.CreateEngineMaterial(_shader);
             _materialPropertyBlock = new MaterialPropertyBlock();
-            _shaderTags = new ShaderTagId[]
-            {
-                new ShaderTagId("Forward"),
-            };
+            _shaderTags = new [] { new ShaderTagId("Forward") };
+
+            _radarReflectibleLayer = LayerMask.NameToLayer("Radar_Reflectible");
         }
     
         void DrawMeshses(ScriptableRenderContext renderContext, CommandBuffer cmd, HDCamera hdCamera, CullingResults cullingResult)
         {
-            if (!hdCamera.camera.Equals(TargetCamera))
+            if (!enabled || hdCamera.camera.gameObject.layer != Layer)
             {
                 return;
             }
@@ -39,7 +40,7 @@ namespace OsaVR.RadarSimulation
                 renderQueueRange = GetRenderQueueRange(RenderQueueType.AllOpaque),
                 sortingCriteria = SortingCriteria.BackToFront,
                 excludeObjectMotionVectors = false,
-                layerMask = 1 << 11,
+                layerMask = 1 << _radarReflectibleLayer,
                 overrideMaterial = _material,
                 overrideMaterialPassIndex = 5,
             };

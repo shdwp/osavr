@@ -49,6 +49,11 @@ namespace OsaVR.World.Simulation
             return _simRunloop.Delay(ts);
         }
 
+        private void LateUpdate()
+        {
+            
+        }
+
         private void OnApplicationQuit()
         {
             _simRunloop.Stop();

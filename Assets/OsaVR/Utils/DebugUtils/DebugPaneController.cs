@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using OsaVR.World.Simulation;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ namespace OsaVR.Utils.DebugUtils
     public class DebugPaneController: MonoBehaviour
     {
         public GameObject LabelFrametime, LabelSimRate;
+
+        public RenderTexture SaveRT;
 
         private Text _textFrametime, _textSimRate;
 
@@ -21,6 +24,8 @@ namespace OsaVR.Utils.DebugUtils
             _sim = FindObjectOfType<SimulationController>();
             _textFrametime = LabelFrametime.GetComponent<Text>();
             _textSimRate = LabelSimRate.GetComponent<Text>();
+
+            Application.targetFrameRate = 45;
         }
 
         private void Update()
@@ -34,6 +39,15 @@ namespace OsaVR.Utils.DebugUtils
             _textSimRate.text = $"SimLag: {_sim.averageLag:F3}ms\nSimSleep: {_sim.averageSleep:F3}ms";
             
             _frametimeStopwatch = Stopwatch.StartNew();
+
+            if (SaveRT != null)
+            {
+                var tex = new Texture2D(SaveRT.width, SaveRT.height);
+
+                RenderTexture.active = SaveRT;
+                tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
+                File.WriteAllBytes("Temp/savert.png", tex.EncodeToPNG());
+            }
         }
     }
 }

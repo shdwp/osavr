@@ -23,7 +23,7 @@ void RadarScope_ScanlineFade_float(float4 In, float2 Pos, float Azimuth, out flo
     Out = In * smoothstep(0.f, pow(pi * 2, factor), pow(RadarScope_AzimuthOffset(Pos, Azimuth), factor));
 }
 
-void RadarScope_RangeCircles_float(float2 UV, float Scanline_Azimuth, out float4 Out) {
+void RadarScope_RangeCircles_float(float2 UV, out float4 Out) {
     float dist = smoothstep(0.f, 0.5f, distance(float2(0.5f, 0.5f), UV));
     Out = float4(0.f, 0.f, 0.f, 1.f);
     

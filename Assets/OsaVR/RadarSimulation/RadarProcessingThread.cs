@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using UnityEngine;
@@ -12,35 +13,34 @@ namespace OsaVR.RadarSimulation
         public float Fov = 0f;
         public float OutputNearPlane = 0f, OutputFarPlane = 90f;
         
+        public Color32[] outputBuffer;
+        public int outputWidth, outputHeight;
+        
         private RenderTexture _rt;
         private Texture2D _inputTex;
 
         private Color32[] _inputBuffer;
-        private Color32[] _outputBuffer;
 
-        private int _inputWidth, _inputHeight, _outputWidth, _outputHeight, _channels = 4;
+        private int _inputWidth, _inputHeight,  _channels = 4;
         
-        private Mutex _synchLock = new Mutex(true);
+        private AutoResetEvent _synch = new AutoResetEvent(false);
         private AutoResetEvent _handle = new AutoResetEvent(false);
         
-        private bool _run;
+        private bool _run = true;
         private Thread _thread;
 
-        public RadarProcessingThread(RenderTexture rt, Color32[] outputBuffer, int outputWidth, int outputHeight)
+        public RadarProcessingThread(RenderTexture rt)
         {
             _rt = rt;
             _inputTex = new Texture2D(_rt.width, _rt.height);
             _inputWidth = _inputTex.width;
             _inputHeight = _inputTex.height;
-            
-            _outputBuffer = outputBuffer;
-            _outputWidth = outputWidth;
-            _outputHeight = outputHeight;
         }
 
         public void Start()
         {
             _thread = new Thread(Main);
+            _thread.Name = "RadarProcessingThread_" + _rt.name;
             _thread.Start();
             
         }
@@ -55,7 +55,9 @@ namespace OsaVR.RadarSimulation
         {
             RenderTexture.active = _rt;
             _inputTex.ReadPixels(new Rect(0, 0, _rt.width, _rt.height), 0, 0);
-            _synchLock.ReleaseMutex();
+            _inputBuffer = _inputTex.GetPixels32();
+            
+            _synch.Set();
 
             return _handle;
         }
@@ -64,10 +66,23 @@ namespace OsaVR.RadarSimulation
         {
             while (_run)
             {
-                _synchLock.WaitOne();
+                try
+                {
+                    _synch.WaitOne();
+                }
+                catch (ThreadInterruptedException)
+                {
+                    break;
+                }
+
+                if (outputBuffer == null)
+                {
+                    continue;
+                }
+
                 fixed (Color32* inputPtr = _inputBuffer)
                 {
-                    fixed (Color32* outputPtr = _outputBuffer)
+                    fixed (Color32* outputPtr = outputBuffer)
                     {
                         update_search_radar_image(
                             (IntPtr)inputPtr,
@@ -78,8 +93,8 @@ namespace OsaVR.RadarSimulation
                             InputFarPlane,
                             Azimuth,
                             (IntPtr)outputPtr,
-                            _outputWidth,
-                            _outputHeight,
+                            outputWidth,
+                            outputHeight,
                             _channels,
                             OutputNearPlane,
                             OutputFarPlane

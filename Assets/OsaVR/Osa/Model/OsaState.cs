@@ -18,11 +18,6 @@ namespace OsaVR.Osa.Model
         /// SOC azimuth in degrees
         /// </summary>
         public float SOCAzimuth = 0;
-        
-        /// <summary>
-        /// SSC azimuth in degrees
-        /// </summary>
-        public float SSCAzimuth = 0;
 
         /// <summary>
         /// Whether search radar is currently turning
@@ -33,6 +28,16 @@ namespace OsaVR.Osa.Model
         /// Whether search radar is currently emitting and receiving returns
         /// </summary>
         public bool SOCEmitting = true;
+
+        /// <summary>
+        /// Active SOC beam
+        /// </summary>
+        public uint SOCActiveBeam = 2;
+        
+        /// <summary>
+        /// SSC azimuth in degrees
+        /// </summary>
+        public float SSCAzimuth = 0;
         
         /// <summary>
         /// SSC distance in degrees
@@ -58,7 +63,7 @@ namespace OsaVR.Osa.Model
 
         private void Start()
         {
-             _sim.Add(new SimulationProcess(0, SOC_Process()));
+            _sim.Add(new SimulationProcess(0, SOC_Process()));
             SSCDistance = 15f;
         }
 
@@ -73,15 +78,14 @@ namespace OsaVR.Osa.Model
                 if (SOCTurning)
                 {
                     SOCAzimuth = MathUtils.NormalizeAzimuth(SOCAzimuth + 4f);
+                    yield return new SimulationEvent(SOCTurnTick);
                 }
                 
-                yield return new SimulationEvent(SOCTurnTick);
-
                 if (SOCEmitting)
                 {
+                    yield return new SimulationEvent(SOCReceiveTick);
                 }
                 
-                yield return new SimulationEvent(SOCReceiveTick);
                 yield return _sim.Delay(TimeSpan.FromMilliseconds(20.13));
             }
         }

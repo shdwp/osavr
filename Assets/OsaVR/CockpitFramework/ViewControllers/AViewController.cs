@@ -34,19 +34,5 @@ namespace OsaVR.CockpitFramework.ViewControllers
 
             renderer.material = _viewSurfaceMat;
         }
-
-        public static IViewController AddControllerForViewId(GameObject o, string id)
-        {
-            switch (id)
-            {
-                case "signal_scope":
-                    return o.AddComponent<SSCScopeController>();
-                
-                case "radar_scope":
-                    return o.AddComponent<SOCScopeController>();
-            }
-
-            throw new NotImplementedException();
-        }
     }
 }

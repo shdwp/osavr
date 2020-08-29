@@ -24,6 +24,8 @@ namespace OsaVR.Osa.ViewControllers.SOCScope
         private void Start()
         {
             _state = FindObjectOfType<OsaState>();
+            
+            FindObjectOfType<RadarCameraProcessingController>().SetSOCTargetTexture(dataTex);
         }
 
         private void Update()
