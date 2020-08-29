@@ -120,8 +120,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_6C640CCF: 0.5
-    - Vector1_7BFDD6BB: 0
-    - Vector1_FC501ECE: 3.5081117
+    - Vector1_7BFDD6BB: 1.4470525
+    - Vector1_FC501ECE: 3.9095376
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1

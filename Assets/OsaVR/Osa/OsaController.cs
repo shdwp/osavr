@@ -25,8 +25,8 @@ namespace OsaVR.Osa
             _state = FindObjectOfType<OsaState>();
             _SOCRoot = gameObject.FindChildNamed("SOC_Root");
             
-            _state.WorldPosition = transform.position;
-            _state.ForwardVector = transform.forward;
+            _state.worldPosition = transform.position;
+            _state.worldForwardVector = transform.forward;
             
             /*
             _sim.Listen(OsaState.SOCTurnTick, _ =>

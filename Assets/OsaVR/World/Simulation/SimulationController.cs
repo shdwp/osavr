@@ -9,8 +9,8 @@ namespace OsaVR.World.Simulation
 {
     public class SimulationController : MonoBehaviour
     {
-        public double AverageLag => _simRunloop.AverageLag;
-        public double AverageSleep => _simRunloop.AverageSleep;
+        public double averageLag => _simRunloop.averageLag;
+        public double averageSleep => _simRunloop.averageSleep;
         
         private SimulationRunloop _simRunloop = new SimulationRunloop();
 

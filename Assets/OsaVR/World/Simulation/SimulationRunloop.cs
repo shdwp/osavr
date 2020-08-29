@@ -13,10 +13,10 @@ namespace OsaVR.World.Simulation
     
     public class SimulationRunloop
     {
-        public bool Run = true;
+        public bool run = true;
 
-        public double AverageLag;
-        public double AverageSleep;
+        public double averageLag;
+        public double averageSleep;
 
         private uint _autoPidCounter = 1000;
         private Thread _thread;
@@ -29,13 +29,13 @@ namespace OsaVR.World.Simulation
         {
             lock (this)
             {
-                if (e.Id == 0)
+                if (e.id == 0)
                 {
                     _autoPidCounter++;
-                    e.Id = _autoPidCounter;
+                    e.id = _autoPidCounter;
                 }
                 _processes.Add(e);
-                _processIds.Add(e.Id, e);
+                _processIds.Add(e.id, e);
                 
                 // @TODO: figure out whether its viable to interrupt the thread
             }
@@ -72,20 +72,20 @@ namespace OsaVR.World.Simulation
 
         public void Start()
         {
-            Run = true;
+            run = true;
             _thread = new Thread(ThreadMain);
             _thread.Start();
         }
 
         public void Stop()
         {
-            Run = false;
+            run = false;
             _thread.Abort();
         }
         
         public void ThreadMain()
         {
-            while (Run)
+            while (run)
             {
                 var frameSw = Stopwatch.StartNew();
                 var sleepTimeSpan = TimeSpan.MaxValue;
@@ -133,7 +133,7 @@ namespace OsaVR.World.Simulation
                     if (correlatedTimespan > TimeSpan.Zero)
                     {
                         _currentTime += sleepTimeSpan;
-                        AverageSleep = (AverageSleep + correlatedTimespan.TotalMilliseconds) / 2;
+                        averageSleep = (averageSleep + correlatedTimespan.TotalMilliseconds) / 2;
                         
                         try {
                             Thread.Sleep((int) correlatedTimespan.TotalMilliseconds);
@@ -148,7 +148,7 @@ namespace OsaVR.World.Simulation
                     else
                     {
                         _currentTime += frameSw.Elapsed;
-                        AverageSleep /= 2;
+                        averageSleep /= 2;
                     }
                 }
             }
@@ -156,24 +156,24 @@ namespace OsaVR.World.Simulation
 
         private TimeSpan HandleProcess(SimulationProcess p)
         {
-            if (p.Running == false)
+            if (p.running == false)
             {
-                p.Running = true;
-                p.Enumerator.MoveNext();
+                p.running = true;
+                p.enumerator.MoveNext();
             }
                     
-            switch (p.Enumerator.Current)
+            switch (p.enumerator.Current)
             {
                 case SimulationDelay d:
-                    var delta = d.DelayUntil - _currentTime;
+                    var delta = d.delayUntil - _currentTime;
                     if (delta <= TimeSpan.Zero)
                     {
 #if DEBUG_LOGS
                         Debug.Log($"Simulation lag {delta.TotalMilliseconds}");
 #endif
                         // Debug.Log(delta.TotalMilliseconds);
-                        AverageLag = (AverageLag + -delta.TotalMilliseconds) / 2;
-                        p.Enumerator.MoveNext();
+                        averageLag = (averageLag + -delta.TotalMilliseconds) / 2;
+                        p.enumerator.MoveNext();
                         return HandleProcess(p);
                     }
                     else
@@ -183,7 +183,7 @@ namespace OsaVR.World.Simulation
                 
                 case SimulationEvent e:
                     NotifyListenersAbout(e);
-                    p.Enumerator.MoveNext();
+                    p.enumerator.MoveNext();
                     return HandleProcess(p);
                 
                 case null:
@@ -197,7 +197,7 @@ namespace OsaVR.World.Simulation
             bool contains;
             lock (this)
             {
-                contains = _eventListeners.ContainsKey(e.Id);
+                contains = _eventListeners.ContainsKey(e.id);
             }
 
             if (contains)
@@ -205,7 +205,7 @@ namespace OsaVR.World.Simulation
                 Action<SimulationEvent>[] array;
                 lock (this)
                 {
-                    var list = _eventListeners[e.Id];
+                    var list = _eventListeners[e.id];
                     array = new Action<SimulationEvent>[list.Count];
                     list.CopyTo(array);
                 }

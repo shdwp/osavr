@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using OsaVR.Osa.Model;
@@ -23,9 +24,10 @@ namespace OsaVR.Osa
         private SimulationController _sim;
         private OsaState _state;
         private SOCScopeController _scope;
-        
-        private Dictionary<RenderTexture, Texture2D> _rts = new Dictionary<RenderTexture, Texture2D>();
+
+        private RadarProcessingThread[] _processingThreads;
         private Texture2D _resultTex;
+        private Color32[] _resultTexBuffer;
         
         private bool _waitingOnRender = false;
 
@@ -39,9 +41,12 @@ namespace OsaVR.Osa
             _sim.Listen(OsaState.SOCReceiveTick, _ => { _waitingOnRender = true; });
             _state = FindObjectOfType<OsaState>();
 
-            _rts[Beam1RT] = new Texture2D(Beam1RT.width, Beam2RT.height);
-            _rts[Beam2RT] = new Texture2D(Beam1RT.width, Beam2RT.height);
-            _rts[Beam3RT] = new Texture2D(Beam3RT.width, Beam2RT.height);
+            _processingThreads = new[]
+            {
+                new RadarProcessingThread(Beam1RT, _resultTexBuffer, _resultTex.width, _resultTex.height), 
+                new RadarProcessingThread(Beam2RT, _resultTexBuffer, _resultTex.width, _resultTex.height), 
+                new RadarProcessingThread(Beam3RT, _resultTexBuffer, _resultTex.width, _resultTex.height), 
+            };
         }
 
         private void Update()
@@ -49,71 +54,39 @@ namespace OsaVR.Osa
             if (_scope == null)
             {
                 _scope = FindObjectOfType<SOCScopeController>();
-                _resultTex = _scope.DataTex;
+                _resultTex = _scope.dataTex;
             }
 
             CameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SOCAzimuth, 0f);
         }
-        
+
         private unsafe void LateUpdate()
         {
             if (_waitingOnRender && _scope != null)
             {
-                _waitingOnRender = false;
-
-                var handles_idx = 0;
-                var handles = new List<JobHandle>(_rts.Count);
+                var sw = Stopwatch.StartNew();
                 
-                var outputBuffer = _resultTex.GetPixels32();
-                
-                fixed (Color32* output_buffer_pinned = outputBuffer)
+                fixed (Color32* outputBufferPinned = _resultTexBuffer)
                 {
-                    fade_radar_image((IntPtr) output_buffer_pinned, _resultTex.width, _resultTex.height, 4, 3);
-                    
-                    foreach (var kv in _rts)
-                    {
-                        if (!kv.Key.name.EndsWith("_2"))
-                        {
-                            // continue;
-                        }
-                        
-                        RenderTexture.active = kv.Key;
-                        kv.Value.ReadPixels(new Rect(0, 0, kv.Value.width, kv.Value.height), 0, 0);
-                        // File.WriteAllBytes("Temp/input.png", kv.Value.EncodeToPNG());
-                        
-                        var input_buffer = kv.Value.GetPixels32();
-                        fixed (Color32* input_buffer_pinned = input_buffer)
-                        {
-                            var job = new RadarProcessingJob(
-                                (IntPtr)input_buffer_pinned,
-                                kv.Value.width,
-                                kv.Value.height,
-                                (IntPtr)output_buffer_pinned,
-                                _resultTex.width,
-                                _resultTex.height,
-                                0,
-                                4,
-                                80,
-                                0,
-                                90
-                            );
-
-                            handles.Add(job.Schedule());
-                        }
-                    }
-                }
-
-                foreach (var handle in handles)
-                {
-                    handle.Complete();
+                    fade_radar_image((IntPtr)outputBufferPinned, _resultTex.width, _resultTex.height, 4, 3);
                 }
                 
-                _resultTex.SetPixels32(outputBuffer);
-                _resultTex.Apply();
-                //File.WriteAllBytes("Temp/output.png", _resultTex.EncodeToPNG());
+                Debug.Log($"Faded in {sw.Elapsed.TotalMilliseconds}ms");
+
+                var handles = new List<WaitHandle>(_processingThreads.Length);
+                foreach (var th in _processingThreads)
+                {
+                    handles.Add(th.ProcessImage());
+                }
+                Debug.Log($"Started threads in {sw.Elapsed.TotalMilliseconds}ms");
+
+                WaitHandle.WaitAll(handles.ToArray());
+                
+                Debug.Log($"Done in {sw.Elapsed.TotalMilliseconds}ms");
             }
         }
 
+        // @TODO: move onto separate class?
         [DllImport("radarimg_proc")]
         private static extern int fade_radar_image(IntPtr output, int output_width, int output_height, int output_ch, int output_fade_speed);
     }

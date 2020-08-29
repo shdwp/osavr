@@ -13,10 +13,10 @@ namespace OsaVR.CockpitFramework.Interactor
             Left = 5,
         }
 
-        protected Position SupportedPositions = Position.Up | Position.Down;
-        protected Position NeutralPosition = Position.Down;
-        protected Position CurrentPosition = Position.Down;
-        protected bool Springloaded = false;
+        protected Position supportedPositions = Position.Up | Position.Down;
+        protected Position neutralPosition = Position.Down;
+        protected Position currentPosition = Position.Down;
+        protected bool springloaded = false;
         
         public override InteractionType[] InteractionTypes()
         {
@@ -30,22 +30,22 @@ namespace OsaVR.CockpitFramework.Interactor
             };
             var i = 1;
 
-            if (SupportedPositions.HasFlag(Position.Up))
+            if (supportedPositions.HasFlag(Position.Up))
             {
                 types[++i] = InteractionType.MoveUp;
             }
             
-            if (SupportedPositions.HasFlag(Position.Down))
+            if (supportedPositions.HasFlag(Position.Down))
             {
                 types[++i] = InteractionType.MoveDown;
             }
             
-            if (SupportedPositions.HasFlag(Position.Left))
+            if (supportedPositions.HasFlag(Position.Left))
             {
                 types[++i] = InteractionType.MoveLeft;
             }
             
-            if (SupportedPositions.HasFlag(Position.Right))
+            if (supportedPositions.HasFlag(Position.Right))
             {
                 types[++i] = InteractionType.MoveRight;
             }
@@ -58,7 +58,7 @@ namespace OsaVR.CockpitFramework.Interactor
             switch (type)
             {
                 case InteractionType.MoveDown:
-                    switch (CurrentPosition)
+                    switch (currentPosition)
                     {
                         case Position.Up:
                             if (MoveToPositionIfSupported(Position.Neutral) || MoveToPositionIfSupported(Position.Down)) { }
@@ -73,7 +73,7 @@ namespace OsaVR.CockpitFramework.Interactor
                     }
                     break;
                 case InteractionType.MoveUp:
-                    switch (CurrentPosition)
+                    switch (currentPosition)
                     {
                         case Position.Up:
                             break;
@@ -92,26 +92,26 @@ namespace OsaVR.CockpitFramework.Interactor
                     }
                     break;
                 case InteractionType.Release:
-                    if (Springloaded)
+                    if (springloaded)
                     {
-                        MoveToPositionIfSupported(NeutralPosition);
+                        MoveToPositionIfSupported(neutralPosition);
                     }
                     break;
             }
             
-            _animator.SetInteger("Position", (int)CurrentPosition);
+            _animator.SetInteger("Position", (int)currentPosition);
         }
 
         private void Start()
         {
-            _animator.SetInteger("Position", (int)CurrentPosition);
+            _animator.SetInteger("Position", (int)currentPosition);
         }
 
         private bool MoveToPositionIfSupported(Position p)
         {
-            if (SupportedPositions.HasFlag(p))
+            if (supportedPositions.HasFlag(p))
             {
-                CurrentPosition = p;
+                currentPosition = p;
                 return true;
             }
 

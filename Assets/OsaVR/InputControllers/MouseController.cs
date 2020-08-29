@@ -66,7 +66,7 @@ namespace OsaVR.InputControllers
                 var interactor = hit.transform.gameObject.GetComponent<InteractorControllerBinding>();
                 if (interactor)
                 {
-                    return interactor.Controller;
+                    return interactor.controller;
                 }
             }
 

@@ -9,7 +9,7 @@
 #define radToDeg(angleInRadians) ((angleInRadians) * 180.0 / M_PI)
 
 void fill_pixel(unsigned char *ptr, int w, int h, int ch, int x, int y) {
-    size_t output_offset = (w * h) - (y * w + x) * ch - 3;
+    size_t output_offset = (w * h * ch) - (y * w + x) * ch;
 
     ptr[output_offset++] = 255;
     ptr[output_offset++] = 255;

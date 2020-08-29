@@ -42,12 +42,12 @@ namespace OsaVR.Osa.Model
         /// <summary>
         /// 
         /// </summary>
-        public Vector3 WorldPosition;
+        public Vector3 worldPosition;
 
         /// <summary>
         /// 
         /// </summary>
-        public Vector3 ForwardVector;
+        public Vector3 worldForwardVector;
 
         private SimulationController _sim;
 
@@ -66,9 +66,13 @@ namespace OsaVR.Osa.Model
         {
             while (true)
             {
+                // 1.818s per revolution
+                // 90 adjustments per rotation
+                // 20.13ms per adjustment
+                
                 if (SOCTurning)
                 {
-                    SOCAzimuth = MathUtils.NormalizeAzimuth(SOCAzimuth + 3f);
+                    SOCAzimuth = MathUtils.NormalizeAzimuth(SOCAzimuth + 4f);
                 }
                 
                 yield return new SimulationEvent(SOCTurnTick);
@@ -78,7 +82,7 @@ namespace OsaVR.Osa.Model
                 }
                 
                 yield return new SimulationEvent(SOCReceiveTick);
-                yield return _sim.Delay(TimeSpan.FromMilliseconds(15.5));
+                yield return _sim.Delay(TimeSpan.FromMilliseconds(20.13));
             }
         }
     }

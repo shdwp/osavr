@@ -14,7 +14,7 @@ namespace OsaVR.CockpitFramework.ViewControllers
     
     public abstract class AViewController: MonoBehaviour, IViewController
     {
-        public Texture2D DataTex;
+        public Texture2D dataTex;
         protected Material _viewSurfaceMat;
 
         protected void Awake()
@@ -22,15 +22,15 @@ namespace OsaVR.CockpitFramework.ViewControllers
             var display = gameObject.FindChildNamed("@ViewSurface");
             var renderer = display.GetComponent<MeshRenderer>();
 
-            DataTex = new Texture2D(256, 256, TextureFormat.ARGB32, false);
-            for (int x = 0; x < DataTex.width; x++)
+            dataTex = new Texture2D(256, 256, TextureFormat.ARGB32, false);
+            for (int x = 0; x < dataTex.width; x++)
             {
-                for (int y = 0; y < DataTex.height; y++)
+                for (int y = 0; y < dataTex.height; y++)
                 {
-                    DataTex.SetPixel(x, y, Color.black);
+                    dataTex.SetPixel(x, y, Color.black);
                 }
             }
-            DataTex.Apply();
+            dataTex.Apply();
 
             renderer.material = _viewSurfaceMat;
         }

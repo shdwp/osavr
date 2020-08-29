@@ -4,12 +4,12 @@ namespace OsaVR.CockpitFramework.Interactor
 {
     public class InteractorControllerBinding : MonoBehaviour
     {
-        public IInteractorController Controller;
+        public IInteractorController controller;
 
         public static void Bind(GameObject o, IInteractorController ctrl)
         {
             var binding = o.AddComponent<InteractorControllerBinding>();
-            binding.Controller = ctrl;
+            binding.controller = ctrl;
         }
     }
 }

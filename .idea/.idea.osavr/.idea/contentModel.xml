@@ -53,7 +53,7 @@
           </e>
           <e p="RadarSimulation" t="Include">
             <e p="RadarCameraRenderingPass.cs" t="Include" />
-            <e p="RadarProcessingJob.cs" t="Include" />
+            <e p="RadarProcessingThread.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="CommonExtensions.cs" t="Include" />

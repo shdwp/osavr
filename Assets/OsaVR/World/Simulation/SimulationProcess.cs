@@ -5,34 +5,34 @@ namespace OsaVR.World.Simulation
 {
     public class SimulationProcess
     {
-        public bool Running = false;
-        public IEnumerator Enumerator;
-        public uint Id;
+        public bool running = false;
+        public IEnumerator enumerator;
+        public uint id;
 
         public SimulationProcess(uint id, IEnumerator enumerator)
         {
-            Enumerator = enumerator;
-            Id = id;
+            this.enumerator = enumerator;
+            this.id = id;
         }
     }
 
     public class SimulationDelay
     {
-        public DateTime DelayUntil;
+        public DateTime delayUntil;
         
         public SimulationDelay(DateTime delayUntil)
         {
-            DelayUntil = delayUntil;
+            this.delayUntil = delayUntil;
         }
     }
 
     public class SimulationEvent
     {
-        public uint Id;
+        public uint id;
 
         public SimulationEvent(uint id)
         {
-            Id = id;
+            this.id = id;
         }
     }
     
