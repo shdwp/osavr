@@ -136,6 +136,18 @@
 		<Unit filename="D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h">
 			<Option target="radarimg_proc"/>
 		</Unit>
+		<Unit filename="D:/UnityProjects/osavr/Plugins/radarimg_proc/soc_radar.c">
+			<Option target="radarimg_proc"/>
+		</Unit>
+		<Unit filename="D:/UnityProjects/osavr/Plugins/radarimg_proc/soc_radar.h">
+			<Option target="radarimg_proc"/>
+		</Unit>
+		<Unit filename="D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.c">
+			<Option target="radarimg_proc"/>
+		</Unit>
+		<Unit filename="D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.h">
+			<Option target="radarimg_proc"/>
+		</Unit>
 		<Unit filename="D:/UnityProjects/osavr/Plugins/radarimg_proc/stb/stb.c">
 			<Option target="test_application"/>
 		</Unit>

@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/radarimg_proc.dir/library.c.obj"
+  "CMakeFiles/radarimg_proc.dir/soc_radar.c.obj"
+  "CMakeFiles/radarimg_proc.dir/ssc_radar.c.obj"
   "radarimg_proc.dll"
   "radarimg_proc.dll.manifest"
   "radarimg_proc.lib"

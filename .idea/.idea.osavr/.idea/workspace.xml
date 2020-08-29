@@ -49,22 +49,36 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/EModules/Auto-Save/AutoSave.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/Utility/HDUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Utilities/CoreUtils.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/a0/bfa3903c/WaitHandle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/9b/bea3dc5d/Interlocked.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Editor/RenderPipeline/Camera/HDCameraEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/RendererList/RendererList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/aa/f0fd8900/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HDRPDefaultResources/Sky and Fog Settings Profile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarCameraRenderingPass.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPassVolume.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/a0/bfa3903c/WaitHandle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/InteractorControllerBinding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/IInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SSCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Shader/SSScopeShaderLib.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/SwitchController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -72,31 +86,27 @@
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/CommonExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/InputControllers/MouseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/ShaderLibrary.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/NativeUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/9b/bea3dc5d/Interlocked.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AutoSave/AutoSave_05.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Editor/RenderPipeline/Camera/HDCameraEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/RendererList/RendererList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Textures/RTHandles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/RadarCameraProcessingController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/Sky/HDRISky/HDRISky.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/6d/89702bd6/Thread.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/aa/f0fd8900/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/Prefab/OsaPrefabController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/RadarScopeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TestPass.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/ViewControllers/SignalScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/SimulationRunloop.cs" />
@@ -132,7 +142,6 @@
         <option value="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationController.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRadarCameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" />
@@ -141,9 +150,14 @@
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader/RadarScopeShaderLib.hlsl" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarCameraProcessingController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarCameraRenderingPass.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarCameraProcessingController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarProcessingThread.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/SOCImageProcessingThread.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/IRadarProcessingThread.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/SSCImageProcessingThread.cs" />
       </list>
     </option>
   </component>
@@ -214,7 +228,7 @@
       <workItem from="1598442274903" duration="22913000" />
       <workItem from="1598520505226" duration="3113000" />
       <workItem from="1598524008633" duration="24456000" />
-      <workItem from="1598698844405" duration="19673000" />
+      <workItem from="1598698844405" duration="23042000" />
     </task>
     <servers />
   </component>
@@ -246,87 +260,91 @@
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
     <state x="-3102" y="214" width="577" height="442" key="#Vim_Emulation/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598521056871" />
-    <state x="-2900" y="228" width="691" height="590" key="#xdebugger.evaluate" timestamp="1598717275119">
+    <state x="-3766" y="107" width="524" height="273" key="#xdebugger.evaluate" timestamp="1598727080252">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state x="-2900" y="228" width="691" height="590" key="#xdebugger.evaluate/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717275119" />
-    <state width="1467" height="387" key="GridCell.Tab.0.bottom" timestamp="1598717347782">
+    <state x="-3766" y="107" width="524" height="273" key="#xdebugger.evaluate/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727080252" />
+    <state width="1467" height="387" key="GridCell.Tab.0.bottom" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347782" />
-    <state width="1467" height="387" key="GridCell.Tab.0.center" timestamp="1598717347782">
+    <state width="1467" height="387" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.0.center" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347782" />
-    <state width="1467" height="387" key="GridCell.Tab.0.left" timestamp="1598717347782">
+    <state width="1467" height="387" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.0.left" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347782" />
-    <state width="1467" height="387" key="GridCell.Tab.0.right" timestamp="1598717347782">
+    <state width="1467" height="387" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.0.right" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347782" />
-    <state width="1467" height="387" key="GridCell.Tab.1.bottom" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.1.bottom" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.1.center" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.1.center" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.1.left" timestamp="1598717347782">
+    <state width="1467" height="387" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.1.left" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347782" />
-    <state width="1467" height="387" key="GridCell.Tab.1.right" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.1.right" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.2.bottom" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.2.bottom" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.2.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.2.center" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.2.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.2.center" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.2.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.2.left" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.2.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.2.left" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.2.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.2.right" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.2.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.2.right" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.2.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.3.bottom" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.2.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.3.bottom" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.3.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.3.center" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.3.bottom/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.3.center" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.3.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.3.left" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.3.center/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.3.left" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.3.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state width="1467" height="387" key="GridCell.Tab.3.right" timestamp="1598717347783">
+    <state width="1467" height="387" key="GridCell.Tab.3.left/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state width="1467" height="387" key="GridCell.Tab.3.right" timestamp="1598727513386">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state width="1467" height="387" key="GridCell.Tab.3.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598717347783" />
-    <state x="-2945" y="214" key="RiderGenerateDialog" timestamp="1598707711043">
+    <state width="1467" height="387" key="GridCell.Tab.3.right/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598727513386" />
+    <state x="-2945" y="214" key="RiderGenerateDialog" timestamp="1598736780119">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state x="-2945" y="214" key="RiderGenerateDialog/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598707711043" />
+    <state x="-2945" y="214" key="RiderGenerateDialog/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598736780119" />
     <state x="-3377" y="203" width="994" height="729" key="SettingsEditor" timestamp="1598700869402">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
     <state x="-3377" y="203" width="994" height="729" key="SettingsEditor/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598700869402" />
     <state x="420" y="217" key="SettingsEditor/0.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1598520894869" />
-    <state x="-2971" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1598726170154">
+    <state width="600" height="428" key="javadoc.popup" timestamp="1598736660268">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state x="-2971" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598726170154" />
+    <state width="600" height="428" key="javadoc.popup/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598736660268" />
+    <state x="-2967" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1598736522172">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-2967" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598736522172" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -353,19 +371,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarCameraRenderingPass.cs</url>
-          <line>36</line>
-          <properties documentPath="D:\UnityProjects\osavr\Assets\OsaVR\RadarSimulation\RadarCameraRenderingPass.cs" initialLine="36">
-            <startOffsets>
-              <option value="1327" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1842" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

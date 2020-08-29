@@ -6,6 +6,8 @@ CMakeFiles\test_application.dir\stb\stb.c.obj: ..\stb\stb_image.h
 CMakeFiles\test_application.dir\stb\stb.c.obj: ..\stb\stb_image_write.h
 
 CMakeFiles\test_application.dir\test_application.c.obj: ..\library.h
+CMakeFiles\test_application.dir\test_application.c.obj: ..\soc_radar.h
+CMakeFiles\test_application.dir\test_application.c.obj: ..\ssc_radar.h
 CMakeFiles\test_application.dir\test_application.c.obj: ..\stb\stb_image.h
 CMakeFiles\test_application.dir\test_application.c.obj: ..\stb\stb_image_write.h
 CMakeFiles\test_application.dir\test_application.c.obj: ..\test_application.c

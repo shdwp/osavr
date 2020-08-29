@@ -7,6 +7,16 @@
 #IncludeRegexTransform: 
 
 D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
+math.h
+-
+
+D:/UnityProjects/osavr/Plugins/radarimg_proc/soc_radar.h
+library.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
+
+D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.h
+library.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
 
 D:/UnityProjects/osavr/Plugins/radarimg_proc/stb/stb_image.h
 stb_image.h
@@ -65,10 +75,12 @@ string.h
 D:/UnityProjects/osavr/Plugins/radarimg_proc/string.h
 
 D:/UnityProjects/osavr/Plugins/radarimg_proc/test_application.h
-library.h
-D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
 stb/stb_image.h
 D:/UnityProjects/osavr/Plugins/radarimg_proc/stb/stb_image.h
 stb/stb_image_write.h
 D:/UnityProjects/osavr/Plugins/radarimg_proc/stb/stb_image_write.h
+soc_radar.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/soc_radar.h
+ssc_radar.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.h
 

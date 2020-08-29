@@ -77,17 +77,59 @@ CMakeFiles\radarimg_proc.dir\library.c.s: cmake_force
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\radarimg_proc.dir\library.c.s /c D:\UnityProjects\osavr\Plugins\radarimg_proc\library.c
 <<
 
+CMakeFiles\radarimg_proc.dir\soc_radar.c.obj: CMakeFiles\radarimg_proc.dir\flags.make
+CMakeFiles\radarimg_proc.dir\soc_radar.c.obj: ..\soc_radar.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\UnityProjects\osavr\Plugins\radarimg_proc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/radarimg_proc.dir/soc_radar.c.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\radarimg_proc.dir\soc_radar.c.obj /FdCMakeFiles\radarimg_proc.dir\ /FS -c D:\UnityProjects\osavr\Plugins\radarimg_proc\soc_radar.c
+<<
+
+CMakeFiles\radarimg_proc.dir\soc_radar.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/radarimg_proc.dir/soc_radar.c.i"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\cl.exe > CMakeFiles\radarimg_proc.dir\soc_radar.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\UnityProjects\osavr\Plugins\radarimg_proc\soc_radar.c
+<<
+
+CMakeFiles\radarimg_proc.dir\soc_radar.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/radarimg_proc.dir/soc_radar.c.s"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\radarimg_proc.dir\soc_radar.c.s /c D:\UnityProjects\osavr\Plugins\radarimg_proc\soc_radar.c
+<<
+
+CMakeFiles\radarimg_proc.dir\ssc_radar.c.obj: CMakeFiles\radarimg_proc.dir\flags.make
+CMakeFiles\radarimg_proc.dir\ssc_radar.c.obj: ..\ssc_radar.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\UnityProjects\osavr\Plugins\radarimg_proc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/radarimg_proc.dir/ssc_radar.c.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\radarimg_proc.dir\ssc_radar.c.obj /FdCMakeFiles\radarimg_proc.dir\ /FS -c D:\UnityProjects\osavr\Plugins\radarimg_proc\ssc_radar.c
+<<
+
+CMakeFiles\radarimg_proc.dir\ssc_radar.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/radarimg_proc.dir/ssc_radar.c.i"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\cl.exe > CMakeFiles\radarimg_proc.dir\ssc_radar.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\UnityProjects\osavr\Plugins\radarimg_proc\ssc_radar.c
+<<
+
+CMakeFiles\radarimg_proc.dir\ssc_radar.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/radarimg_proc.dir/ssc_radar.c.s"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\radarimg_proc.dir\ssc_radar.c.s /c D:\UnityProjects\osavr\Plugins\radarimg_proc\ssc_radar.c
+<<
+
 # Object files for target radarimg_proc
 radarimg_proc_OBJECTS = \
-"CMakeFiles\radarimg_proc.dir\library.c.obj"
+"CMakeFiles\radarimg_proc.dir\library.c.obj" \
+"CMakeFiles\radarimg_proc.dir\soc_radar.c.obj" \
+"CMakeFiles\radarimg_proc.dir\ssc_radar.c.obj"
 
 # External object files for target radarimg_proc
 radarimg_proc_EXTERNAL_OBJECTS =
 
 radarimg_proc.dll: CMakeFiles\radarimg_proc.dir\library.c.obj
+radarimg_proc.dll: CMakeFiles\radarimg_proc.dir\soc_radar.c.obj
+radarimg_proc.dll: CMakeFiles\radarimg_proc.dir\ssc_radar.c.obj
 radarimg_proc.dll: CMakeFiles\radarimg_proc.dir\build.make
 radarimg_proc.dll: CMakeFiles\radarimg_proc.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\UnityProjects\osavr\Plugins\radarimg_proc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library radarimg_proc.dll"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\UnityProjects\osavr\Plugins\radarimg_proc\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared library radarimg_proc.dll"
 	"C:\Program Files\JetBrains\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -E vs_link_dll --intdir=CMakeFiles\radarimg_proc.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x64\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1424~1.283\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\radarimg_proc.dir\objects1.rsp @<<
  /out:radarimg_proc.dll /implib:radarimg_proc.lib /pdb:D:\UnityProjects\osavr\Plugins\radarimg_proc\cmake-build-debug\radarimg_proc.pdb /dll /version:0.0 /machine:x64 /debug /INCREMENTAL  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib  
 <<

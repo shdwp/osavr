@@ -891,17 +891,17 @@ PrefabInstance:
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: m_FocalLength
-      value: 1375.0638
+      value: 13750.9795
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: field of view
-      value: 1.4999523
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: m_FOVAxisMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
@@ -928,6 +928,11 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: c2c15636dbf48d34d8ce9eb82a965fe7, type: 2}
+    - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -5713052500918849530, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: m_HDR
@@ -2317,12 +2322,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a9dffed04ff80c84e87671afd374df20,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.78602034
+      value: -7.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9dffed04ff80c84e87671afd374df20,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1406.6
+      value: 1383.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9dffed04ff80c84e87671afd374df20,
         type: 3}

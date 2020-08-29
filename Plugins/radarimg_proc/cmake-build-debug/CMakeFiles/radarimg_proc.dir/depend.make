@@ -4,3 +4,11 @@
 CMakeFiles\radarimg_proc.dir\library.c.obj: ..\library.c
 CMakeFiles\radarimg_proc.dir\library.c.obj: ..\library.h
 
+CMakeFiles\radarimg_proc.dir\soc_radar.c.obj: ..\library.h
+CMakeFiles\radarimg_proc.dir\soc_radar.c.obj: ..\soc_radar.c
+CMakeFiles\radarimg_proc.dir\soc_radar.c.obj: ..\soc_radar.h
+
+CMakeFiles\radarimg_proc.dir\ssc_radar.c.obj: ..\library.h
+CMakeFiles\radarimg_proc.dir\ssc_radar.c.obj: ..\ssc_radar.c
+CMakeFiles\radarimg_proc.dir\ssc_radar.c.obj: ..\ssc_radar.h
+

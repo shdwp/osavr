@@ -3,45 +3,36 @@
 
 #define EXPORT_API __declspec(dllexport)
 
-int EXPORT_API fade_radar_image(
-        unsigned char *output,
-        int output_width,
-        int output_height,
-        int output_ch,
-        int output_fade_speed
-);
+#define _USE_MATH_DEFINES
+#include <math.h>
 
-int EXPORT_API update_search_radar_image(
-        unsigned char *input,
-        int input_width,
-        int input_height,
-        int input_channels,
-        float input_fov,
-        float input_far_plane,
-        float input_azimuth,
+#define degToRad(angleInDegrees) ((angleInDegrees) * M_PI / 180.0)
+#define radToDeg(angleInRadians) ((angleInRadians) * 180.0 / M_PI)
 
-        unsigned char *output,
-        int output_width,
-        int output_height,
-        int output_ch,
-        float output_near_plane,
-        float output_far_plane
-);
+struct input_struct {
+    unsigned char *buf;
+    int width;
+    int height;
+    int channels;
+    float far_plane;
+    float azimuth;
+    float elevation;
+};
 
-int EXPORT_API render_tracking_radar_image(
-        unsigned char *input,
-        int input_width,
-        int input_height,
-        int input_channels,
+struct output_struct {
+    unsigned char *buf;
+    int width;
+    int height;
+    int channels;
 
-        float input_fov,
-        float input_far_plane,
-        float input_azimuth,
+    float near_plane;
+    float far_plane;
+};
 
-        unsigned char *output,
-        int output_width,
-        int output_height,
-        int output_ch
-);
+typedef struct input_struct input_t;
+typedef struct output_struct output_t;
+
+void fill_px(output_t output, int x, int y);
+void fill_pixel(unsigned char *ptr, int w, int h, int ch, int x, int y);
 
 #endif //RADARIMG_PROC_LIBRARY_H

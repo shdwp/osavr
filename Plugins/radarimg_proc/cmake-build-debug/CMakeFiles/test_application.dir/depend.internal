@@ -7,6 +7,8 @@ CMakeFiles/test_application.dir/stb/stb.c.obj
  D:/UnityProjects/osavr/Plugins/radarimg_proc/stb/stb_image_write.h
 CMakeFiles/test_application.dir/test_application.c.obj
  D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
+ D:/UnityProjects/osavr/Plugins/radarimg_proc/soc_radar.h
+ D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.h
  D:/UnityProjects/osavr/Plugins/radarimg_proc/stb/stb_image.h
  D:/UnityProjects/osavr/Plugins/radarimg_proc/stb/stb_image_write.h
  D:/UnityProjects/osavr/Plugins/radarimg_proc/test_application.c

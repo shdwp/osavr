@@ -164,6 +164,60 @@ library.c.s:
 	$(MAKE) -f CMakeFiles\radarimg_proc.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\radarimg_proc.dir\library.c.s
 .PHONY : library.c.s
 
+soc_radar.obj: soc_radar.c.obj
+
+.PHONY : soc_radar.obj
+
+# target to build an object file
+soc_radar.c.obj:
+	$(MAKE) -f CMakeFiles\radarimg_proc.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\radarimg_proc.dir\soc_radar.c.obj
+.PHONY : soc_radar.c.obj
+
+soc_radar.i: soc_radar.c.i
+
+.PHONY : soc_radar.i
+
+# target to preprocess a source file
+soc_radar.c.i:
+	$(MAKE) -f CMakeFiles\radarimg_proc.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\radarimg_proc.dir\soc_radar.c.i
+.PHONY : soc_radar.c.i
+
+soc_radar.s: soc_radar.c.s
+
+.PHONY : soc_radar.s
+
+# target to generate assembly for a file
+soc_radar.c.s:
+	$(MAKE) -f CMakeFiles\radarimg_proc.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\radarimg_proc.dir\soc_radar.c.s
+.PHONY : soc_radar.c.s
+
+ssc_radar.obj: ssc_radar.c.obj
+
+.PHONY : ssc_radar.obj
+
+# target to build an object file
+ssc_radar.c.obj:
+	$(MAKE) -f CMakeFiles\radarimg_proc.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\radarimg_proc.dir\ssc_radar.c.obj
+.PHONY : ssc_radar.c.obj
+
+ssc_radar.i: ssc_radar.c.i
+
+.PHONY : ssc_radar.i
+
+# target to preprocess a source file
+ssc_radar.c.i:
+	$(MAKE) -f CMakeFiles\radarimg_proc.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\radarimg_proc.dir\ssc_radar.c.i
+.PHONY : ssc_radar.c.i
+
+ssc_radar.s: ssc_radar.c.s
+
+.PHONY : ssc_radar.s
+
+# target to generate assembly for a file
+ssc_radar.c.s:
+	$(MAKE) -f CMakeFiles\radarimg_proc.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\radarimg_proc.dir\ssc_radar.c.s
+.PHONY : ssc_radar.c.s
+
 stb\stb.obj: stb\stb.c.obj
 
 .PHONY : stb\stb.obj
@@ -231,6 +285,12 @@ help:
 	@echo ... library.obj
 	@echo ... library.i
 	@echo ... library.s
+	@echo ... soc_radar.obj
+	@echo ... soc_radar.i
+	@echo ... soc_radar.s
+	@echo ... ssc_radar.obj
+	@echo ... ssc_radar.i
+	@echo ... ssc_radar.s
 	@echo ... stb/stb.obj
 	@echo ... stb/stb.i
 	@echo ... stb/stb.s

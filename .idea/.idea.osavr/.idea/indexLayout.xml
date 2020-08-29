@@ -32,7 +32,6 @@
       <Path>Logs</Path>
       <Path>Plugins</Path>
       <Path>References</Path>
-      <Path>Temp</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
     </explicitExcludes>

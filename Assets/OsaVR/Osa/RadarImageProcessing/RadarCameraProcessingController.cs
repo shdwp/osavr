@@ -29,7 +29,7 @@ namespace OsaVR.Osa
         private OsaController _controller;
         private SOCScopeController _scope;
 
-        private RadarProcessingThread[] _processingThreads;
+        private IRadarProcessingThread[] _processingThreads;
         
         private Texture2D _socResultTex;
         private Color32[] _socResultTexBuffer;
@@ -50,8 +50,8 @@ namespace OsaVR.Osa
             _sim.Listen(OsaState.SOCReceiveTick, _ => { _waitingOnRender = true; });
             _state = FindObjectOfType<OsaState>();
 
-            _processingThreads = new RadarProcessingThread[1];
-            _processingThreads[SOCIndex] = new RadarProcessingThread(SOCRenderTexture);
+            _processingThreads = new IRadarProcessingThread[1];
+            _processingThreads[SOCIndex] = new SOCImageProcessingThread(SOCRenderTexture);
             
             foreach (var thread in _processingThreads)
             {
@@ -64,11 +64,7 @@ namespace OsaVR.Osa
             _socResultTex = tex;
             _socResultTexBuffer = tex.GetPixels32();
 
-            var thread = _processingThreads[SOCIndex];
-            
-            thread.outputBuffer = _socResultTexBuffer;
-            thread.outputWidth = _socResultTex.width;
-            thread.outputHeight = _socResultTex.height;
+            _processingThreads[SOCIndex].SetOutput(_socResultTexBuffer, _socResultTex.width, _socResultTex.height);
 
             _setupDone = true;
         }
@@ -108,7 +104,7 @@ namespace OsaVR.Osa
                 var handles = new WaitHandle[_processingThreads.Length];
                 for (int i = 0; i < _processingThreads.Length; i++)
                 {
-                    handles[i] = _processingThreads[i].ProcessImage();
+                    handles[i] = _processingThreads[i].StartProcessing();
                 }
                 
 #if TIMING_DEBUG
@@ -117,7 +113,7 @@ namespace OsaVR.Osa
 
                 if (!WaitHandle.WaitAll(handles, 64))
                 {
-                    Debug.Log($"Threads didn't finish in 64ms!");
+                    Debug.Log($"RadarProcessing threads didn't finish in 64ms!");
                 }
                 
 #if TIMING_DEBUG
