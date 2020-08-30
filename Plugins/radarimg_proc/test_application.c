@@ -41,7 +41,7 @@ void test_ssc_processing() {
     int w, h, ch;
     unsigned char *data = stbi_load("ssc_input.png", &w, &h, &ch, 0);
 
-    int output_w = 256, output_h = 192, output_ch = 4;
+    int output_w = 256, output_h = 256, output_ch = 4;
     unsigned char *target_data = malloc(output_w * output_h * output_ch);
     memset(target_data, 0, output_w * output_h * output_ch);
 
@@ -52,7 +52,7 @@ void test_ssc_processing() {
             .width = w,
             .height = h,
             .channels = ch,
-            .far_plane = 28,
+            .far_plane = 50,
             .azimuth = 0,
             .elevation = 0
     };
@@ -66,9 +66,9 @@ void test_ssc_processing() {
             .far_plane = 28,
     };
 
-    ssc_targeting_info_t targeting_info = {
-            .near_plane = 12,
-            .far_plane = 16,
+    ssc_targeting_gate_t targeting_info = {
+            .near_plane = 25,
+            .far_plane = 28,
     };
 
     ssc_deviation_info_t deviation_info;

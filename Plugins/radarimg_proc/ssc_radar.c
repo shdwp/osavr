@@ -6,16 +6,14 @@
 void process_ssc_image(
         input_t input,
         output_t output,
-        ssc_targeting_info_t targeting_info,
+        ssc_targeting_gate_t targeting_info,
         ssc_deviation_info_t *deviation_info
 ) {
-    // float *full_range_returns = malloc(sizeof(float) * output.width);
-    float full_range_returns[256];
-    memset(full_range_returns, 0, output.width * sizeof(int));
+    float *full_range_returns = malloc(sizeof(float) * output.width);
+    memset(full_range_returns, 0, output.width * sizeof(float));
 
-    //float *target_range_returns = malloc(sizeof(float) * output.width);
-    float target_range_returns[256];
-    memset(target_range_returns, 0, output.width * sizeof(int));
+    float *target_range_returns = malloc(sizeof(float) * output.width);
+    memset(target_range_returns, 0, output.width * sizeof(float));
 
     float max_return = 0.f;
 
@@ -31,14 +29,19 @@ void process_ssc_image(
                 float return_level = (float) b / 255.f;
                 float distance = ((float) (r) / 255.f) * input.far_plane;
 
-                int full_range_idx = ((float)(r) / 255.f) * output.width;
-                full_range_returns[full_range_idx] += return_level;
+                float output_distance_factor = distance / output.far_plane;
+                if (output_distance_factor <= 1.f) {
+                    int full_range_idx = output_distance_factor * (output.width - 1);
+                    full_range_returns[full_range_idx] += return_level;
 
-                if (distance >= targeting_info.near_plane && distance <= targeting_info.far_plane) {
-                    int target_range_idx = ((distance - targeting_info.near_plane) / (targeting_info.far_plane - targeting_info.near_plane)) * output.width;
-                    target_range_returns[target_range_idx] += return_level;
+                    if (distance >= targeting_info.near_plane && distance <= targeting_info.far_plane) {
+                        int target_range_idx = ((distance - targeting_info.near_plane) /
+                                                (targeting_info.far_plane - targeting_info.near_plane)) *
+                                               (output.width - 1);
+                        target_range_returns[target_range_idx] += return_level;
 
-                    max_return = max(max_return, target_range_returns[target_range_idx]);
+                        max_return = max(max_return, target_range_returns[target_range_idx]);
+                    }
                 }
             }
         }
@@ -60,6 +63,10 @@ void process_ssc_image(
     int previous_y = 0;
 
     for (int x = 0; x < output.width; x++) {
+        for (int y = 0; y < output.height; y++) {
+            blank_px(output, x, y);
+        }
+
         int y_start = full_range_y;
         if (x >= targeting_start_idx && x <= targeting_end_idx) {
             y_start += 15;
@@ -86,8 +93,7 @@ void process_ssc_image(
         }
 
         float diff = current_value - draw_value;
-        float correction = max(fabs(diff / 5.f), target_return_per_px * 1);
-        printf("%f to %f, correction %f, change %d\n", draw_value, current_value, correction, changing);
+        float correction = max(fabs(diff / 3.f), target_return_per_px * 0.3);
         if (fabs(diff) > correction) {
             draw_value += current_value > draw_value ? +correction : -correction;
             changing = 1;
@@ -108,6 +114,6 @@ void process_ssc_image(
         fill_px(output, x, target_range_y + current_y);
     }
 
-    // free(full_range_returns);
-    // free(target_range_returns);
+    free(full_range_returns);
+    free(target_range_returns);
 }

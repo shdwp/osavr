@@ -14,6 +14,7 @@ struct input_struct {
     int width;
     int height;
     int channels;
+    float fov;
     float far_plane;
     float azimuth;
     float elevation;
@@ -33,6 +34,7 @@ typedef struct input_struct input_t;
 typedef struct output_struct output_t;
 
 void fill_px(output_t output, int x, int y);
+void blank_px(output_t output, int x, int y);
 void fill_pixel(unsigned char *ptr, int w, int h, int ch, int x, int y);
 
 #endif //RADARIMG_PROC_LIBRARY_H

@@ -1,4 +1,5 @@
-﻿using OsaVR.CockpitFramework.ViewControllers;
+﻿using System;
+using OsaVR.CockpitFramework.ViewControllers;
 using UnityEngine;
 
 namespace OsaVR.Osa.ViewControllers.SSCScope
@@ -12,17 +13,13 @@ namespace OsaVR.Osa.ViewControllers.SSCScope
             _viewSurfaceMat = Resources.Load<Material>("Controls/scope/SSCScopeMat");
             base.Awake();
             
-            for (int x = 0; x < 10; x++)
-            {
-                for (int y = 0; y < 10; y++)
-                {
-                    dataTex.SetPixel(x, y, y == 5 ? Color.white : Color.black);
-                }
-            }
-            
             dataTex.Apply();
-            //_viewSurfaceMat.SetTexture(_shaderidInput, Resources.Load<Texture2D>("scope_input"));
             _viewSurfaceMat.SetTexture(_shaderidInput, dataTex);
+        }
+
+        private void Start()
+        {
+            FindObjectOfType<RadarCameraProcessingController>().SetSSCTargetTexture(dataTex);
         }
 
         protected void FixedUpdate()

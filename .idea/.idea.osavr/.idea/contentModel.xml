@@ -33,8 +33,8 @@
             </e>
             <e p="OsaController.cs" t="Include" />
             <e p="RadarImageProcessing" t="Include">
-              <e p="IRadarProcessingThread.cs" t="Include" />
               <e p="RadarCameraProcessingController.cs" t="Include" />
+              <e p="RadarProcNative.cs" t="Include" />
               <e p="SOCImageProcessingThread.cs" t="Include" />
               <e p="SSCImageProcessingThread.cs" t="Include" />
             </e>
@@ -57,7 +57,9 @@
             <e p="OsaPrefabController.cs" t="Include" />
           </e>
           <e p="RadarSimulation" t="Include">
+            <e p="IRadarProcessingThread.cs" t="Include" />
             <e p="RadarCameraRenderingPass.cs" t="Include" />
+            <e p="RadarReflectible.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="CommonExtensions.cs" t="Include" />

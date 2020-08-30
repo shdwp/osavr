@@ -22,4 +22,4 @@ elev. -12deg +78deg
 resolution 0.2deg, 55m
 beam horizontal 0.17-0.24, vert 0.13 - 0.17
 two beam types - ultranarrow and wide (1st used when tracking and 2st used for target capture)
-available when moving
+not available when moving

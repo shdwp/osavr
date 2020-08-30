@@ -107,11 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/ViewControllers/AViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Osa/OsaController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Simulation/SimulationRunloop.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/ButtonController.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/IInteractorController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Input/MouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SignalScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/CommonExtensions.cs" />
@@ -123,7 +118,6 @@
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SignalScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/RadarScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/RadarScope/SOCScopeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SSCScopeController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarProcessingController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarCameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/RadarRendering/RadarCameraRenderingPass.cs" />
@@ -149,15 +143,21 @@
         <option value="$PROJECT_DIR$/Assets/OsaVR/InputControllers/MouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader/RadarScopeShaderLib.hlsl" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarCameraRenderingPass.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarCameraProcessingController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarProcessingThread.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/SOCImageProcessingThread.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/IRadarProcessingThread.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarReflectible.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SSCScopeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/SOCImageProcessingThread.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarImageProcessingNative.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarProcNative.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarProcNative.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/SSCImageProcessingThread.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/IRadarProcessingThread.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs" />
       </list>
     </option>
   </component>
@@ -194,10 +194,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="28440">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30972">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="28440" />
+      <option name="pid" value="30972" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -228,7 +228,7 @@
       <workItem from="1598442274903" duration="22913000" />
       <workItem from="1598520505226" duration="3113000" />
       <workItem from="1598524008633" duration="24456000" />
-      <workItem from="1598698844405" duration="23042000" />
+      <workItem from="1598698844405" duration="36422000" />
     </task>
     <servers />
   </component>
@@ -341,10 +341,10 @@
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598736660268" />
-    <state x="-2967" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1598736522172">
+    <state x="-2967" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1598799139013">
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
-    <state x="-2967" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598736522172" />
+    <state x="-2967" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1598799139013" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -371,6 +371,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs</url>
+          <line>88</line>
+          <properties documentPath="D:\UnityProjects\osavr\Assets\OsaVR\Osa\RadarImageProcessing\RadarCameraProcessingController.cs" initialLine="88">
+            <startOffsets>
+              <option value="2861" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2949" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs</url>
+          <line>107</line>
+          <properties documentPath="D:\UnityProjects\osavr\Assets\OsaVR\Osa\RadarImageProcessing\RadarCameraProcessingController.cs" initialLine="107">
+            <startOffsets>
+              <option value="3607" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3632" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

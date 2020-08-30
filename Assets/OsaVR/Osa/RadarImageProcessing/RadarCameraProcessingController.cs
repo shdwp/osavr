@@ -20,9 +20,9 @@ namespace OsaVR.Osa
 {
     public class RadarCameraProcessingController: MonoBehaviour
     {
-        public RenderTexture SOCRenderTexture;
+        public RenderTexture SOCRenderTexture, SSCRenderTexture;
         
-        public GameObject SOCCameraTransformRoot;
+        public GameObject SOCCameraTransformRoot, SSCCameraTransformRoot;
         
         private SimulationController _sim;
         private OsaState _state;
@@ -30,9 +30,11 @@ namespace OsaVR.Osa
         private SOCScopeController _scope;
 
         private IRadarProcessingThread[] _processingThreads;
+        private SOCImageProcessingThread _socThread;
+        private SSCImageProcessingThread _sscThread;
         
-        private Texture2D _socResultTex;
-        private Color32[] _socResultTexBuffer;
+        private Texture2D _socResultTex, _sscResultTex;
+        private Color32[] _socResultTexBuffer, _sscResultTexBuffer;
         
         private bool _waitingOnRender = false;
         private bool _setupDone = false;
@@ -50,8 +52,12 @@ namespace OsaVR.Osa
             _sim.Listen(OsaState.SOCReceiveTick, _ => { _waitingOnRender = true; });
             _state = FindObjectOfType<OsaState>();
 
-            _processingThreads = new IRadarProcessingThread[1];
-            _processingThreads[SOCIndex] = new SOCImageProcessingThread(SOCRenderTexture);
+            _socThread = new SOCImageProcessingThread(SOCRenderTexture);
+            _sscThread = new SSCImageProcessingThread(SSCRenderTexture);
+
+            _processingThreads = new IRadarProcessingThread[2];
+            _processingThreads[SOCIndex] = _socThread;
+            _processingThreads[SSCIndex] = _sscThread;
             
             foreach (var thread in _processingThreads)
             {
@@ -66,24 +72,19 @@ namespace OsaVR.Osa
 
             _processingThreads[SOCIndex].SetOutput(_socResultTexBuffer, _socResultTex.width, _socResultTex.height);
 
-            _setupDone = true;
+            _setupDone = _socResultTex != null && _sscResultTex != null;
         }
 
         public void SetSSCTargetTexture(Texture2D tex)
         {
+            _sscResultTex = tex;
+            _sscResultTexBuffer = tex.GetPixels32();
+            
+            _processingThreads[SSCIndex].SetOutput(_sscResultTexBuffer, _sscResultTex.width, _sscResultTex.height);
+            _setupDone = _socResultTex != null && _sscResultTex != null;
         }
 
-        private void Update()
-        {
-            SOCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SOCAzimuth, 0f);
-
-            for (int i = 1; i <= 3; i++)
-            {
-                _controller.SOCUtilityCamera(i).enabled = _state.SOCActiveBeam == i;
-            }
-        }
-
-        private unsafe void LateUpdate()
+        private unsafe void Update()
         {
             if (_waitingOnRender && _setupDone)
             {
@@ -120,13 +121,36 @@ namespace OsaVR.Osa
                 Debug.Log($"Done processing {sw.Elapsed.TotalMilliseconds}ms");
 #endif
                 
+                File.WriteAllBytes("Temp/soc.png", _socResultTex.EncodeToPNG());
+                
                 _socResultTex.SetPixels32(_socResultTexBuffer);
                 _socResultTex.Apply();
+                
+                _sscResultTex.SetPixels32(_sscResultTexBuffer);
+                _sscResultTex.Apply();
                 
 #if TIMING_DEBUG
                 Debug.Log($"Done in {sw.Elapsed.TotalMilliseconds}ms");
 #endif
             }
+            
+            SOCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SOCAzimuth, 0f);
+            SSCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SSCAzimuth, 0f);
+
+            _socThread.Azimuth = _state.SOCAzimuth;
+            
+            _sscThread.Azimuth = _state.SSCAzimuth;
+            _sscThread.TargetGateNearPlane = _state.SSCDistance - 1.5f;
+            _sscThread.TargetGateFarPlane = _state.SSCDistance + 1.5f;
+
+            for (int i = 1; i <= 3; i++)
+            {
+                _controller.SOCUtilityCamera(i).enabled = _state.SOCActiveBeam == i;
+            }
+        }
+
+        private unsafe void LateUpdate()
+        {
         }
 
         private void OnApplicationQuit()

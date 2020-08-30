@@ -40,7 +40,6 @@ namespace OsaVR.Osa
             }
         }
         
-        
         [DllImport("radarimg_proc")]
         private static extern int update_search_radar_image(
             IntPtr input,
