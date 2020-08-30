@@ -119,9 +119,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_6C640CCF: 0.5
-    - Vector1_7BFDD6BB: -0
-    - Vector1_FC501ECE: 5.1661744
+    - Vector1_6C640CCF: 0.87333333
+    - Vector1_7BFDD6BB: 0
+    - Vector1_FC501ECE: 4.7472954
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1

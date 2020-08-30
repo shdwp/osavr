@@ -121,8 +121,6 @@ namespace OsaVR.Osa
                 Debug.Log($"Done processing {sw.Elapsed.TotalMilliseconds}ms");
 #endif
                 
-                File.WriteAllBytes("Temp/soc.png", _socResultTex.EncodeToPNG());
-                
                 _socResultTex.SetPixels32(_socResultTexBuffer);
                 _socResultTex.Apply();
                 

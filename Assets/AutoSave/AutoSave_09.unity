@@ -746,10 +746,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SOCAzimuth: 0
-  SOCTurning: 0
+  SOCTurning: 1
   SOCEmitting: 1
   SOCActiveBeam: 2
-  SSCAzimuth: 0
+  SSCAzimuth: 5.43
   SSCDistance: 10
   worldPosition: {x: 0, y: 0, z: 0}
   worldForwardVector: {x: 0, y: 0, z: 0}
@@ -1705,7 +1705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LabelFrametime: {fileID: 81529479}
   LabelSimRate: {fileID: 1774203716}
-  SaveRT: {fileID: 8400000, guid: 63e6163c643603a4b8aa6065e62b04b6, type: 2}
+  SaveRT: {fileID: 0}
 --- !u!1 &936053965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,7 +2752,7 @@ MonoBehaviour:
   SMAAQuality: 2
   dithering: 0
   stopNaNs: 0
-  taaSharpenStrength: 0.6
+  taaSharpenStrength: 2
   physicalParameters:
     m_Iso: 200
     m_ShutterSpeed: 0.005
