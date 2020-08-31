@@ -75,16 +75,6 @@ namespace OsaVR.Prefabs
             Destroy(placeholder.GetComponent<MeshRenderer>());
             Destroy(placeholder.GetComponent<MeshFilter>());
 
-            var textObject = new GameObject();
-            textObject.transform.SetParent(parent.transform);
-            var titleText = textObject.AddComponent<TextMeshPro>();
-            titleText.fontSize = 24;
-            titleText.text = "Title";
-            titleText.alignment = TextAlignmentOptions.Center;
-            titleText.transform.localPosition = placeholder.transform.localPosition + placeholder.transform.up * -0.0002f;
-            titleText.transform.localScale = new Vector3(0.0001f, 0.0001f, 0.0001f);
-            titleText.transform.localRotation = Quaternion.Euler(180f, 90f, 90f);
-
             var interactorIdentifier = components[0];
             var interactorPrefabName = components[1];
 

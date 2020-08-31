@@ -16,13 +16,13 @@ long long system_current_time_millis() {
 
 void test_soc_processing() {
     int w, h, ch;
-    unsigned char *data = stbi_load("input.png", &w, &h, &ch, 0);
+    unsigned char *data = stbi_load("input__2Beam.png", &w, &h, &ch, 0);
 
     int output_w = 256, output_h = 256, output_ch = 4;
     unsigned char *target_data = malloc(output_w * output_h * output_ch);
     memset(target_data, 0, output_w * output_h * output_ch);
 
-    float azimuth = 90.f;
+    float azimuth = 180.f;
     float fov = 4.f;
     float input_far_plane = 80.f;
     float output_distance = 160.f;
@@ -82,5 +82,6 @@ void test_ssc_processing() {
 }
 
 void main(void) {
+    test_soc_processing();
     test_ssc_processing();
 }

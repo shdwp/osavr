@@ -1,4 +1,5 @@
 #include "soc_radar.h"
+#include "stdio.h"
 
 int fade_radar_image(
         unsigned char *output,
@@ -50,21 +51,21 @@ int update_search_radar_image(
 
                 if (return_level > 0.f && distance >= output_near_plane && distance <= output_far_plane) {
                     int center_x = output_width / 2, center_y = output_height / 2;
-                    int vertical_offset = (int)((distance - output_near_plane) / output_far_plane * (float)output_height / 2.f);
+                    int radius = (int)((distance - output_near_plane) / output_far_plane * (float)output_height / 2.f);
 
                     float arc_start = degToRad(input_azimuth - input_fov / 2.f);
                     float arc_middle = degToRad(input_azimuth);
                     float arc_end = degToRad(input_azimuth + input_fov / 2.f);
 
-                    int x_a = vertical_offset * sin(arc_start);
-                    int x_b = vertical_offset * sin(arc_end);
+                    int x_a = radius * sin(arc_start);
+                    int x_b = radius * sin(arc_end);
 
                     int x_from = x_a < x_b ? x_a : x_b;
                     int x_to = x_a > x_b ? x_a : x_b;
 
                     for (int mx = x_from; mx < x_to; mx++) {
-                        float rad = asin(mx == 0 ? 0 : (float)mx / (float)vertical_offset);
-                        int my = -vertical_offset * cos(rad);
+                        float rad = asin(mx == 0 ? 0 : (float)mx / (float)radius);
+                        int my = radius * cos(rad);
 
                         int marker_x = center_x + mx;
                         int marker_y = center_y + my;
@@ -72,24 +73,24 @@ int update_search_radar_image(
                         fill_pixel(output, output_width, output_height, output_ch, marker_x, marker_y);
                     }
 
-                    int y_a = vertical_offset * cos(arc_start);
-                    int y_b = vertical_offset * cos(arc_end);
+                    int y_a = radius * cos(arc_start);
+                    int y_b = radius * cos(arc_end);
 
                     int y_from = y_a < y_b ? y_a : y_b;
                     int y_to = y_a > y_b ? y_a : y_b;
 
                     for (int my = y_from; my < y_to; my++) {
-                        float rad = acos(my == 0 ? 0 : (float)my / (float)vertical_offset);
-                        int mx = vertical_offset * sin(rad);
+                        float rad = acos(my == 0 ? 0 : (float)my / (float)radius);
+                        int mx = radius * sin(rad);
 
                         int marker_x = center_x + mx;
-                        int marker_y = center_y - my;
+                        int marker_y = center_y + my;
 
                         fill_pixel(output, output_width, output_height, output_ch, marker_x, marker_y);
                     }
 
-                    int x = center_x + vertical_offset * sin(arc_middle);
-                    int y = center_y - vertical_offset * cos(arc_middle);
+                    int x = center_x + radius * sin(arc_middle);
+                    int y = center_y + radius * cos(arc_middle);
 
                     fill_pixel(output, output_width, output_height, output_ch, x, y);
                 }

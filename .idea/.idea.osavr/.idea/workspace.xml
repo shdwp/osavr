@@ -49,36 +49,21 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/EModules/Auto-Save/AutoSave.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/Utility/HDUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Utilities/CoreUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/a0/bfa3903c/WaitHandle.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/9b/bea3dc5d/Interlocked.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Editor/RenderPipeline/Camera/HDCameraEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/RendererList/RendererList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/aa/f0fd8900/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/Model/OsaState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/SOCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Utilities/CoreUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HDRPDefaultResources/Sky and Fog Settings Profile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/RadarCameraRenderingPass.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/CustomPass/CustomPassVolume.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/a0/bfa3903c/WaitHandle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/InteractorControllerBinding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/IInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/SSCScopeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/RenderPipeline/RenderPass/DrawRenderersCustomPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SSCScope/Shader/SSScopeShaderLib.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/SwitchController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -86,22 +71,22 @@
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/CommonExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/InputControllers/MouseController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/ShaderLibrary.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/MathUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/NativeUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Utils/DebugUtils/DebugPaneController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/9b/bea3dc5d/Interlocked.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AutoSave/AutoSave_05.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Editor/RenderPipeline/Camera/HDCameraEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/RendererList/RendererList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@8.2.0/Runtime/Textures/RTHandles.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationRunloop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OsaVR/World/Simulation/SimulationController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@8.2.0/Runtime/Sky/HDRISky/HDRISky.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/aa/f0fd8900/LayerMask.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/6d/89702bd6/Thread.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -139,7 +124,6 @@
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/SOCRadarCameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/Interactor/AInteractorController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/CockpitFramework/ViewControllers/AViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/InputControllers/MouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/OsaController.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/ViewControllers/SOCScope/Shader/RadarScopeShaderLib.hlsl" />
@@ -158,6 +142,7 @@
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/SSCImageProcessingThread.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/RadarSimulation/IRadarProcessingThread.cs" />
         <option value="$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs" />
+        <option value="$PROJECT_DIR$/Assets/OsaVR/Prefabs/OsaPrefabController.cs" />
       </list>
     </option>
   </component>
@@ -194,10 +179,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30972">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="30972" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -229,6 +214,7 @@
       <workItem from="1598520505226" duration="3113000" />
       <workItem from="1598524008633" duration="24456000" />
       <workItem from="1598698844405" duration="36422000" />
+      <workItem from="1598855320793" duration="2051000" />
     </task>
     <servers />
   </component>
@@ -371,32 +357,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs</url>
-          <line>88</line>
-          <properties documentPath="D:\UnityProjects\osavr\Assets\OsaVR\Osa\RadarImageProcessing\RadarCameraProcessingController.cs" initialLine="88">
-            <startOffsets>
-              <option value="2861" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2949" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/OsaVR/Osa/RadarImageProcessing/RadarCameraProcessingController.cs</url>
-          <line>107</line>
-          <properties documentPath="D:\UnityProjects\osavr\Assets\OsaVR\Osa\RadarImageProcessing\RadarCameraProcessingController.cs" initialLine="107">
-            <startOffsets>
-              <option value="3607" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3632" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
