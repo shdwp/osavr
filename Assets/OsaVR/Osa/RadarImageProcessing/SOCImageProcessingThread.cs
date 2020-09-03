@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using OsaVR.RadarSimulation;
 using UnityEngine;
 
 namespace OsaVR.Osa
@@ -21,41 +22,32 @@ namespace OsaVR.Osa
             {
                 fixed (Color32* outputPtr = _outputBuffer)
                 {
-                    update_search_radar_image(
-                        (IntPtr)inputPtr,
-                        _inputWidth,
-                        _inputHeight,
-                        _channels,
-                        Fov,
-                        InputFarPlane,
-                        Azimuth,
-                        (IntPtr)outputPtr,
-                        _outputWidth,
-                        _outputHeight,
-                        _channels,
-                        OutputNearPlane,
-                        OutputFarPlane
-                    );
+                    
+                    var input = new NativeInputStruct()
+                    {
+                        buf = (IntPtr)inputPtr,
+                        width = _inputWidth,
+                        height = _inputHeight,
+                        channels = 4,
+                        azimuth = Azimuth,
+                        elevation = 0,
+                        far_plane = InputFarPlane,
+                        fov = Fov,
+                    };
+
+                    var output = new NativeOutputStruct()
+                    {
+                        buf = (IntPtr)outputPtr,
+                        width = _outputWidth,
+                        height = _outputHeight,
+                        channels = 4,
+                        near_plane = OutputNearPlane,
+                        far_plane = OutputFarPlane,
+                    };
+
+                    RadarProcNative.update_soc_image(input, output);
                 }
             }
         }
-        
-        [DllImport("radarimg_proc")]
-        private static extern int update_search_radar_image(
-            IntPtr input,
-            int input_width,
-            int input_height,
-            int input_channels,
-            float input_fov,
-            float input_far_plane,
-            float input_azimuth,
-
-            IntPtr output,
-            int output_width,
-            int output_height,
-            int output_ch,
-            float output_near_plane,
-            float output_far_plane
-        );
     }
 }

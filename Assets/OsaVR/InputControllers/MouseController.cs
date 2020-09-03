@@ -29,12 +29,12 @@ namespace OsaVR.InputControllers
                 {
                     if (primaryClick)
                     {
-                        SendFirstApplicableInteraction(_lastMouseInteractor, new InteractionType[] {InteractionType.Press, InteractionType.MoveDown});
+                        SendFirstApplicableInteraction(_lastMouseInteractor, new InteractionType[] {InteractionType.Press, InteractionType.MoveDown, InteractionType.MoveLeft});
                     }
 
                     if (secondaryClick)
                     {
-                        SendFirstApplicableInteraction(_lastMouseInteractor, new InteractionType[] {InteractionType.Press, InteractionType.MoveUp});
+                        SendFirstApplicableInteraction(_lastMouseInteractor, new InteractionType[] {InteractionType.Press, InteractionType.MoveUp, InteractionType.MoveRight});
                     }
                 }
             }

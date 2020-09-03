@@ -30,9 +30,9 @@ namespace OsaVR.Osa.ViewControllers.SOCScope
 
         private void Update()
         {
-            _viewSurfaceMat.SetFloat(_shaderidSOCAzimuth, _state.SOCAzimuth * Mathf.Deg2Rad);
-            _viewSurfaceMat.SetFloat(_shaderidSSCAzimuth, _state.SSCAzimuth * Mathf.Deg2Rad);
-            _viewSurfaceMat.SetFloat(_shaderidSSCDistance, _state.SSCDistance / 30f);
+            _viewSurfaceMat.SetFloat(_shaderidSOCAzimuth, _state.SOC.azimuth * Mathf.Deg2Rad);
+            _viewSurfaceMat.SetFloat(_shaderidSSCAzimuth, _state.SSC.azimuth * Mathf.Deg2Rad);
+            _viewSurfaceMat.SetFloat(_shaderidSSCDistance, _state.SSC.distance / 30f);
         }
     }
 }

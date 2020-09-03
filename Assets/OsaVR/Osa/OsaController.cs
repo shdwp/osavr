@@ -25,6 +25,7 @@ namespace OsaVR.Osa
 
         private Dictionary<string, Camera> _utilityCameras = new Dictionary<string, Camera>();
         private Dictionary<GameObject, GameObject> _interactorColliders = new Dictionary<GameObject, GameObject>();
+        private Dictionary<string, GameObject> _interactors = new Dictionary<string, GameObject>();
         
         private void Start()
         {
@@ -60,20 +61,23 @@ namespace OsaVR.Osa
 
         public void BindInteractor(string id, GameObject interactorObject, GameObject colliderObject)
         {
+            _interactorColliders[colliderObject] = interactorObject;
+            _interactors[id] = interactorObject;
+            
             switch (id)
             {
                 case "emissions_off":
                 case "emissions_on":
-                    InteractorControllerBinding.Bind(colliderObject, interactorObject.AddComponent<ButtonController>());
+                    interactorObject.AddComponent<ButtonController>();
                     break;
                 
-                case "test_1":
-                case "test_2":
-                    InteractorControllerBinding.Bind(colliderObject, interactorObject.AddComponent<SwitchController>());
+                case "ssc_azimuth_powertraverse":
+                    var sw = interactorObject.AddComponent<SSCAzimuthPowertraverseController>();
                     break;
                 
                 default:
-                    throw new NotImplementedException();
+                    // throw new NotImplementedException();
+                    break;
             }
         }
 

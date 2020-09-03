@@ -7,10 +7,10 @@ namespace OsaVR.CockpitFramework.Interactor
         [Flags] public enum Position
         {
             Neutral = 1,
-            Up = 2,
-            Right = 3,
-            Down = 4,
-            Left = 5,
+            Up = 1 << 1,
+            Right = 1 << 2,
+            Down = 1 << 3,
+            Left = 1 << 4,
         }
 
         protected Position supportedPositions = Position.Up | Position.Down;
@@ -22,6 +22,7 @@ namespace OsaVR.CockpitFramework.Interactor
         {
             var types = new InteractionType[]
             {
+                InteractionType.Release,
                 InteractionType.Release,
                 InteractionType.Release,
                 InteractionType.Release,
@@ -88,6 +89,38 @@ namespace OsaVR.CockpitFramework.Interactor
                             break;
                         case Position.Right:
                             MoveToPositionIfSupported(Position.Up);
+                            break;
+                    }
+                    break;
+                case InteractionType.MoveLeft:
+                    switch (currentPosition)
+                    {
+                        case Position.Left:
+                            break;
+                        case Position.Right:
+                            if (MoveToPositionIfSupported(Position.Neutral) || (MoveToPositionIfSupported(Position.Left))) { }
+                            break;
+                        case Position.Neutral:
+                        case Position.Down:
+                        case Position.Up:
+                            MoveToPositionIfSupported(Position.Left);
+                            MoveToPositionIfSupported(Position.Left);
+                            break;
+                    }
+                    break;
+                case InteractionType.MoveRight:
+                    switch (currentPosition)
+                    {
+                        case Position.Right:
+                            break;
+                        case Position.Left:
+                            if (MoveToPositionIfSupported(Position.Neutral) || (MoveToPositionIfSupported(Position.Right))) { }
+                            break;
+                        case Position.Neutral:
+                        case Position.Down:
+                        case Position.Up:
+                            MoveToPositionIfSupported(Position.Right);
+                            MoveToPositionIfSupported(Position.Right);
                             break;
                     }
                     break;

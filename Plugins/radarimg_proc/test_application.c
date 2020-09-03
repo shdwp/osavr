@@ -22,16 +22,31 @@ void test_soc_processing() {
     unsigned char *target_data = malloc(output_w * output_h * output_ch);
     memset(target_data, 0, output_w * output_h * output_ch);
 
-    float azimuth = 180.f;
-    float fov = 4.f;
-    float input_far_plane = 80.f;
-    float output_distance = 160.f;
+    input_t input = {
+            .buf = data,
+            .width = w,
+            .height = h,
+            .channels = ch,
+            .far_plane = 50.f,
+            .fov = 4.f,
+            .azimuth = 0.f,
+            .elevation = 0
+    };
+
+    output_t output = {
+            .buf = target_data,
+            .width = output_w,
+            .height = output_h,
+            .channels = output_ch,
+            .near_plane = 0.f,
+            .far_plane = 50.f,
+    };
 
     printf("image %dx%d\n", w, h);
 
     long long start = system_current_time_millis();
 
-    update_search_radar_image(data, w, h, ch, fov, input_far_plane, azimuth, target_data, output_w, output_h, output_ch, 0.f, output_distance);
+    update_soc_image(input, output);
 
     printf("did it in %llu\n", (system_current_time_millis() - start));
     stbi_write_png("output.png", output_w, output_h, output_ch, target_data, output_w * output_ch);

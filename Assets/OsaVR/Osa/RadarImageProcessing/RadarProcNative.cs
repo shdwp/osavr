@@ -38,7 +38,6 @@ namespace OsaVR.RadarSimulation
         public float horizontal;
         public float vertical;
     };
-    
 
     public class RadarProcNative
     {
@@ -49,5 +48,11 @@ namespace OsaVR.RadarSimulation
             NativeSSCTargetingGateStruct targeting_gate, 
             ref NativeSSCDeviationInfoStruct deviation_info
         );
+
+        [DllImport("radarimg_proc")]
+        public static extern int update_soc_image(NativeInputStruct input, NativeOutputStruct output);
+
+        [DllImport("radarimg_proc")]
+        public static extern int fade_radar_image(NativeOutputStruct output, int speed);
     }
 }

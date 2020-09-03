@@ -80,8 +80,13 @@ namespace OsaVR.Prefabs
 
             var path = Path.Combine("Controls", interactorPrefabName, interactorPrefabName);
             var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
+            
             var animator = item.GetComponent<Animator>();
-            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(path + "_animctrl");
+            if (animator != null)
+            {
+                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(path + "_animctrl");
+            }
+
             item.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
             
             _controller.BindInteractor(interactorIdentifier, item, placeholder);

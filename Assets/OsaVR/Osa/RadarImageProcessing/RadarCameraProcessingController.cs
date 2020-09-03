@@ -49,7 +49,7 @@ namespace OsaVR.Osa
 
         private void Start()
         {
-            _sim.Listen(OsaState.SOCReceiveTick, _ => { _waitingOnRender = true; });
+            _sim.Listen(SOCState.ReceiveEvent, _ => { _waitingOnRender = true; });
             _state = FindObjectOfType<OsaState>();
 
             _socThread = new SOCImageProcessingThread(SOCRenderTexture);
@@ -95,7 +95,17 @@ namespace OsaVR.Osa
                 
                 fixed (Color32* outputBufferPinned = _socResultTexBuffer)
                 {
-                    fade_radar_image((IntPtr)outputBufferPinned, _socResultTex.width, _socResultTex.height, 4, 3);
+                    var output = new NativeOutputStruct
+                    {
+                        buf = (IntPtr) outputBufferPinned,
+                        width = _socResultTex.width,
+                        height = _socResultTex.height,
+                        channels = 4,
+                        far_plane = 0,
+                        near_plane = 0
+                    };
+                    
+                    RadarProcNative.fade_radar_image(output, 3);
                 }
                 
 #if TIMING_DEBUG
@@ -132,18 +142,18 @@ namespace OsaVR.Osa
 #endif
             }
             
-            SOCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SOCAzimuth, 0f);
-            SSCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SSCAzimuth, 0f);
+            SOCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SOC.azimuth, 0f);
+            SSCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SSC.azimuth, 0f);
 
-            _socThread.Azimuth = _state.SOCAzimuth;
+            _socThread.Azimuth = _state.SOC.azimuth;
             
-            _sscThread.Azimuth = _state.SSCAzimuth;
-            _sscThread.TargetGateNearPlane = _state.SSCDistance - 1.5f;
-            _sscThread.TargetGateFarPlane = _state.SSCDistance + 1.5f;
+            _sscThread.Azimuth = _state.SSC.azimuth;
+            _sscThread.TargetGateNearPlane = _state.SSC.distance - 1.5f;
+            _sscThread.TargetGateFarPlane = _state.SSC.distance + 1.5f;
 
             for (int i = 1; i <= 3; i++)
             {
-                _controller.SOCUtilityCamera(i).enabled = _state.SOCActiveBeam == i;
+                _controller.SOCUtilityCamera(i).enabled = _state.SOC.activeBeam == i;
             }
         }
 
@@ -158,9 +168,5 @@ namespace OsaVR.Osa
                 thread.Stop();
             }
         }
-
-        // @TODO: move onto separate class?
-        [DllImport("radarimg_proc")]
-        private static extern int fade_radar_image(IntPtr output, int output_width, int output_height, int output_ch, int output_fade_speed);
     }
 }

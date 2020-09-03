@@ -10,12 +10,13 @@ namespace OsaVR.Utils.DebugUtils
     public class DebugPaneController: MonoBehaviour
     {
         public GameObject LabelFrametime, LabelSimRate;
+        public GameObject ScreenLabelDebug;
 
         public RenderTexture SaveRT;
 
-        private Text _textFrametime, _textSimRate;
+        private Text _textFrametime, _textSimRate, _textScreenDebug;
 
-        private Stopwatch _frametimeStopwatch;
+        private Stopwatch _frametimeStopwatch, _labelUpdateStopwatch = Stopwatch.StartNew();
 
         private SimulationController _sim;
 
@@ -24,19 +25,23 @@ namespace OsaVR.Utils.DebugUtils
             _sim = FindObjectOfType<SimulationController>();
             _textFrametime = LabelFrametime.GetComponent<Text>();
             _textSimRate = LabelSimRate.GetComponent<Text>();
+            _textScreenDebug = ScreenLabelDebug.GetComponent<Text>();
 
             Application.targetFrameRate = 60;
         }
 
         private void Update()
         {
-            if (_frametimeStopwatch != null)
+            if (_frametimeStopwatch != null && _labelUpdateStopwatch.Elapsed > TimeSpan.FromSeconds(1))
             {
+                _labelUpdateStopwatch = Stopwatch.StartNew();
+                
                 var frametime = _frametimeStopwatch.ElapsedMilliseconds;
                 _textFrametime.text = $"FT: {frametime:F3}ms\nFPS:{1000f / frametime:F0}";
-            }
 
-            _textSimRate.text = $"SimLag: {_sim.averageLag:F3}ms\nSimSleep: {_sim.averageSleep:F3}ms";
+                _textSimRate.text = $"SimLag: {_sim.averageLag:F3}ms\nSimSleep: {_sim.averageSleep:F3}ms";
+                _textScreenDebug.text = $"{1000f / frametime:F0} ({frametime:F3}ms) / lag {_sim.averageLag:F3}ms / sleep {_sim.averageSleep:F3}ms";
+            }
             
             _frametimeStopwatch = Stopwatch.StartNew();
 
