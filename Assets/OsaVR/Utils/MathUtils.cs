@@ -7,7 +7,7 @@ namespace OsaVR.Utils
 
         public static float NormalizeAzimuth(float deg)
         {
-            if (deg < 360f && deg > 0f)
+            if (deg < 360f && deg >= 0f)
             {
                 return deg;
             }
@@ -17,7 +17,7 @@ namespace OsaVR.Utils
             }
             else
             {
-                var circles = Mathf.Ceil(deg / 360f);
+                var circles = Mathf.Floor(deg / 360f);
                 return deg - circles * 360f;
             }
         }

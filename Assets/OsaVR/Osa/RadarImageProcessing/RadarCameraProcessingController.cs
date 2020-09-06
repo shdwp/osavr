@@ -49,7 +49,7 @@ namespace OsaVR.Osa
 
         private void Start()
         {
-            _sim.Listen(SOCState.ReceiveEvent, _ => { _waitingOnRender = true; });
+            _sim.ListenProcessEvent(SOCState.ReceiveEvent, _ => { _waitingOnRender = true; });
             _state = FindObjectOfType<OsaState>();
 
             _socThread = new SOCImageProcessingThread(SOCRenderTexture);
@@ -143,7 +143,7 @@ namespace OsaVR.Osa
             }
             
             SOCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SOC.azimuth, 0f);
-            SSCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SSC.azimuth, 0f);
+            SSCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f + _state.SSC.elevation, _state.SSC.azimuth, 0f);
 
             _socThread.Azimuth = _state.SOC.azimuth;
             

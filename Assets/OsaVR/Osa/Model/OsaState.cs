@@ -11,9 +11,9 @@ namespace OsaVR.Osa.Model
 {
     public class OsaState: MonoBehaviour
     {
-        public static readonly uint OsaProcOffset = 0;
-        public static readonly uint SSCProcOffset = 100;
-        public static readonly uint SOCProcOffset = 100;
+        public static readonly uint OsaSimOffset = 0;
+        public static readonly uint SSCSimOffset = 100;
+        public static readonly uint SOCSimOffset = 200;
 
         public Vector3 worldPosition;
         public Vector3 worldForwardVector;
@@ -31,7 +31,7 @@ namespace OsaVR.Osa.Model
         private void Start()
         {
             SOC = new SOCState(_sim);
-            SSC = new SSCState(_sim);
+            SSC = new SSCState(_sim, this);
         }
     }
 }

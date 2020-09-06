@@ -84,6 +84,7 @@ namespace OsaVR.InputControllers
                 if (supported_types.Contains(t))
                 {
                     ctrl.Handle(t);
+                    break;
                 }
             }
         }

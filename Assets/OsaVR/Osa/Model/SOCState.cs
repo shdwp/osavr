@@ -7,15 +7,54 @@ namespace OsaVR.Osa.Model
 {
     public class SOCState
     {
-        private static readonly uint _SOCProcess = OsaState.SOCProcOffset + 0;
+        private static readonly uint _SOCProcess = OsaState.SOCSimOffset + 0;
         
-        public static readonly uint TurnEvent = OsaState.SOCProcOffset + 1;
-        public static readonly uint ReceiveEvent = OsaState.SOCProcOffset + 2;
+        public static readonly uint TurnEvent = OsaState.SOCSimOffset + 1;
+        public static readonly uint ReceiveEvent = OsaState.SOCSimOffset + 2;
+        public static readonly uint ChangedActiveBeamNotification = OsaState.SOCSimOffset + 3;
         
         public float azimuth;
-        public bool turning = true;
-        public bool emitting = true;
-        public uint activeBeam = 2;
+        public bool turning = false;
+
+        private bool _emitting = true;
+
+        public bool emitting
+        {
+            get => _emitting;
+            set
+            {
+                _emitting = value;
+            }
+        }
+
+        private uint _activeBeam = 2;
+        public uint activeBeam
+        {
+            get => _activeBeam;
+            set
+            {
+                _activeBeam = value;
+                switch (_activeBeam)
+                {
+                    case 1:
+                        _elevation = 3f;
+                        break;
+                    case 2:
+                        _elevation = 6f;
+                        break;
+                    case 3:
+                        _elevation = 12f;
+                        break;
+                    default:
+                        throw new NotImplementedException();
+                }
+                
+                _sim.PostNotification(ChangedActiveBeamNotification);
+            }
+        }
+
+        private float _elevation;
+        public float elevation => _elevation;
 
         private SimulationController _sim;
 
@@ -23,7 +62,7 @@ namespace OsaVR.Osa.Model
         {
             _sim = sim;
             
-            sim.Add(new SimulationProcess(_SOCProcess, SimulationProcess()));
+            sim.AddProcess(new SimulationProcess(_SOCProcess, SimulationProcess()));
         }
         
         public IEnumerator SimulationProcess()

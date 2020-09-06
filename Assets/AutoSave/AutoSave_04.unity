@@ -149,7 +149,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 600
+  m_Intensity: 399.3
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -847,33 +847,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6471531886881458858, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6471531886881458858, guid: 563b0764c4ea20c48ac3b48f550d52dc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.67430234
-      objectReference: {fileID: 0}
-    - target: {fileID: -6471531886881458858, guid: 563b0764c4ea20c48ac3b48f550d52dc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7384555
-      objectReference: {fileID: 0}
-    - target: {fileID: -6471531886881458858, guid: 563b0764c4ea20c48ac3b48f550d52dc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6471531886881458858, guid: 563b0764c4ea20c48ac3b48f550d52dc,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -84.8
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -6471531886881458858, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 176.51
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
@@ -893,17 +873,17 @@ PrefabInstance:
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: m_FocalLength
-      value: 13750.9795
+      value: 343.46045
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: field of view
-      value: 0.15
+      value: 6.0000005
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: m_FOVAxisMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
@@ -1237,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_Intensity
-      value: 47.746483
+      value: 31.775282
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_LightShadowCasterMode
@@ -1254,6 +1234,10 @@ PrefabInstance:
     - target: {fileID: 10800000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_AreaSize.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 532775588582320901, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}

@@ -13,45 +13,65 @@ namespace OsaVR.World.Simulation
         public double averageSleep => _simRunloop.averageSleep;
         
         private SimulationRunloop _simRunloop = new SimulationRunloop();
+        private Dictionary<uint, List<Action<uint>>> _notificationListeners = new Dictionary<uint, List<Action<uint>>>();
 
         private void Start()
         {
             _simRunloop.Start();
         }
 
-        public void Add(SimulationProcess p)
+        public void AddProcess(SimulationProcess p)
         {
             _simRunloop.AddProcess(p);
         }
 
-        public void Add(IEnumerator procEnumerator)
+        public void AddProcess(IEnumerator procEnumerator)
         {
             _simRunloop.AddProcess(new SimulationProcess(0, procEnumerator));
         }
 
-        public void Add(uint procId, IEnumerator procEnumerator)
+        public void AddProcess(uint procId, IEnumerator procEnumerator)
         {
             _simRunloop.AddProcess(new SimulationProcess(procId, procEnumerator)); 
         }
 
-        public void Remove(uint id)
+        public void RemoveProcess(uint id)
         {
             _simRunloop.RemoveProcess(id);
         }
 
-        public void Listen(uint id, Action<SimulationEvent> listener)
+        public void ListenProcessEvent(uint id, Action<SimulationEvent> listener)
         {
             _simRunloop.ListenEvent(id, listener);
+        }
+        
+        public void ListenNotification(uint id, Action<uint> listener)
+        {
+            List<Action<uint>> listeners;
+            if (!_notificationListeners.TryGetValue(id, out listeners))
+            {
+                listeners = new List<Action<uint>>();
+                _notificationListeners.Add(id, listeners);
+            }
+            
+            listeners.Add(listener);
+        }
+
+        public void PostNotification(uint id)
+        {
+            List<Action<uint>> listeners;
+            if (_notificationListeners.TryGetValue(id, out listeners))
+            {
+                foreach (var listener in listeners)
+                {
+                    listener(id);
+                }
+            }
         }
 
         public SimulationDelay Delay(TimeSpan ts)
         {
             return _simRunloop.Delay(ts);
-        }
-
-        private void LateUpdate()
-        {
-            
         }
 
         private void OnApplicationQuit()

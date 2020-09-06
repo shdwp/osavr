@@ -5,6 +5,8 @@ using System.IO;
 using System.Runtime.InteropServices;
 using JetBrains.Annotations;
 using OsaVR.CockpitFramework.Interactor;
+using OsaVR.Osa.DisplayControllers;
+using OsaVR.Osa.Interactor;
 using OsaVR.Osa.Model;
 using OsaVR.Osa.ViewControllers;
 using OsaVR.Osa.ViewControllers.SOCScope;
@@ -20,8 +22,6 @@ namespace OsaVR.Osa
     public class OsaController: MonoBehaviour
     {
         private OsaState _state;
-        private GameObject _SOCRoot;
-        private SSCScopeController _scope;
 
         private Dictionary<string, Camera> _utilityCameras = new Dictionary<string, Camera>();
         private Dictionary<GameObject, GameObject> _interactorColliders = new Dictionary<GameObject, GameObject>();
@@ -29,9 +29,7 @@ namespace OsaVR.Osa
         
         private void Start()
         {
-            _scope = FindObjectOfType<SSCScopeController>();
             _state = FindObjectOfType<OsaState>();
-            _SOCRoot = gameObject.FindChildNamed("SOC_Root");
             
             _state.worldPosition = transform.position;
             _state.worldForwardVector = transform.forward;
@@ -41,12 +39,15 @@ namespace OsaVR.Osa
         {
             switch (id)
             {
-                case "signal_scope":
+                case "ssc_scope":
                     o.AddComponent<SSCScopeController>();
                     break;
                 
-                case "radar_scope":
+                case "soc_scope":
                     o.AddComponent<SOCScopeController>();
+                    break;
+                case "soc_active_beam_indicator":
+                    o.AddComponent<SOCActiveBeamIndicatorController>();
                     break;
                 
                 default: 
@@ -71,8 +72,22 @@ namespace OsaVR.Osa
                     interactorObject.AddComponent<ButtonController>();
                     break;
                 
+                case "soc_switch_active_beam_1":
+                case "soc_switch_active_beam_2":
+                case "soc_switch_active_beam_3":
+                    interactorObject.AddComponent<SOCActiveBeamButtonController>().SetTargetBeamBasedOnId(id);
+                    break;
+                
                 case "ssc_azimuth_powertraverse":
-                    var sw = interactorObject.AddComponent<SSCAzimuthPowertraverseController>();
+                    interactorObject.AddComponent<SSCAzimuthPowertraverseController>();
+                    break;
+                
+                case "ssc_distance_wheel":
+                    interactorObject.AddComponent<SSCDistanceWheelController>();
+                    break;
+                
+                case "ssc_azimuth_wheel":
+                    interactorObject.AddComponent<SSCAzimuthWheelController>();
                     break;
                 
                 default:

@@ -8,6 +8,8 @@
         MoveDown,
         MoveRight,
         MoveLeft,
+        ClickRight,
+        ClickLeft,
     }
     
     public interface IInteractorController

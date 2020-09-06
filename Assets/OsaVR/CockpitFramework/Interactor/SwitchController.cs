@@ -104,7 +104,6 @@ namespace OsaVR.CockpitFramework.Interactor
                         case Position.Down:
                         case Position.Up:
                             MoveToPositionIfSupported(Position.Left);
-                            MoveToPositionIfSupported(Position.Left);
                             break;
                     }
                     break;
@@ -119,7 +118,6 @@ namespace OsaVR.CockpitFramework.Interactor
                         case Position.Neutral:
                         case Position.Down:
                         case Position.Up:
-                            MoveToPositionIfSupported(Position.Right);
                             MoveToPositionIfSupported(Position.Right);
                             break;
                     }
@@ -140,11 +138,14 @@ namespace OsaVR.CockpitFramework.Interactor
             _animator.SetInteger("Position", (int)currentPosition);
         }
 
+        protected virtual void OnMovedInto(Position pos) {}
+        
         private bool MoveToPositionIfSupported(Position p)
         {
             if (supportedPositions.HasFlag(p))
             {
                 currentPosition = p;
+                OnMovedInto(p);
                 return true;
             }
 

@@ -17,31 +17,25 @@
               <e p="AInteractorController.cs" t="Include" />
               <e p="ButtonController.cs" t="Include" />
               <e p="IInteractorController.cs" t="Include" />
-              <e p="InteractorControllerBinding.cs" t="Include" />
               <e p="SwitchController.cs" t="Include" />
+              <e p="WheelController.cs" t="Include" />
             </e>
             <e p="ViewControllers" t="Include">
-              <e p="AViewController.cs" t="Include" />
+              <e p="ADisplayController.cs" t="Include" />
+              <e p="Indicator" t="Include">
+                <e p="IndicatorController.cs" t="Include" />
+                <e p="Shader" t="Include">
+                  <e p="IndicatorShaderLib.hlsl" t="Include" />
+                </e>
+              </e>
             </e>
           </e>
           <e p="InputControllers" t="Include">
             <e p="MouseController.cs" t="Include" />
           </e>
           <e p="Osa" t="Include">
-            <e p="Model" t="Include">
-              <e p="OsaState.cs" t="Include" />
-              <e p="SOCState.cs" t="Include" />
-              <e p="SSCState.cs" t="Include" />
-            </e>
-            <e p="OsaController.cs" t="Include" />
-            <e p="RadarImageProcessing" t="Include">
-              <e p="RadarCameraProcessingController.cs" t="Include" />
-              <e p="RadarProcNative.cs" t="Include" />
-              <e p="SOCImageProcessingThread.cs" t="Include" />
-              <e p="SSCImageProcessingThread.cs" t="Include" />
-            </e>
-            <e p="SSCInteractionControllers.cs" t="Include" />
-            <e p="ViewControllers" t="Include">
+            <e p="DisplayControllers" t="Include">
+              <e p="SOCActiveBeamIndicatorController.cs" t="Include" />
               <e p="SOCScope" t="Include">
                 <e p="Shader" t="Include">
                   <e p="RadarScopeShaderLib.hlsl" t="Include" />
@@ -55,9 +49,26 @@
                 <e p="SSCScopeController.cs" t="Include" />
               </e>
             </e>
-          </e>
-          <e p="Prefabs" t="Include">
-            <e p="OsaPrefabController.cs" t="Include" />
+            <e p="Interactor" t="Include">
+              <e p="OsaInteractionControllers.cs" t="Include" />
+              <e p="SOCActiveBeamButtonController.cs" t="Include" />
+              <e p="SSCInteractionControllers.cs" t="Include" />
+            </e>
+            <e p="Model" t="Include">
+              <e p="OsaState.cs" t="Include" />
+              <e p="SOCState.cs" t="Include" />
+              <e p="SSCState.cs" t="Include" />
+            </e>
+            <e p="OsaController.cs" t="Include" />
+            <e p="Prefabs" t="Include">
+              <e p="OsaPrefabController.cs" t="Include" />
+            </e>
+            <e p="RadarImageProcessing" t="Include">
+              <e p="RadarCameraProcessingController.cs" t="Include" />
+              <e p="RadarProcNative.cs" t="Include" />
+              <e p="SOCImageProcessingThread.cs" t="Include" />
+              <e p="SSCImageProcessingThread.cs" t="Include" />
+            </e>
           </e>
           <e p="RadarSimulation" t="Include">
             <e p="IRadarProcessingThread.cs" t="Include" />
