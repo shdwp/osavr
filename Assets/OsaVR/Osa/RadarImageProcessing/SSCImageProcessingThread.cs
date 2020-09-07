@@ -6,6 +6,9 @@ namespace OsaVR.Osa
 {
     public class SSCImageProcessingThread: RadarProcessingThread 
     {
+        public static readonly uint SignalScopeIndex = 0;
+        public static readonly uint ElevationScopeIndex = 1;
+        
         public float InputFarPlane = 50f;
         public float Azimuth = 0f;
         public float Elevation = 0f;
@@ -15,46 +18,60 @@ namespace OsaVR.Osa
 
         public NativeSSCDeviationInfoStruct DeviationInfo = new NativeSSCDeviationInfoStruct();
         
-        public SSCImageProcessingThread(RenderTexture rt) : base(rt)
+        public SSCImageProcessingThread(RenderTexture inputRT) : base(inputRT)
         {
         }
 
         protected override unsafe void PerformProcessing()
         {
 
-            fixed (Color32* inputPtr = _inputBuffer)
+            fixed (Color32* inputPtr = _inputBuffer.array)
             {
-                fixed (Color32* outputPtr = _outputBuffer)
+                var scopeBuffer = _outputBuffers[SignalScopeIndex];
+                var elevScopeBuffer = _outputBuffers[ElevationScopeIndex];
+                
+                fixed (Color32* scopeOutputPtr = scopeBuffer.array)
                 {
-                    var input = new NativeInputStruct()
+                    fixed (Color32* elevScopeOutputPtr = elevScopeBuffer.array)
                     {
-                        buf = (IntPtr)inputPtr,
-                        width = _inputWidth,
-                        height = _inputHeight,
-                        channels = 4,
-                        azimuth = Azimuth,
-                        elevation = Elevation,
-                        far_plane = InputFarPlane,
-                        fov = Fov,
-                    };
+                        var input = new NativeInputStruct()
+                        {
+                            buf = (IntPtr) inputPtr,
+                            width = _inputBuffer.width,
+                            height = _inputBuffer.height,
+                            channels = _inputBuffer.channels,
+                            azimuth = Azimuth,
+                            elevation = Elevation,
+                            far_plane = InputFarPlane,
+                            fov = Fov,
+                        };
 
-                    var output = new NativeOutputStruct()
-                    {
-                        buf = (IntPtr)outputPtr,
-                        width = _outputWidth,
-                        height = _outputHeight,
-                        channels = 4,
-                        near_plane = OutputNearPlane,
-                        far_plane = OutputFarPlane,
-                    };
+                        var scopeOutput = new NativeOutputStruct()
+                        {
+                            buf = (IntPtr) scopeOutputPtr,
+                            width = scopeBuffer.width,
+                            height = scopeBuffer.height,
+                            channels = scopeBuffer.channels,
+                            near_plane = OutputNearPlane,
+                            far_plane = OutputFarPlane,
+                        };
 
-                    var targetGate = new NativeSSCTargetingGateStruct()
-                    {
-                        near_plane = TargetGateNearPlane,
-                        far_plane = TargetGateFarPlane,
-                    };
-                    
-                    RadarProcNative.process_ssc_image(input, output, targetGate, ref DeviationInfo);
+                        var elevScopeOutput = new NativeOutputStruct()
+                        {
+                            buf = (IntPtr) elevScopeOutputPtr,
+                            width = elevScopeBuffer.width,
+                            height = elevScopeBuffer.height,
+                            channels = elevScopeBuffer.channels
+                        };
+
+                        var targetGate = new NativeSSCTargetingGateStruct()
+                        {
+                            near_plane = TargetGateNearPlane,
+                            far_plane = TargetGateFarPlane,
+                        };
+
+                        RadarProcNative.process_ssc_image(input, scopeOutput, elevScopeOutput, targetGate, ref DeviationInfo);
+                    }
                 }
             }
         }

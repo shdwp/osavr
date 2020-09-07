@@ -31,9 +31,11 @@
             </e>
           </e>
           <e p="InputControllers" t="Include">
+            <e p="KeyboardInputController.cs" t="Include" />
             <e p="MouseController.cs" t="Include" />
           </e>
           <e p="Osa" t="Include">
+            <e p="CockpitFrameworkExtensions.cs" t="Include" />
             <e p="DisplayControllers" t="Include">
               <e p="SOCActiveBeamIndicatorController.cs" t="Include" />
               <e p="SOCScope" t="Include">
@@ -41,6 +43,9 @@
                   <e p="RadarScopeShaderLib.hlsl" t="Include" />
                 </e>
                 <e p="SOCScopeController.cs" t="Include" />
+              </e>
+              <e p="SSCElevationScope" t="Include">
+                <e p="SSCElevationScopeController.cs" t="Include" />
               </e>
               <e p="SSCScope" t="Include">
                 <e p="Shader" t="Include">
@@ -50,8 +55,8 @@
               </e>
             </e>
             <e p="Interactor" t="Include">
-              <e p="OsaInteractionControllers.cs" t="Include" />
               <e p="SOCActiveBeamButtonController.cs" t="Include" />
+              <e p="SOCScopeDisplayRangeSwitchController.cs" t="Include" />
               <e p="SSCInteractionControllers.cs" t="Include" />
             </e>
             <e p="Model" t="Include">

@@ -8,12 +8,10 @@ namespace OsaVR.InputControllers
     public class MouseController: MonoBehaviour
     {
         private IInteractorController _lastMouseInteractor;
-        private Camera _camera;
         private OsaController _controller;
 
         private void Awake()
         {
-            _camera = Camera.main;
             _controller = FindObjectOfType<OsaController>();
         }
 
@@ -39,29 +37,31 @@ namespace OsaVR.InputControllers
                 }
             }
 
-            if (Input.GetMouseButton(1) && _lastMouseInteractor == null)
-            {
-                var rot = _camera.transform.eulerAngles;
-                var speed = 70f;
-
-                rot.y += Input.GetAxis("Mouse X") * speed * Time.deltaTime;
-                rot.x += -Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
-
-                _camera.transform.eulerAngles = rot;
-            }
-
             if (_lastMouseInteractor != null && (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)))
             {
                 SendFirstApplicableInteraction(_lastMouseInteractor, new InteractionType[] {InteractionType.Release});
             
                 _lastMouseInteractor = null;
             }
+
+            /*
+            if (Input.GetMouseButton(1) && _lastMouseInteractor == null)
+            {
+                var rot = Camera.main.transform.eulerAngles;
+                var speed = 70f;
+
+                rot.y += Input.GetAxis("Mouse X") * speed * Time.deltaTime;
+                rot.x += -Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
+
+                Camera.main.transform.eulerAngles = rot;
+            }
+            */
         }
 
         private IInteractorController InteractorUnderMouse()
         {
             RaycastHit hit;
-            var ray = _camera.ScreenPointToRay(Input.mousePosition);
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))
             {

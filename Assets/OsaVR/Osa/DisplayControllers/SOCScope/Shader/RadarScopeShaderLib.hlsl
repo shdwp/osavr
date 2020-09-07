@@ -4,7 +4,7 @@
 
     float2 dir = normalize(float2(Pos.x - 0.5f, Pos.y - 0.5f));
     float angle = acos(dot(normalize(float2(-1.f, 0.f)), dir));
-
+    
     if (dir.y > 0)
     {
         angle = pi * 2 - angle;
@@ -44,21 +44,32 @@ void RadarScope_ScanlineFade_float(float4 In, float2 Pos, float Azimuth, out flo
     Out = In * smoothstep(0.f, pow(pi * 2, factor), pow(RadarScope_AzimuthOffset(Pos, Azimuth), factor));
 }
 
-void RadarScope_RangeCircles_float(float2 UV, float SOCAzimuth, out float4 Out)
+void RadarScope_RangeCircles_float(float2 UV, float RangeMarkerMargin, float RangeMarkerCount, float SOCAzimuth, out float4 Out)
 {
-    float dist = smoothstep(0.f, 0.5f, distance(float2(0.5f, 0.5f), UV));
+    float dist = abs(distance(float2(0.5f, 0.5f), UV)) * 2;
+    
     Out = float4(0.f, 0.f, 0.f, 1.f);
 
-    for (float i = 0.1f; i < 1.f; i += 1.f / 5.f)
+    float spacing = 1.f / (RangeMarkerCount);
+    for (float i = RangeMarkerMargin; i <= 1.f; i += spacing)
     {
-        if (dist > i && dist < i + 0.01f)
-        {
-            Out.rgb = float3(1.f, 1.f, 1.f);
-        }
+        float delta = abs(dist - i);
+        float comp = lerp(1.f, 0.f, smoothstep(0.001f, 0.007f, delta));
+
+        Out.rgb += float3(comp, comp, comp);
     }
 
-    float angle = RadarScope_AzimuthOffset(UV, SOCAzimuth);
-    Out.rgb *= lerp(1.f, 0.f, angle);
+    float2 pos = float2(0.5 + 0.5 * sin(SOCAzimuth), 0.5f + 0.5 * cos(SOCAzimuth));
+    float soc_dist = DistanceToLine(float2(0.5, 0.5), pos, UV);
+
+    if (soc_dist >= 0.f)
+    {
+        Out.rgb *= lerp(1.f, 0.1f, smoothstep(0.001f, 0.04f, soc_dist));
+    }
+    else
+    {
+        Out.rgb *= 0.1f;
+    }
 }
 
 void SOCLine_float(float2 UV, float Azimuth, out float4 Out)
@@ -79,7 +90,7 @@ void SOCLine_float(float2 UV, float Azimuth, out float4 Out)
         float p = (total_dist + uv_start_dist + uv_end_dist) / 2;
         float h = 2 / total_dist * sqrt(p * (p - uv_start_dist) * (p - uv_end_dist) * (p - total_dist));
 
-        float r = lerp(1.f, 0.f, smoothstep(0.001f, 0.004f, h));
+        float r = lerp(1.f, 0.f, smoothstep(0.0015f, 0.002f, h));
         Out = float4(r, r, r, 1.f);
     }
 }

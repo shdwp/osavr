@@ -19,7 +19,8 @@ typedef struct ssc_deviation_info_struct ssc_deviation_info_t;
 
 void EXPORT_API process_ssc_image(
         input_t input,
-        output_t output,
+        output_t scope_output,
+        output_t elev_output,
         ssc_targeting_gate_t targeting_info,
         ssc_deviation_info_t *deviation_info
 );

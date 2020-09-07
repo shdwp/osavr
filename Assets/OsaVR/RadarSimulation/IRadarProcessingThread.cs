@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using UnityEngine;
@@ -10,20 +11,32 @@ namespace OsaVR.Osa
         void Start();
         void Stop();
 
-        void SetOutput(Color32[] buffer, int width, int height);
+        void SetOutput(uint idx, Color32[] array, int width, int height);
 
         WaitHandle StartProcessing();
     }
 
     public abstract class RadarProcessingThread : IRadarProcessingThread
     {
-        protected Color32[] _inputBuffer;
-        protected int _inputWidth, _inputHeight,  _channels = 4;
+        public struct Buffer
+        {
+            public Color32[] array;
+            public int width, height;
+            public int channels;
+
+            public Buffer(Color32[] array, int width, int height) : this()
+            {
+                this.array = array;
+                this.width = width;
+                this.height = height;
+                this.channels = 4;
+            }
+        }
+
+        protected Buffer _inputBuffer;
+        protected Dictionary<uint, Buffer> _outputBuffers = new Dictionary<uint, Buffer>();
         
-        protected Color32[] _outputBuffer;
-        protected int _outputWidth, _outputHeight;
-        
-        private RenderTexture _rt;
+        private RenderTexture _inputRT;
         private Texture2D _inputTex;
         
         private AutoResetEvent _synch = new AutoResetEvent(false);
@@ -32,18 +45,16 @@ namespace OsaVR.Osa
         private bool _run = true;
         private Thread _thread;
 
-        public RadarProcessingThread(RenderTexture rt)
+        public RadarProcessingThread(RenderTexture inputRT)
         {
-            _rt = rt;
-            _inputTex = new Texture2D(_rt.width, _rt.height);
-            _inputWidth = _inputTex.width;
-            _inputHeight = _inputTex.height;
+            _inputRT = inputRT;
+            _inputTex = new Texture2D(_inputRT.width, _inputRT.height);
         }
 
         public void Start()
         {
             _thread = new Thread(Main);
-            _thread.Name = "RadarProcessingThread_" + _rt.name;
+            _thread.Name = "RadarProcessingThread_" + _inputRT.name;
             _thread.Start();
             
         }
@@ -54,18 +65,16 @@ namespace OsaVR.Osa
             _thread.Interrupt();
         }
 
-        public void SetOutput(Color32[] buffer, int width, int height)
+        public void SetOutput(uint idx, Color32[] array, int width, int height)
         {
-            _outputBuffer = buffer;
-            _outputWidth = width;
-            _outputHeight = height;
+            _outputBuffers[idx] = new Buffer(array, width, height);
         }
 
         public WaitHandle StartProcessing()
         {
-            RenderTexture.active = _rt;
-            _inputTex.ReadPixels(new Rect(0, 0, _rt.width, _rt.height), 0, 0);
-            _inputBuffer = _inputTex.GetPixels32();
+            RenderTexture.active = _inputRT;
+            _inputTex.ReadPixels(new Rect(0, 0, _inputRT.width, _inputRT.height), 0, 0);
+            _inputBuffer = new Buffer(_inputTex.GetPixels32(), _inputRT.width, _inputRT.height);
             
             _synch.Set();
             return _handle;
@@ -86,7 +95,7 @@ namespace OsaVR.Osa
                     break;
                 }
 
-                if (_outputBuffer == null)
+                if (_outputBuffers.Count == 0)
                 {
                     continue;
                 }

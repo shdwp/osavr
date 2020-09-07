@@ -7,28 +7,32 @@ namespace OsaVR.Osa
 {
     public class SOCImageProcessingThread: RadarProcessingThread
     {
-        public float InputFarPlane = 80f;
+        public static readonly uint ScopeIndex = 0;
+        
+        public float InputFarPlane = 50f;
         public float Azimuth = 0f;
         public float Fov = 0f;
         public float OutputNearPlane = 0f, OutputFarPlane = 90f;
         
-        public SOCImageProcessingThread(RenderTexture rt) : base(rt)
+        public SOCImageProcessingThread(RenderTexture inputRT) : base(inputRT)
         {
         }
 
         protected override unsafe void PerformProcessing()
         {
-            fixed (Color32* inputPtr = _inputBuffer)
+            fixed (Color32* inputPtr = _inputBuffer.array)
             {
-                fixed (Color32* outputPtr = _outputBuffer)
+                var outputBuffer = _outputBuffers[0];
+                
+                fixed (Color32* outputPtr = outputBuffer.array)
                 {
                     
                     var input = new NativeInputStruct()
                     {
                         buf = (IntPtr)inputPtr,
-                        width = _inputWidth,
-                        height = _inputHeight,
-                        channels = 4,
+                        width = _inputBuffer.width,
+                        height = _inputBuffer.height,
+                        channels = _inputBuffer.channels,
                         azimuth = Azimuth,
                         elevation = 0,
                         far_plane = InputFarPlane,
@@ -38,9 +42,9 @@ namespace OsaVR.Osa
                     var output = new NativeOutputStruct()
                     {
                         buf = (IntPtr)outputPtr,
-                        width = _outputWidth,
-                        height = _outputHeight,
-                        channels = 4,
+                        width = outputBuffer.width,
+                        height = outputBuffer.height,
+                        channels = outputBuffer.channels,
                         near_plane = OutputNearPlane,
                         far_plane = OutputFarPlane,
                     };

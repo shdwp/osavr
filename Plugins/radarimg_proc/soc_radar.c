@@ -33,29 +33,43 @@ int update_soc_image(
             if (b > 0) {
                 float return_level = (float)b / 255.f;
                 float distance = ((float)(r) / 255.f) * input.far_plane;
+                float angular_velocity = (float)g / 255.f;
+                unsigned int iff_response = (unsigned int)a;
 
                 if (return_level > 0.f && distance >= output.near_plane && distance <= output.far_plane) {
                     int center_x = output.width / 2, center_y = output.height / 2;
-                    int radius = (int)((distance - output.near_plane) / output.far_plane * (float)output.height / 2.f);
+                    float radius = ((distance - output.near_plane) / output.far_plane * (float)output.height / 2.f);
 
                     float arc_start = degToRad(input.azimuth - input.fov / 2.f);
+                    float arc_middle = degToRad(input.azimuth);
                     float arc_end = degToRad(input.azimuth + input.fov / 2.f);
+                    float arc_step = 0.00793f; // precalculated based on tex resolution
 
-                    int x_a = radius * sin(arc_start);
-                    int x_b = radius * sin(arc_end);
+                    for (float angle = arc_start; angle < arc_end; angle += arc_step) {
+                        for (float rad = radius; rad < radius + 4.f; rad += 0.5f) {
+                            int mx = (int)floorf(rad * sinf(angle));
+                            int my = (int)floorf(rad * cosf(angle));
 
-                    int x_from = x_a < x_b ? x_a : x_b;
-                    int x_to = x_a > x_b ? x_a : x_b;
+                            fill_px(output, center_x + mx, center_y + my);
+                        }
+                    }
 
-                    int y_a = radius * cos(arc_start);
-                    int y_b = radius * cos(arc_end);
+                    if (iff_response & 2 != 0) {
+                        for (float angle = arc_middle; angle < arc_end; angle += arc_step) {
+                            for (float rad = radius + 4.f; rad < radius + 6.f; rad += 0.5f) {
+                                int mx = (int) floorf(rad * sinf(angle));
+                                int my = (int) floorf(rad * cosf(angle));
 
-                    int y_from = y_a < y_b ? y_a : y_b;
-                    int y_to = y_a > y_b ? y_a : y_b;
+                                fill_px(output, center_x + mx, center_y + my);
+                            }
+                        }
+                    }
 
-                    // @TODO: make it a proper arc
-                    for (int mx = x_from; mx <= x_to; mx++) {
-                        for (int my = y_from; my <= y_to; my++) {
+                    if (iff_response & 1 != 0) {
+                        for (float angle = arc_start; angle < arc_end; angle += arc_step) {
+                            int mx = (int) floorf((radius - 4.f) * sinf(angle));
+                            int my = (int) floorf((radius - 4.f) * cosf(angle));
+
                             fill_px(output, center_x + mx, center_y + my);
                         }
                     }

@@ -16,7 +16,8 @@ namespace OsaVR.Utils.DebugUtils
 
         private Text _textFrametime, _textSimRate, _textScreenDebug;
 
-        private Stopwatch _frametimeStopwatch, _labelUpdateStopwatch = Stopwatch.StartNew();
+        private Stopwatch _frametimeStopwatch, _fixedFrametimeStopwatch, _labelUpdateStopwatch = Stopwatch.StartNew();
+        private float _lastFixedFrametime;
 
         private SimulationController _sim;
 
@@ -32,7 +33,7 @@ namespace OsaVR.Utils.DebugUtils
 
         private void Update()
         {
-            if (_frametimeStopwatch != null && _labelUpdateStopwatch.Elapsed > TimeSpan.FromSeconds(1))
+            if (_frametimeStopwatch != null && _labelUpdateStopwatch.Elapsed > TimeSpan.FromMilliseconds(200))
             {
                 _labelUpdateStopwatch = Stopwatch.StartNew();
                 
@@ -40,7 +41,7 @@ namespace OsaVR.Utils.DebugUtils
                 _textFrametime.text = $"FT: {frametime:F3}ms\nFPS:{1000f / frametime:F0}";
 
                 _textSimRate.text = $"SimLag: {_sim.averageLag:F3}ms\nSimSleep: {_sim.averageSleep:F3}ms";
-                _textScreenDebug.text = $"{1000f / frametime:F0} ({frametime:F3}ms) / lag {_sim.averageLag:F3}ms / sleep {_sim.averageSleep:F3}ms";
+                _textScreenDebug.text = $"{1000f / frametime:F0} ({frametime:F3}ms) / {_lastFixedFrametime:F0}ms / lag {_sim.averageLag:F3}ms / sleep {_sim.averageSleep:F3}ms";
             }
             
             _frametimeStopwatch = Stopwatch.StartNew();
@@ -53,6 +54,16 @@ namespace OsaVR.Utils.DebugUtils
                 tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
                 File.WriteAllBytes("Temp/savert.png", tex.EncodeToPNG());
             }
+        }
+
+        private void FixedUpdate()
+        {
+            if (_fixedFrametimeStopwatch != null)
+            {
+                _lastFixedFrametime = _fixedFrametimeStopwatch.ElapsedMilliseconds;
+            }
+            
+            _fixedFrametimeStopwatch = Stopwatch.StartNew();
         }
     }
 }

@@ -6,10 +6,8 @@ using UnityEngine;
 
 namespace OsaVR.Osa.DisplayControllers
 {
-    public class SOCActiveBeamIndicatorController: IndicatorController
+    public class SOCActiveBeamIndicatorController: OsaIndicatorController
     {
-        private SimulationController _sim;
-        private OsaState _state;
         private bool _update = true, _forceUpdate = true;
         private int _currentActiveBeam = 1;
         
@@ -26,9 +24,6 @@ namespace OsaVR.Osa.DisplayControllers
 
         private void Start()
         {
-            _sim = FindObjectOfType<SimulationController>();
-            _state = FindObjectOfType<OsaState>();
-
             _sim.ListenNotification(SOCState.ChangedActiveBeamNotification, (_) =>
             {
                 _update = true;

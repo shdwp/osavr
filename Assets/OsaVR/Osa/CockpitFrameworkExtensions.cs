@@ -1,9 +1,39 @@
 ﻿using OsaVR.CockpitFramework.Interactor;
+using OsaVR.CockpitFramework.ViewControllers;
+using OsaVR.CockpitFramework.ViewControllers.Indicator;
 using OsaVR.Osa.Model;
 using OsaVR.World.Simulation;
 
-namespace OsaVR.Osa.Interactor
+namespace OsaVR.Osa
 {
+    public class OsaIndicatorController: IndicatorController
+    {
+        protected SimulationController _sim;
+        protected OsaState _state;
+
+        protected void Awake()
+        {
+            base.Awake();
+            
+            _sim = FindObjectOfType<SimulationController>();
+            _state = FindObjectOfType<OsaState>();
+        }
+    }
+
+    public class OsaDisplayController : ADisplayController
+    {
+        protected SimulationController _sim;
+        protected OsaState _state;
+
+        protected void Awake()
+        {
+            base.Awake();
+            
+            _sim = FindObjectOfType<SimulationController>();
+            _state = FindObjectOfType<OsaState>();
+        }
+    }
+    
     public class OsaButtonController: ButtonController
     {
         protected OsaState _state;

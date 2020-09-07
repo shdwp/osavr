@@ -11,20 +11,38 @@ namespace OsaVR.Osa.Model
         
         public static readonly uint TurnEvent = OsaState.SOCSimOffset + 1;
         public static readonly uint ReceiveEvent = OsaState.SOCSimOffset + 2;
+        
         public static readonly uint ChangedActiveBeamNotification = OsaState.SOCSimOffset + 3;
+        public static readonly uint ChangedDisplayRange = OsaState.SOCSimOffset + 4;
+
+        public enum ScopeDisplayRange
+        {
+            Zero_Fifteen,
+            Zero_ThirtyFive,
+            Ten_FortyFive
+        }
+
+        private ScopeDisplayRange _scopeScopeDisplayRange = ScopeDisplayRange.Zero_ThirtyFive;
+
+        public ScopeDisplayRange ScopeScopeDisplayRange
+        {
+            get => _scopeScopeDisplayRange;
+            set
+            {
+                _scopeScopeDisplayRange = value;
+                _sim.PostNotification(ChangedDisplayRange);
+            }
+        }
         
         public float azimuth;
-        public bool turning = false;
+        public bool turning = true;
 
         private bool _emitting = true;
 
         public bool emitting
         {
             get => _emitting;
-            set
-            {
-                _emitting = value;
-            }
+            set => _emitting = value;
         }
 
         private uint _activeBeam = 2;
@@ -84,7 +102,8 @@ namespace OsaVR.Osa.Model
                     yield return new SimulationEvent(ReceiveEvent);
                 }
                 
-                yield return _sim.Delay(TimeSpan.FromMilliseconds(20.13));
+                //yield return _sim.Delay(TimeSpan.FromMilliseconds(20.13));
+                yield return _sim.Delay(TimeSpan.FromMilliseconds(40.26));
             }
         }
     }

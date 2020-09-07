@@ -33,8 +33,8 @@ namespace OsaVR.Osa
         private SOCImageProcessingThread _socThread;
         private SSCImageProcessingThread _sscThread;
         
-        private Texture2D _socResultTex, _sscResultTex;
-        private Color32[] _socResultTexBuffer, _sscResultTexBuffer;
+        private Texture2D _socResultTex, _sscResultTex, _sscElevResultTex;
+        private Color32[] _socResultTexBuffer, _sscResultTexBuffer, _sscElevResultTexBuffer;
         
         private bool _waitingOnRender = false;
         private bool _setupDone = false;
@@ -70,9 +70,9 @@ namespace OsaVR.Osa
             _socResultTex = tex;
             _socResultTexBuffer = tex.GetPixels32();
 
-            _processingThreads[SOCIndex].SetOutput(_socResultTexBuffer, _socResultTex.width, _socResultTex.height);
+            _processingThreads[SOCIndex].SetOutput(SOCImageProcessingThread.ScopeIndex, _socResultTexBuffer, _socResultTex.width, _socResultTex.height);
 
-            _setupDone = _socResultTex != null && _sscResultTex != null;
+            _setupDone = _socResultTex != null && _sscResultTex != null && _sscElevResultTex != null;
         }
 
         public void SetSSCTargetTexture(Texture2D tex)
@@ -80,8 +80,17 @@ namespace OsaVR.Osa
             _sscResultTex = tex;
             _sscResultTexBuffer = tex.GetPixels32();
             
-            _processingThreads[SSCIndex].SetOutput(_sscResultTexBuffer, _sscResultTex.width, _sscResultTex.height);
-            _setupDone = _socResultTex != null && _sscResultTex != null;
+            _processingThreads[SSCIndex].SetOutput(SSCImageProcessingThread.SignalScopeIndex, _sscResultTexBuffer, _sscResultTex.width, _sscResultTex.height);
+            _setupDone = _socResultTex != null && _sscResultTex != null && _sscElevResultTex != null;
+        }
+
+        public void SetSSCElevationTargetTexture(Texture2D tex)
+        {
+            _sscElevResultTex = tex;
+            _sscElevResultTexBuffer = tex.GetPixels32();
+            
+            _processingThreads[SSCIndex].SetOutput(SSCImageProcessingThread.ElevationScopeIndex, _sscElevResultTexBuffer, _sscElevResultTex.width, _sscElevResultTex.height);
+            _setupDone = _socResultTex != null && _sscResultTex != null && _sscElevResultTex != null;
         }
 
         private unsafe void Update()
@@ -105,7 +114,7 @@ namespace OsaVR.Osa
                         near_plane = 0
                     };
                     
-                    RadarProcNative.fade_radar_image(output, 3);
+                    RadarProcNative.fade_radar_image(output, 1);
                 }
                 
 #if TIMING_DEBUG
@@ -137,6 +146,9 @@ namespace OsaVR.Osa
                 _sscResultTex.SetPixels32(_sscResultTexBuffer);
                 _sscResultTex.Apply();
                 
+                _sscElevResultTex.SetPixels32(_sscElevResultTexBuffer);
+                _sscElevResultTex.Apply();
+                
 #if TIMING_DEBUG
                 Debug.Log($"Done in {sw.Elapsed.TotalMilliseconds}ms");
 #endif
@@ -146,6 +158,23 @@ namespace OsaVR.Osa
             SSCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f + _state.SSC.elevation, _state.SSC.azimuth, 0f);
 
             _socThread.Azimuth = _state.SOC.azimuth;
+            switch (_state.SOC.ScopeScopeDisplayRange)
+            {
+                case SOCState.ScopeDisplayRange.Zero_Fifteen:
+                    _socThread.OutputNearPlane = 0f;
+                    _socThread.OutputFarPlane = 15f;
+                    break;
+                
+                case SOCState.ScopeDisplayRange.Zero_ThirtyFive:
+                    _socThread.OutputNearPlane = 0f;
+                    _socThread.OutputFarPlane = 35f;
+                    break;
+                
+                case SOCState.ScopeDisplayRange.Ten_FortyFive:
+                    _socThread.OutputNearPlane = 10f;
+                    _socThread.OutputFarPlane = 45f;
+                    break;
+            }
             
             _sscThread.Azimuth = _state.SSC.azimuth;
             _sscThread.TargetGateNearPlane = _state.SSC.distance - 1.5f;

@@ -44,7 +44,8 @@ namespace OsaVR.RadarSimulation
         [DllImport("radarimg_proc")]
         public static extern int process_ssc_image(
             NativeInputStruct input, 
-            NativeOutputStruct output, 
+            NativeOutputStruct scope_output, 
+            NativeOutputStruct elevation_scope_output, 
             NativeSSCTargetingGateStruct targeting_gate, 
             ref NativeSSCDeviationInfoStruct deviation_info
         );

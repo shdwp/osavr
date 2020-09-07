@@ -10,13 +10,17 @@ D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
 math.h
 -
 
-D:/UnityProjects/osavr/Plugins/radarimg_proc/soc_radar.c
-soc_radar.h
-D:/UnityProjects/osavr/Plugins/radarimg_proc/soc_radar.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.c
+ssc_radar.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.h
+stdlib.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/stdlib.h
 stdio.h
 D:/UnityProjects/osavr/Plugins/radarimg_proc/stdio.h
+string.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/string.h
 
-D:/UnityProjects/osavr/Plugins/radarimg_proc/soc_radar.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.h
 library.h
 D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
 

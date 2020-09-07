@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using JetBrains.Annotations;
 using OsaVR.CockpitFramework.Interactor;
 using OsaVR.Osa.DisplayControllers;
+using OsaVR.Osa.DisplayControllers.SSCElevationScope;
 using OsaVR.Osa.Interactor;
 using OsaVR.Osa.Model;
 using OsaVR.Osa.ViewControllers;
@@ -43,15 +44,20 @@ namespace OsaVR.Osa
                     o.AddComponent<SSCScopeController>();
                     break;
                 
+                case "ssc_elevation_scope":
+                    o.AddComponent<SSCElevationScopeController>();
+                    break;
+                
                 case "soc_scope":
                     o.AddComponent<SOCScopeController>();
                     break;
+                
                 case "soc_active_beam_indicator":
                     o.AddComponent<SOCActiveBeamIndicatorController>();
                     break;
                 
-                default: 
-                    throw new NotImplementedException();
+                //default: 
+                    //throw new NotImplementedException();
             }
         }
 
@@ -88,6 +94,10 @@ namespace OsaVR.Osa
                 
                 case "ssc_azimuth_wheel":
                     interactorObject.AddComponent<SSCAzimuthWheelController>();
+                    break;
+                
+                case "soc_scope_range":
+                    interactorObject.AddComponent<SOCScopeDisplayRangeSwitchController>();
                     break;
                 
                 default:

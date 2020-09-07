@@ -8,6 +8,8 @@
 
 #define degToRad(angleInDegrees) ((angleInDegrees) * M_PI / 180.0)
 #define radToDeg(angleInRadians) ((angleInRadians) * 180.0 / M_PI)
+#define lerp(a, b, f) a + f * (b - a)
+#define inverseLerp(a, b, f) (f - a) / (b - a)
 
 struct input_struct {
     unsigned char *buf;
