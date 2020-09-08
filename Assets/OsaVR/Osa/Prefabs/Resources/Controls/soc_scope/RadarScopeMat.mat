@@ -205,11 +205,11 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
-    - _SOC_Azimuth: 4.3982296
+    - _SOC_Azimuth: 0
     - _SOC_RangeMarker_Count: 7
     - _SOC_RangeMarker_Margin: 0.14285715
-    - _SSC_Azimuth: 0
-    - _SSC_Distance: 0.014375828
+    - _SSC_Azimuth: 0.000037816888
+    - _SSC_Distance: 0.4357509
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1

@@ -9,7 +9,7 @@ namespace OsaVR.Osa
         public static readonly uint SignalScopeIndex = 0;
         public static readonly uint ElevationScopeIndex = 1;
         
-        public float InputFarPlane = 50f;
+        public float InputFarPlane = 28f;
         public float Azimuth = 0f;
         public float Elevation = 0f;
         public float Fov = 0;

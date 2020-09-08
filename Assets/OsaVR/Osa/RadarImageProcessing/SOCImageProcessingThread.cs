@@ -11,7 +11,7 @@ namespace OsaVR.Osa
         
         public float InputFarPlane = 50f;
         public float Azimuth = 0f;
-        public float Fov = 0f;
+        public float Fov = 4f;
         public float OutputNearPlane = 0f, OutputFarPlane = 90f;
         
         public SOCImageProcessingThread(RenderTexture inputRT) : base(inputRT)
@@ -22,11 +22,10 @@ namespace OsaVR.Osa
         {
             fixed (Color32* inputPtr = _inputBuffer.array)
             {
-                var outputBuffer = _outputBuffers[0];
+                var outputBuffer = _outputBuffers[ScopeIndex];
                 
                 fixed (Color32* outputPtr = outputBuffer.array)
                 {
-                    
                     var input = new NativeInputStruct()
                     {
                         buf = (IntPtr)inputPtr,

@@ -69,7 +69,6 @@ namespace OsaVR.Osa
         {
             _socResultTex = tex;
             _socResultTexBuffer = tex.GetPixels32();
-
             _processingThreads[SOCIndex].SetOutput(SOCImageProcessingThread.ScopeIndex, _socResultTexBuffer, _socResultTex.width, _socResultTex.height);
 
             _setupDone = _socResultTex != null && _sscResultTex != null && _sscElevResultTex != null;
@@ -133,6 +132,8 @@ namespace OsaVR.Osa
 
                 if (!WaitHandle.WaitAll(handles, 64))
                 {
+                    File.WriteAllBytes("Temp/slog_soc.png", _processingThreads[SOCIndex].InputData());
+                    File.WriteAllBytes("Temp/slog_ssc.png", _processingThreads[SSCIndex].InputData());
                     Debug.Log($"RadarProcessing threads didn't finish in 64ms!");
                 }
                 

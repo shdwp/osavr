@@ -45,6 +45,9 @@
                 <e p="SOCScopeController.cs" t="Include" />
               </e>
               <e p="SSCElevationScope" t="Include">
+                <e p="Shader" t="Include">
+                  <e p="SSCElevationScopeShaderLib.hlsl" t="Include" />
+                </e>
                 <e p="SSCElevationScopeController.cs" t="Include" />
               </e>
               <e p="SSCScope" t="Include">

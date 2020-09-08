@@ -3,6 +3,8 @@
 #include "stdio.h"
 #include "string.h"
 
+#define STATIC_RETURNS_ARRAY 1
+
 void process_ssc_image(
         input_t input,
         output_t scope_output,
@@ -10,6 +12,15 @@ void process_ssc_image(
         ssc_targeting_gate_t targeting_info,
         ssc_deviation_info_t *deviation_info
 ) {
+#ifdef STATIC_RETURNS_ARRAY
+    float full_range_returns[256];
+    float target_range_returns[256];
+    float elevation_returns[256];
+
+    memset(full_range_returns, 0, sizeof(float) * 256);
+    memset(target_range_returns, 0, sizeof(float) * 256);
+    memset(elevation_returns, 0, sizeof(float) * 256);
+#else
     float *full_range_returns = malloc(sizeof(float) * scope_output.width);
     memset(full_range_returns, 0, scope_output.width * sizeof(float));
 
@@ -18,6 +29,7 @@ void process_ssc_image(
 
     float *elevation_returns = malloc(sizeof(float) * elev_output.width);
     memset(elevation_returns, 0, elev_output.width * sizeof(float));
+#endif
 
     float max_return = 0.f;
 
@@ -105,7 +117,7 @@ void process_ssc_image(
         }
 
         float diff = current_value - draw_value;
-        float correction = max(fabs(diff / 3.f), target_return_per_px * 0.3);
+        float correction = max(fabs(diff / 3.f), 0.1f);
         if (fabs(diff) > correction) {
             draw_value += current_value > draw_value ? +correction : -correction;
             changing = 1;
@@ -132,10 +144,19 @@ void process_ssc_image(
         }
 
         if (elevation_returns[x] != 0.f) {
-            fill_px(elev_output, x, elev_output.height / 2.f + elevation_returns[x] * elev_output.height);
+            int y = elev_output.height / 2.f + elevation_returns[x] * elev_output.height;
+            int size = 6;
+
+            for (int mx = max(0, x - size); mx < min(x + size, elev_output.width - 1); mx++) {
+                for (int my = max(0, y - size); my < min(y + size, elev_output.height - 1); my++) {
+                    fill_px(elev_output, mx, my);
+                }
+            }
         }
     }
 
+#ifndef STATIC_RETURNS_ARRAY
     free(full_range_returns);
     free(target_range_returns);
+#endif
 }

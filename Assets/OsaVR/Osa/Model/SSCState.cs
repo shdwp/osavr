@@ -27,7 +27,13 @@ namespace OsaVR.Osa.Model
         }
         
         private float _elevation;
-        public float elevation => _elevation;
+        public float elevation
+        {
+            get => _elevation;
+            set => _elevation = Mathf.Clamp(value, minElevation, maxElevation);
+        }
+
+        public float minElevation = 3f, maxElevation = 9f;
 
         private float _distance;
         public float distance
@@ -67,7 +73,23 @@ namespace OsaVR.Osa.Model
             
             _sim.ListenNotification(SOCState.ChangedActiveBeamNotification, (_) =>
             {
-                _elevation = _state.SOC.elevation;
+                switch (_state.SOC.activeBeam)
+                {
+                case 1:
+                    minElevation = -1f;
+                    maxElevation = 5f;
+                    break;
+                
+                case 2:
+                    minElevation = 3f;
+                    maxElevation = 9f;
+                    break;
+                
+                case 3:
+                    minElevation = 6f;
+                    maxElevation = 30f;
+                    break;
+                }
             });
         }
 

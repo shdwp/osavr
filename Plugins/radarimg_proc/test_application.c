@@ -16,7 +16,7 @@ long long system_current_time_millis() {
 
 void test_soc_processing() {
     int w, h, ch;
-    unsigned char *data = stbi_load("input__2Beam.png", &w, &h, &ch, 0);
+    unsigned char *data = stbi_load("soc_input.png", &w, &h, &ch, 0);
 
     int output_w = 256, output_h = 256, output_ch = 4;
     unsigned char *target_data = malloc(output_w * output_h * output_ch);
@@ -49,7 +49,7 @@ void test_soc_processing() {
     update_soc_image(input, output);
 
     printf("did it in %llu\n", (system_current_time_millis() - start));
-    stbi_write_png("output.png", output_w, output_h, output_ch, target_data, output_w * output_ch);
+    stbi_write_png("soc_output.png", output_w, output_h, output_ch, target_data, output_w * output_ch);
 }
 
 void test_ssc_processing() {
@@ -61,7 +61,7 @@ void test_ssc_processing() {
             .width = w,
             .height = h,
             .channels = ch,
-            .far_plane = 50,
+            .far_plane = 28,
             .azimuth = 0,
             .elevation = 0
     };
@@ -89,8 +89,8 @@ void test_ssc_processing() {
     };
 
     ssc_targeting_gate_t targeting_info = {
-            .near_plane = 25,
-            .far_plane = 28,
+            .near_plane = 14,
+            .far_plane = 16,
     };
 
     ssc_deviation_info_t deviation_info;
@@ -105,6 +105,6 @@ void test_ssc_processing() {
 }
 
 void main(void) {
-    // test_soc_processing();
+    test_soc_processing();
     test_ssc_processing();
 }

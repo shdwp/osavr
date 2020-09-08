@@ -11,8 +11,9 @@ namespace OsaVR.Osa
         void Start();
         void Stop();
 
+        byte[] InputData();
         void SetOutput(uint idx, Color32[] array, int width, int height);
-
+        
         WaitHandle StartProcessing();
     }
 
@@ -74,10 +75,16 @@ namespace OsaVR.Osa
         {
             RenderTexture.active = _inputRT;
             _inputTex.ReadPixels(new Rect(0, 0, _inputRT.width, _inputRT.height), 0, 0);
-            _inputBuffer = new Buffer(_inputTex.GetPixels32(), _inputRT.width, _inputRT.height);
+            _inputTex.Apply();
+            _inputBuffer = new Buffer(_inputTex.GetPixels32(), _inputTex.width, _inputTex.height);
             
             _synch.Set();
             return _handle;
+        }
+
+        public byte[] InputData()
+        {
+            return _inputTex.EncodeToPNG();
         }
 
         protected abstract void PerformProcessing();

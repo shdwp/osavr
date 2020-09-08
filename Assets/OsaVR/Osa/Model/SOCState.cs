@@ -35,7 +35,7 @@ namespace OsaVR.Osa.Model
         }
         
         public float azimuth;
-        public bool turning = true;
+        public bool turning = false;
 
         private bool _emitting = true;
 

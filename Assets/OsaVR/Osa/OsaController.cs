@@ -96,6 +96,10 @@ namespace OsaVR.Osa
                     interactorObject.AddComponent<SSCAzimuthWheelController>();
                     break;
                 
+                case "ssc_elevation_wheel":
+                    interactorObject.AddComponent<SSCElevationWheelController>();
+                    break;
+                
                 case "soc_scope_range":
                     interactorObject.AddComponent<SOCScopeDisplayRangeSwitchController>();
                     break;

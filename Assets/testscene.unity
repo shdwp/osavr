@@ -874,12 +874,12 @@ PrefabInstance:
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: m_FocalLength
-      value: 343.46045
+      value: 1375.0201
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
       propertyPath: field of view
-      value: 6.0000005
+      value: 1.5000001
       objectReference: {fileID: 0}
     - target: {fileID: -6215850476013842894, guid: 563b0764c4ea20c48ac3b48f550d52dc,
         type: 3}
@@ -1054,7 +1054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_projectionMatrixMode
@@ -1110,7 +1110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2000002, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000002, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: far clip plane

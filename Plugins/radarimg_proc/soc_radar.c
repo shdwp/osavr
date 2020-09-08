@@ -1,5 +1,16 @@
 #include "soc_radar.h"
+#include "stdlib.h"
 #include "stdio.h"
+#include "string.h"
+
+struct soc_radar_return {
+    float val;
+    float velocity;
+    float distance;
+    unsigned int iff_response;
+};
+
+typedef struct soc_radar_return soc_radar_return_t;
 
 int fade_radar_image(
         output_t output,
@@ -22,6 +33,9 @@ int update_soc_image(
         input_t input,
         output_t output
 ) {
+    soc_radar_return_t *returns = malloc(sizeof(soc_radar_return_t) * input.width);
+    memset(returns, 0, sizeof(soc_radar_return_t) * input.width);
+
     for (int y = 0; y < input.height; y++) {
         for (int x = 0; x < input.width; x++) {
             size_t offset = (x + y * input.width) * input.channels;
@@ -36,43 +50,52 @@ int update_soc_image(
                 float angular_velocity = (float)g / 255.f;
                 unsigned int iff_response = (unsigned int)a;
 
-                if (return_level > 0.f && distance >= output.near_plane && distance <= output.far_plane) {
-                    int center_x = output.width / 2, center_y = output.height / 2;
-                    float radius = ((distance - output.near_plane) / output.far_plane * (float)output.height / 2.f);
+                returns[r].val += (float)b / 255.f;
+                returns[r].velocity = angular_velocity;
+                returns[r].iff_response = max(iff_response, returns[r].iff_response);
+                returns[r].distance = distance;
+            }
+        }
+    }
 
-                    float arc_start = degToRad(input.azimuth - input.fov / 2.f);
-                    float arc_middle = degToRad(input.azimuth);
-                    float arc_end = degToRad(input.azimuth + input.fov / 2.f);
-                    float arc_step = 0.00793f; // precalculated based on tex resolution
+    for (int w = 0; w < input.width; w++) {
+        soc_radar_return_t ret = returns[w];
 
-                    for (float angle = arc_start; angle < arc_end; angle += arc_step) {
-                        for (float rad = radius; rad < radius + 4.f; rad += 0.5f) {
-                            int mx = (int)floorf(rad * sinf(angle));
-                            int my = (int)floorf(rad * cosf(angle));
+        if (ret.val > 0.f && ret.distance >= output.near_plane && ret.distance <= output.far_plane) {
+            int center_x = output.width / 2, center_y = output.height / 2;
+            float radius = ((ret.distance - output.near_plane) / output.far_plane * (float)output.height / 2.f);
 
-                            fill_px(output, center_x + mx, center_y + my);
-                        }
+            float arc_start = degToRad(input.azimuth - input.fov / 2.f);
+            float arc_middle = degToRad(input.azimuth);
+            float arc_end = degToRad(input.azimuth + input.fov / 2.f);
+            float arc_step = 0.00793f; // precalculated based on tex resolution
+
+            for (float angle = arc_start; angle < arc_end; angle += arc_step) {
+                for (float rad = radius; rad < radius + 2.f; rad += 0.5f) {
+                    int mx = (int)(rad * sinf(angle));
+                    int my = (int)(rad * cosf(angle));
+
+                    fill_px(output, center_x + mx, center_y + my);
+                }
+            }
+
+            if ((ret.iff_response & 2) != 0) {
+                for (float angle = arc_middle; angle < arc_end; angle += arc_step) {
+                    for (float rad = radius + 2.f; rad < radius + 4.f; rad += 0.5f) {
+                        int mx = (int) floorf(rad * sinf(angle));
+                        int my = (int) floorf(rad * cosf(angle));
+
+                        fill_px(output, center_x + mx, center_y + my);
                     }
+                }
+            }
 
-                    if (iff_response & 2 != 0) {
-                        for (float angle = arc_middle; angle < arc_end; angle += arc_step) {
-                            for (float rad = radius + 4.f; rad < radius + 6.f; rad += 0.5f) {
-                                int mx = (int) floorf(rad * sinf(angle));
-                                int my = (int) floorf(rad * cosf(angle));
+            if ((ret.iff_response & 1) != 0) {
+                for (float angle = arc_start; angle < arc_end; angle += arc_step) {
+                    int mx = (int) floorf((radius - 4.f) * sinf(angle));
+                    int my = (int) floorf((radius - 4.f) * cosf(angle));
 
-                                fill_px(output, center_x + mx, center_y + my);
-                            }
-                        }
-                    }
-
-                    if (iff_response & 1 != 0) {
-                        for (float angle = arc_start; angle < arc_end; angle += arc_step) {
-                            int mx = (int) floorf((radius - 4.f) * sinf(angle));
-                            int my = (int) floorf((radius - 4.f) * cosf(angle));
-
-                            fill_px(output, center_x + mx, center_y + my);
-                        }
-                    }
+                    fill_px(output, center_x + mx, center_y + my);
                 }
             }
         }
