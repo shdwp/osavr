@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using OsaVR.RadarSimulation;
 using OsaVR.Utils;
 using OsaVR.World.Simulation;
 using UnityEngine;
@@ -16,9 +17,28 @@ namespace OsaVR.Osa.Model
         }
 
         private static uint _PowertraverseProcessId = OsaState.SSCSimOffset + 0;
+
+        public static uint ChangedEnergyStateNotification = OsaState.SSCSimOffset + 3;
+        
         private SimulationController _sim;
         private OsaState _state;
 
+        private bool _emitting = true;
+
+        public bool emitting
+        {
+            get => _emitting;
+            set
+            {
+                if (_emitting != value)
+                {
+                    _emitting = value;
+                    _sim.PostNotification(ChangedEnergyStateNotification);
+                }
+            }
+        }
+        public float fov = 2f;
+        
         private float _azimuth;
         public float azimuth
         {
@@ -41,11 +61,11 @@ namespace OsaVR.Osa.Model
             get => _distance;
             set => _distance = Mathf.Clamp(value, minDistance, maxDistance);
         }
-
+        
         public float minDistance = 0f, maxDistance = 28f;
+        public float targetGateWidth = 1.5f;
 
         private PowertraverseState _powertraverseState;
-
         public PowertraverseState powertraverseState
         {
             get => _powertraverseState;
@@ -65,6 +85,7 @@ namespace OsaVR.Osa.Model
                 }
             }
         }
+
 
         public SSCState(SimulationController sim, OsaState state)
         {
@@ -110,7 +131,7 @@ namespace OsaVR.Osa.Model
                 }
 
                 _azimuth = ClampAzimuth(newAzimuth);
-                yield return _sim.Delay(TimeSpan.FromMilliseconds(20));
+                yield return _sim.Delay(TimeSpan.FromMilliseconds(50));
             }
         }
 

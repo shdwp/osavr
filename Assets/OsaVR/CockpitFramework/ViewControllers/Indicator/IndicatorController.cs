@@ -15,7 +15,7 @@ namespace OsaVR.CockpitFramework.ViewControllers.Indicator
 
         protected new void Awake()
         {
-            _viewSurfaceMat = Resources.Load<Material>("Controls/generic_indicator/IndicatorMat");
+            _viewSurfaceMat = Instantiate(Resources.Load<Material>("Controls/generic_indicator/IndicatorMat"));
             base.Awake();
 
             if (_baseTex != null)
@@ -29,6 +29,16 @@ namespace OsaVR.CockpitFramework.ViewControllers.Indicator
             }
 
             _viewSurfaceMat.SetTexture(_IllumMaskTex, dataTex);
+        }
+
+        protected void ApplyUpdates()
+        {
+            dataTex.Apply();
+        }
+        
+        protected void Set(int x, int y, bool value)
+        {
+            dataTex.SetPixel(x, y, value ? Color.white : Color.black);
         }
     }
 }

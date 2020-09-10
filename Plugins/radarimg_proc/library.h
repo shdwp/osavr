@@ -10,6 +10,7 @@
 #define radToDeg(angleInRadians) ((angleInRadians) * 180.0 / M_PI)
 #define lerp(a, b, f) a + f * (b - a)
 #define inverseLerp(a, b, f) (f - a) / (b - a)
+#define clamp(a, b, v) v < a ? a : (v > b) ? b : v
 
 struct input_struct {
     unsigned char *buf;

@@ -63,7 +63,7 @@ int update_soc_image(
 
         if (ret.val > 0.f && ret.distance >= output.near_plane && ret.distance <= output.far_plane) {
             int center_x = output.width / 2, center_y = output.height / 2;
-            float radius = ((ret.distance - output.near_plane) / output.far_plane * (float)output.height / 2.f);
+            float radius = inverseLerp(output.near_plane, output.far_plane, ret.distance) * (float)output.height / 2.f;
 
             float arc_start = degToRad(input.azimuth - input.fov / 2.f);
             float arc_middle = degToRad(input.azimuth);

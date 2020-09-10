@@ -18,6 +18,7 @@ using Debug = UnityEngine.Debug;
 
 namespace OsaVR.Osa
 {
+    // @TODO: split, refactor
     public class RadarCameraProcessingController: MonoBehaviour
     {
         public RenderTexture SOCRenderTexture, SSCRenderTexture;
@@ -94,27 +95,27 @@ namespace OsaVR.Osa
 
         private unsafe void Update()
         {
+            fixed (Color32* outputBufferPinned = _socResultTexBuffer)
+            {
+                var output = new NativeOutputStruct
+                {
+                    buf = (IntPtr) outputBufferPinned,
+                    width = _socResultTex.width,
+                    height = _socResultTex.height,
+                    channels = 4,
+                    far_plane = 0,
+                    near_plane = 0
+                };
+                    
+                RadarProcNative.fade_radar_image(output, 1);
+            }
+                
             if (_waitingOnRender && _setupDone)
             {
                 _waitingOnRender = false;
 #if TIMING_DEBUG
                 var sw = Stopwatch.StartNew();
 #endif
-                
-                fixed (Color32* outputBufferPinned = _socResultTexBuffer)
-                {
-                    var output = new NativeOutputStruct
-                    {
-                        buf = (IntPtr) outputBufferPinned,
-                        width = _socResultTex.width,
-                        height = _socResultTex.height,
-                        channels = 4,
-                        far_plane = 0,
-                        near_plane = 0
-                    };
-                    
-                    RadarProcNative.fade_radar_image(output, 1);
-                }
                 
 #if TIMING_DEBUG
                 Debug.Log($"Faded in {sw.Elapsed.TotalMilliseconds}ms");
@@ -141,9 +142,6 @@ namespace OsaVR.Osa
                 Debug.Log($"Done processing {sw.Elapsed.TotalMilliseconds}ms");
 #endif
                 
-                _socResultTex.SetPixels32(_socResultTexBuffer);
-                _socResultTex.Apply();
-                
                 _sscResultTex.SetPixels32(_sscResultTexBuffer);
                 _sscResultTex.Apply();
                 
@@ -154,6 +152,11 @@ namespace OsaVR.Osa
                 Debug.Log($"Done in {sw.Elapsed.TotalMilliseconds}ms");
 #endif
             }
+            
+            _socResultTex.SetPixels32(_socResultTexBuffer);
+            _socResultTex.Apply();
+
+            _state.Sua.InputDeviationInfo(_sscThread.DeviationInfo);
             
             SOCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f, _state.SOC.azimuth, 0f);
             SSCCameraTransformRoot.transform.eulerAngles = new Vector3(-90f + _state.SSC.elevation, _state.SSC.azimuth, 0f);
@@ -178,8 +181,9 @@ namespace OsaVR.Osa
             }
             
             _sscThread.Azimuth = _state.SSC.azimuth;
-            _sscThread.TargetGateNearPlane = _state.SSC.distance - 1.5f;
-            _sscThread.TargetGateFarPlane = _state.SSC.distance + 1.5f;
+            _sscThread.TargetGateNearPlane = _state.SSC.distance - _state.SSC.targetGateWidth / 2f;
+            _sscThread.TargetGateFarPlane = _state.SSC.distance + _state.SSC.targetGateWidth / 2f;
+            _sscThread.Emitting = _state.SSC.emitting;
 
             for (int i = 1; i <= 3; i++)
             {

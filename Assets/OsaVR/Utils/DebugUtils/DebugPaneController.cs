@@ -28,7 +28,7 @@ namespace OsaVR.Utils.DebugUtils
             _textSimRate = LabelSimRate.GetComponent<Text>();
             _textScreenDebug = ScreenLabelDebug.GetComponent<Text>();
 
-            Application.targetFrameRate = 60;
+            // Application.targetFrameRate = 60;
         }
 
         private void Update()

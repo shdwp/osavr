@@ -13,10 +13,11 @@ namespace OsaVR.Osa
         public float Azimuth = 0f;
         public float Elevation = 0f;
         public float Fov = 0;
+        public bool Emitting;
         public float OutputNearPlane = 0f, OutputFarPlane = 28f;
         public float TargetGateNearPlane = 10f, TargetGateFarPlane = 13f;
 
-        public NativeSSCDeviationInfoStruct DeviationInfo = new NativeSSCDeviationInfoStruct();
+        public NativeSSCDeviationInfoStruct DeviationInfo;
         
         public SSCImageProcessingThread(RenderTexture inputRT) : base(inputRT)
         {
@@ -64,13 +65,17 @@ namespace OsaVR.Osa
                             channels = elevScopeBuffer.channels
                         };
 
-                        var targetGate = new NativeSSCTargetingGateStruct()
+                        var state = new NativeSSCStateStruct()
                         {
                             near_plane = TargetGateNearPlane,
                             far_plane = TargetGateFarPlane,
+                            emitting = Emitting,
+                            guiding_missile1 = false,
+                            guiding_missile2 = false,
                         };
 
-                        RadarProcNative.process_ssc_image(input, scopeOutput, elevScopeOutput, targetGate, ref DeviationInfo);
+                        DeviationInfo = new NativeSSCDeviationInfoStruct();
+                        RadarProcNative.process_ssc_image(input, scopeOutput, elevScopeOutput, state, ref DeviationInfo);
                     }
                 }
             }

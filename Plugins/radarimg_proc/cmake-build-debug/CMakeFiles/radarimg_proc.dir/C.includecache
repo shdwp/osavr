@@ -23,4 +23,6 @@ D:/UnityProjects/osavr/Plugins/radarimg_proc/string.h
 D:/UnityProjects/osavr/Plugins/radarimg_proc/ssc_radar.h
 library.h
 D:/UnityProjects/osavr/Plugins/radarimg_proc/library.h
+stdbool.h
+D:/UnityProjects/osavr/Plugins/radarimg_proc/stdbool.h
 

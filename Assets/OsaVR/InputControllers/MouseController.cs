@@ -7,6 +7,8 @@ namespace OsaVR.InputControllers
 {
     public class MouseController: MonoBehaviour
     {
+        public Camera freeCamera;
+        
         private IInteractorController _lastMouseInteractor;
         private OsaController _controller;
 
@@ -44,18 +46,16 @@ namespace OsaVR.InputControllers
                 _lastMouseInteractor = null;
             }
 
-            /*
-            if (Input.GetMouseButton(1) && _lastMouseInteractor == null)
+            if (Input.GetMouseButton(1) && _lastMouseInteractor == null && freeCamera.enabled)
             {
-                var rot = Camera.main.transform.eulerAngles;
+                var rot = freeCamera.transform.eulerAngles;
                 var speed = 70f;
 
                 rot.y += Input.GetAxis("Mouse X") * speed * Time.deltaTime;
                 rot.x += -Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
 
-                Camera.main.transform.eulerAngles = rot;
+                freeCamera.transform.eulerAngles = rot;
             }
-            */
         }
 
         private IInteractorController InteractorUnderMouse()

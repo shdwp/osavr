@@ -38,8 +38,8 @@ void test_soc_processing() {
             .width = output_w,
             .height = output_h,
             .channels = output_ch,
-            .near_plane = 0.f,
-            .far_plane = 50.f,
+            .near_plane = 10.f,
+            .far_plane = 45.f,
     };
 
     printf("image %dx%d\n", w, h);
@@ -88,18 +88,21 @@ void test_ssc_processing() {
             .channels = output_ch
     };
 
-    ssc_targeting_gate_t targeting_info = {
-            .near_plane = 14,
-            .far_plane = 16,
+    ssc_general_state_t state = {
+            .tgate_near_plane = 14,
+            .tgate_far_plane = 16,
+            .emitting = true,
+            .guiding_missile_1 = false,
+            .guiding_missile_2 = false
     };
 
     ssc_deviation_info_t deviation_info;
-
+    deviation_info.defined = false;
     long long start = system_current_time_millis();
 
-    process_ssc_image(input, scope_output, elev_output, targeting_info, &deviation_info);
+    process_ssc_image(input, scope_output, elev_output, state, &deviation_info);
 
-    printf("did it in %llu\n", (system_current_time_millis() - start));
+    printf("did it in %llu; deviation %f %f %f\n", (system_current_time_millis() - start), deviation_info.x, deviation_info.y, deviation_info.z);
     stbi_write_png("ssc_output.png", output_w, output_h, output_ch, scope_buf, output_w * output_ch);
     stbi_write_png("ssc_elev_output.png", elev_output.width, elev_output.height, elev_output.channels, elev_output.buf, elev_output.width * elev_output.channels);
 }

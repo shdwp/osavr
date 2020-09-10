@@ -23,3 +23,6 @@ resolution 0.2deg, 55m
 beam horizontal 0.17-0.24, vert 0.13 - 0.17
 two beam types - ultranarrow and wide (1st used when tracking and 2st used for target capture)
 not available when moving
+target gate 1.5km
+SHT->SDC - decides what to amplify on the scope - all of it or 1.5 tgate
+max azimuth rate 30deg/s (0.6 per 20ms), elevation = 15deg/s (0.3 per 20ms)

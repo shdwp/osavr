@@ -45,8 +45,11 @@ namespace OsaVR.World.Simulation
         {
             lock (this)
             {
-                _processes.Remove(_processIds[id]);
-                _processIds.Remove(id);
+                if (_processIds.ContainsKey(id))
+                {
+                    _processes.Remove(_processIds[id]);
+                    _processIds.Remove(id);
+                }
             }
         }
 

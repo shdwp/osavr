@@ -35,9 +35,11 @@
             <e p="MouseController.cs" t="Include" />
           </e>
           <e p="Osa" t="Include">
-            <e p="CockpitFrameworkExtensions.cs" t="Include" />
             <e p="DisplayControllers" t="Include">
-              <e p="SOCActiveBeamIndicatorController.cs" t="Include" />
+              <e p="SOCIndicators" t="Include">
+                <e p="SOCActiveBeamIndicatorController.cs" t="Include" />
+                <e p="SOCEnergyIndicatorController.cs" t="Include" />
+              </e>
               <e p="SOCScope" t="Include">
                 <e p="Shader" t="Include">
                   <e p="RadarScopeShaderLib.hlsl" t="Include" />
@@ -50,22 +52,47 @@
                 </e>
                 <e p="SSCElevationScopeController.cs" t="Include" />
               </e>
+              <e p="SSCIndicators" t="Include">
+                <e p="SSCEnergyEmittingIndicatorController.cs" t="Include" />
+                <e p="SSCEnergyReadyIndicatorController.cs" t="Include" />
+              </e>
               <e p="SSCScope" t="Include">
                 <e p="Shader" t="Include">
                   <e p="SSScopeShaderLib.hlsl" t="Include" />
                 </e>
                 <e p="SSCScopeController.cs" t="Include" />
               </e>
+              <e p="SUAIndicators" t="Include">
+                <e p="SUAAutoacquisitionStateIndicator.cs" t="Include" />
+                <e p="SUATrackingStateIndicator.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Framework" t="Include">
+              <e p="CockpitFrameworkExtensions.cs" t="Include" />
+              <e p="OsaLightIndicatorController.cs" t="Include" />
             </e>
             <e p="Interactor" t="Include">
-              <e p="SOCActiveBeamButtonController.cs" t="Include" />
-              <e p="SOCScopeDisplayRangeSwitchController.cs" t="Include" />
-              <e p="SSCInteractionControllers.cs" t="Include" />
+              <e p="SOC" t="Include">
+                <e p="SOCActiveBeamButtonController.cs" t="Include" />
+                <e p="SOCEnergyStateButtonController.cs" t="Include" />
+                <e p="SOCScopeDisplayRangeSwitchController.cs" t="Include" />
+                <e p="SOCTraverseStateButtonController.cs" t="Include" />
+              </e>
+              <e p="SSC" t="Include">
+                <e p="SSCEnergyStateButtonController.cs" t="Include" />
+                <e p="SSCInteractionControllers.cs" t="Include" />
+              </e>
+              <e p="SUA" t="Include">
+                <e p="SUAAutoacquireButtonController.cs" t="Include" />
+                <e p="SUATrackingModeDisableButtonController.cs" t="Include" />
+                <e p="SUATrackingModeEnableButtonController.cs" t="Include" />
+              </e>
             </e>
             <e p="Model" t="Include">
               <e p="OsaState.cs" t="Include" />
               <e p="SOCState.cs" t="Include" />
               <e p="SSCState.cs" t="Include" />
+              <e p="SUAState.cs" t="Include" />
             </e>
             <e p="OsaController.cs" t="Include" />
             <e p="Prefabs" t="Include">
