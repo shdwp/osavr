@@ -74,6 +74,7 @@
             <e p="Interactor" t="Include">
               <e p="SOC" t="Include">
                 <e p="SOCActiveBeamButtonController.cs" t="Include" />
+                <e p="SOCAutoActiveBeamButtonController.cs" t="Include" />
                 <e p="SOCEnergyStateButtonController.cs" t="Include" />
                 <e p="SOCScopeDisplayRangeSwitchController.cs" t="Include" />
                 <e p="SOCTraverseStateButtonController.cs" t="Include" />
@@ -108,6 +109,7 @@
           <e p="RadarSimulation" t="Include">
             <e p="IRadarProcessingThread.cs" t="Include" />
             <e p="RadarCameraRenderingPass.cs" t="Include" />
+            <e p="RadarCameraViewShader.shader" t="Include" />
             <e p="RadarReflectible.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">

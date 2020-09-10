@@ -51,7 +51,7 @@ void process_ssc_image(
 
             if (b > 0) {
                 float return_level = (float) b / 255.f;
-                float distance = ((float) (r) / 255.f) * input.far_plane;
+                float distance = lerp(input.far_plane, 0.f, (float) (r) / 255.f);
                 float deviation_x = inverseLerp(0, input.width, (float)x) - 0.5f;
                 float deviation_y = inverseLerp(0, input.height, (float)y) - 0.5f;
 

@@ -31,11 +31,11 @@ namespace OsaVR.Osa.DisplayControllers.SSCElevationScope
             switch (_state.SOC.activeBeam)
             {
                 case 1:
-                    _viewSurfaceMat.SetFloat(_shaderidElevation, Mathf.InverseLerp(-1f, 5f, _state.SSC.elevation));
+                    _viewSurfaceMat.SetFloat(_shaderidElevation, Mathf.Lerp(0f, 0.53f, Mathf.InverseLerp(-1f, 5f, _state.SSC.elevation)));
                     break;
                 
                 case 2:
-                    _viewSurfaceMat.SetFloat(_shaderidElevation, Mathf.InverseLerp(3f, 9f, _state.SSC.elevation));
+                    _viewSurfaceMat.SetFloat(_shaderidElevation, Mathf.Lerp(0.33f, 1f, Mathf.InverseLerp(3f, 9f, _state.SSC.elevation)));
                     break;
                 
                 case 3:

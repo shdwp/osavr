@@ -5,24 +5,25 @@ namespace OsaVR.RadarSimulation
 {
     public class RadarReflectible: MonoBehaviour
     {
+        private Renderer _rend;
         private MaterialPropertyBlock _block;
         
         private static readonly int _shaderidVelocityVector = Shader.PropertyToID("_VelocityVector");
         private static readonly int _shaderidIFFResponse = Shader.PropertyToID("_IFFResponse");
+        private static readonly int _shaderidWeatherFactor = Shader.PropertyToID("_WeatherFactor");
         
         private void Awake()
         {
-            var rend = GetComponent<Renderer>();
-            
+            _rend = GetComponentInChildren<Renderer>();
             _block = new MaterialPropertyBlock();
-            rend.GetPropertyBlock(_block);
-            rend.SetPropertyBlock(_block);
         }
 
         private void Update()
         {
-            _block.SetVector(_shaderidVelocityVector, new Vector4(0f, 0f, 0f, 0f));
-            _block.SetInt(_shaderidIFFResponse, 0);
+            _block.SetVector(_shaderidVelocityVector, new Vector3(0f, 0f, 300f));
+            _block.SetInt(_shaderidIFFResponse, 1);
+            _block.SetFloat(_shaderidWeatherFactor, 0f);
+            _rend.SetPropertyBlock(_block);
         }
     }
 }

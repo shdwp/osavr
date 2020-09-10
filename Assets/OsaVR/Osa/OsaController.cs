@@ -132,6 +132,14 @@ namespace OsaVR.Osa
                     interactorObject.AddComponent<SOCActiveBeamButtonController>().SetTargetBeamBasedOnId(id);
                     break;
                 
+                case "soc_active_beam_auto_1":
+                    interactorObject.AddComponent<SOCAutoActiveBeamButtonController>().SetTargetMode(SOCState.ActiveBeamAutoMode.Beam1_3);
+                    break;
+                
+                case "soc_active_beam_auto_2":
+                    interactorObject.AddComponent<SOCAutoActiveBeamButtonController>().SetTargetMode(SOCState.ActiveBeamAutoMode.Beam1_2);
+                    break;
+                
                 case "soc_energy_on":
                     interactorObject.AddComponent<SOCEnergyStateButtonController>().SetTargetState(true);
                     break;

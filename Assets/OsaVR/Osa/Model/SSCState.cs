@@ -55,13 +55,14 @@ namespace OsaVR.Osa.Model
 
         public float minElevation = 3f, maxElevation = 9f;
 
-        private float _distance;
+        private float _distance = 15f;
         public float distance
         {
             get => _distance;
             set => _distance = Mathf.Clamp(value, minDistance, maxDistance);
         }
-        
+
+        private bool _waitingToApplySOCBeamLimits = false;
         public float minDistance = 0f, maxDistance = 28f;
         public float targetGateWidth = 1.5f;
 
@@ -92,24 +93,23 @@ namespace OsaVR.Osa.Model
             _sim = sim;
             _state = state;
             
+            _sim.ListenNotification(SUAState.ChangedTrackingState, (_) =>
+            {
+                if (_state.Sua.trackingFlags == SUAState.TrackingFlags.Disabled)
+                {
+                    ApplySOCActiveBeamLimits();
+                }
+            });
+            
             _sim.ListenNotification(SOCState.ChangedActiveBeamNotification, (_) =>
             {
-                switch (_state.SOC.activeBeam)
+                if (_state.Sua.trackingFlags != SUAState.TrackingFlags.Disabled)
                 {
-                case 1:
-                    minElevation = -1f;
-                    maxElevation = 5f;
-                    break;
-                
-                case 2:
-                    minElevation = 3f;
-                    maxElevation = 9f;
-                    break;
-                
-                case 3:
-                    minElevation = 6f;
-                    maxElevation = 30f;
-                    break;
+                    _waitingToApplySOCBeamLimits = true;
+                }
+                else
+                {
+                    ApplySOCActiveBeamLimits();
                 }
             });
         }
@@ -135,13 +135,40 @@ namespace OsaVR.Osa.Model
             }
         }
 
+        private void ApplySOCActiveBeamLimits()
+        {
+            switch (_state.SOC.activeBeam)
+            {
+                case 1:
+                    minElevation = -1f;
+                    maxElevation = 5f;
+                    break;
+
+                case 2:
+                    minElevation = 3f;
+                    maxElevation = 9f;
+                    break;
+
+                case 3:
+                    minElevation = 6f;
+                    maxElevation = 30f;
+                    break;
+            }
+
+            _waitingToApplySOCBeamLimits = false;
+        }
+
         private float ClampAzimuth(float value)
         {
+            /*
             value = MathUtils.NormalizeAzimuth(value);
             if (value > 165f && value < 195f)
             {
                 value = value < 180f ? 165f : 195f;
             }
+            */
+            
+            // @TODO: implement 690deg limit
 
             return value;
         }

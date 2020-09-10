@@ -2,5 +2,5 @@
     Out = float4(1.f, 1.f, 1.f, 1.f);
 
     float distance = abs(UV.y - Elevation);
-    Out.rgb *= lerp(1.f, 0.f, smoothstep(0.001f, 0.01f, distance));
+    Out.rgb *= lerp(1.f, 0.f, smoothstep(0.01f, 0.05f, distance));
 }

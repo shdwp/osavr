@@ -39,25 +39,40 @@ namespace OsaVR.Osa
 
     public class SSCElevationWheelController : OsaWheelController
     {
+        public SSCElevationWheelController()
+        {
+            _turnSpeed = 2f;
+        }
+
         protected override void OnTurn(float value)
         {
-            _state.SSC.elevation += value / 10f;
+            _state.SSC.elevation += value;
         }
     }
 
     public class SSCDistanceWheelController : OsaWheelController
     {
+        public SSCDistanceWheelController()
+        {
+            _turnSpeed = 2f;
+        }
+
         protected override void OnTurn(float value)
         {
-            _state.SSC.distance += value / 10f;
+            _state.SSC.distance += value;
         }
     }
 
     public class SSCAzimuthWheelController : OsaWheelController
     {
+        public SSCAzimuthWheelController()
+        {
+            _turnSpeed = 2f;
+        }
+
         protected override void OnTurn(float value)
         {
-            _state.SSC.azimuth += value / 30f;
+            _state.SSC.azimuth += value;
         }
     }
 }

@@ -45,10 +45,9 @@ int update_soc_image(
             unsigned char a = input.buf[offset++];
 
             if (b > 0) {
-                float return_level = (float)b / 255.f;
-                float distance = ((float)(r) / 255.f) * input.far_plane;
+                float distance = lerp(input.far_plane, 0.f, (float)(r) / 255.f);
                 float angular_velocity = (float)g / 255.f;
-                unsigned int iff_response = (unsigned int)a;
+                unsigned int iff_response = (int)((float)a / (255.f / 3.f));
 
                 returns[r].val += (float)b / 255.f;
                 returns[r].velocity = angular_velocity;

@@ -12,16 +12,17 @@ namespace OsaVR.RadarSimulation
     
         private Shader _shader;
         private Material _material;
-        private MaterialPropertyBlock _materialPropertyBlock;
         private ShaderTagId[] _shaderTags;
 
         private int _radarReflectibleLayer;
+        private int _shaderPass;
     
         protected override void Setup(ScriptableRenderContext renderContext, CommandBuffer cmd)
         {
-            _shader = Shader.Find("Shader Graphs/RadarViewShader");
+            _shader = Shader.Find("Unlit/RadarCameraViewShader");
             _material = CoreUtils.CreateEngineMaterial(_shader);
-            _materialPropertyBlock = new MaterialPropertyBlock();
+            _material.enableInstancing = true;
+            _shaderPass = _material.FindPass("Forward");
             _shaderTags = new [] { new ShaderTagId("Forward") };
 
             _radarReflectibleLayer = LayerMask.NameToLayer("Radar_Reflectible");
@@ -42,7 +43,7 @@ namespace OsaVR.RadarSimulation
                 excludeObjectMotionVectors = false,
                 layerMask = 1 << _radarReflectibleLayer,
                 overrideMaterial = _material,
-                overrideMaterialPassIndex = 5,
+                overrideMaterialPassIndex = _shaderPass,
             };
 
             CoreUtils.SetRenderTarget(cmd, RT.colorBuffer, ClearFlag.All);

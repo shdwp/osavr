@@ -2,6 +2,7 @@
 using System.Collections;
 using OsaVR.Utils;
 using OsaVR.World.Simulation;
+using UnityEngine;
 
 namespace OsaVR.Osa.Model
 {
@@ -23,8 +24,14 @@ namespace OsaVR.Osa.Model
             Ten_FortyFive
         }
 
-        private ScopeDisplayRange _scopeScopeDisplayRange = ScopeDisplayRange.Zero_ThirtyFive;
+        public enum ActiveBeamAutoMode
+        {
+            Disabled,
+            Beam1_3,
+            Beam1_2,
+        }
 
+        private ScopeDisplayRange _scopeScopeDisplayRange = ScopeDisplayRange.Zero_ThirtyFive;
         public ScopeDisplayRange ScopeScopeDisplayRange
         {
             get => _scopeScopeDisplayRange;
@@ -36,10 +43,9 @@ namespace OsaVR.Osa.Model
         }
         
         public float azimuth;
-        public bool turning = true;
+        public bool turning = false;
 
         private bool _emitting = true;
-
         public bool emitting
         {
             get => _emitting;
@@ -76,6 +82,13 @@ namespace OsaVR.Osa.Model
             }
         }
 
+        private ActiveBeamAutoMode _activeBeamAutoMode = ActiveBeamAutoMode.Disabled;
+        public ActiveBeamAutoMode activeBeamAutoMode
+        {
+            get => _activeBeamAutoMode;
+            set => _activeBeamAutoMode = value;
+        }
+
         private float _elevation;
         public float elevation => _elevation;
 
@@ -92,23 +105,35 @@ namespace OsaVR.Osa.Model
         {
             while (true)
             {
-                // 1.818s per revolution
-                // 90 adjustments per rotation
-                // 20.13ms per adjustment
-                
+                var oldAzimuth = azimuth;
+                var adjustment = 4f;
                 if (turning)
                 {
-                    azimuth = MathUtils.NormalizeAzimuth(azimuth + 4f);
+                    azimuth = MathUtils.NormalizeAzimuth(azimuth + adjustment);
                     yield return new SimulationEvent(TurnEvent);
                 }
-                
+
                 if (emitting)
                 {
                     yield return new SimulationEvent(ReceiveEvent);
                 }
                 
+                if (activeBeamAutoMode != ActiveBeamAutoMode.Disabled && Mathf.Abs(oldAzimuth - azimuth) > (360f - adjustment - 1f))
+                {
+                    var newActiveBeam = activeBeam + 1;
+                    switch (activeBeamAutoMode)
+                    {
+                        case ActiveBeamAutoMode.Beam1_2:
+                            activeBeam = newActiveBeam > 2 ? 1 : newActiveBeam;
+                            break;
+                        
+                        case ActiveBeamAutoMode.Beam1_3:
+                            activeBeam = newActiveBeam > 3 ? 1 : newActiveBeam;
+                            break;
+                    }
+                }
+                
                 yield return _sim.Delay(TimeSpan.FromMilliseconds(20.13));
-                // yield return _sim.Delay(TimeSpan.FromMilliseconds(40.26));
             }
         }
     }

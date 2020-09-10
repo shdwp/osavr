@@ -39,7 +39,7 @@ void test_soc_processing() {
             .height = output_h,
             .channels = output_ch,
             .near_plane = 10.f,
-            .far_plane = 45.f,
+            .far_plane = 50.f,
     };
 
     printf("image %dx%d\n", w, h);
@@ -61,7 +61,7 @@ void test_ssc_processing() {
             .width = w,
             .height = h,
             .channels = ch,
-            .far_plane = 28,
+            .far_plane = 50,
             .azimuth = 0,
             .elevation = 0
     };

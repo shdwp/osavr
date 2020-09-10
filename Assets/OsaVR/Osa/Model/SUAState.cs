@@ -30,7 +30,6 @@ namespace OsaVR.Osa.Model
         }
 
         private bool _autoAcquisition = false;
-
         public bool autoAcquisition
         {
             get => _autoAcquisition;
@@ -41,10 +40,13 @@ namespace OsaVR.Osa.Model
                     if (_autoAcquisition && !value)
                     {
                         _sim.RemoveProcess(_AutoacquisitionProcessId);
-                    } else if (!_autoAcquisition && value)
+                    } 
+                    else if (!_autoAcquisition && value)
                     {
-                        _sim.RemoveProcess(_TrackingProcessId);
-                        _sim.AddProcess(_AutoacquisitionProcessId, AutoacquisitionProcess());
+                        if (trackingFlags == TrackingFlags.Disabled)
+                        {
+                            _sim.AddProcess(_AutoacquisitionProcessId, AutoacquisitionProcess());
+                        }
                     }
                     
                     _sim.PostNotification(ChangedTrackingState);
@@ -53,6 +55,7 @@ namespace OsaVR.Osa.Model
             }
         }
 
+        private bool _trackingProcess = false;
         private TrackingFlags _trackingFlags;
         public TrackingFlags trackingFlags
         {
@@ -63,6 +66,16 @@ namespace OsaVR.Osa.Model
                 {
                     _sim.PostNotification(ChangedTrackingState);
                     _trackingFlags = value;
+
+                    if (_trackingFlags != TrackingFlags.Disabled && !_trackingProcess && _lastDeviationInfo.defined)
+                    {
+                        _sim.AddProcess(_TrackingProcessId, TrackingProcess());
+                        _trackingProcess = true;
+                    } else if (_trackingFlags == TrackingFlags.Disabled && _trackingProcess)
+                    {
+                        _sim.RemoveProcess(_TrackingProcessId);
+                        _trackingProcess = false;
+                    }
                 }
             }
         }
@@ -87,7 +100,6 @@ namespace OsaVR.Osa.Model
             {
                 autoAcquisition = false;
                 trackingFlags = TrackingFlags.Elevation | TrackingFlags.Azimuth | TrackingFlags.Distance;
-                _sim.AddProcess(_TrackingProcessId, TrackingProcess());
             }
         }
 
@@ -136,34 +148,35 @@ namespace OsaVR.Osa.Model
 
                 if (trackingFlags.HasFlag(TrackingFlags.Azimuth))
                 {
-                    var azimuthFix = deviation.x * ssc.fov;
+                    var azimuthFix = deviation.x * ssc.fov / 2f;
                     if (Mathf.Abs(azimuthFix) > 0.05f)
                     {
-                        ssc.azimuth += Mathf.Clamp(azimuthFix, -1.2f, 1.2f);
+                        ssc.azimuth += Mathf.Clamp(azimuthFix, -0.6f, 0.6f);
                     }
                 }
 
                 if (trackingFlags.HasFlag(TrackingFlags.Elevation))
                 {
-                    var elevFix = deviation.y * ssc.fov;
-                    if (Mathf.Abs(elevFix) > 0.01f)
+                    var elevFix = deviation.y * ssc.fov / 3f;
+                    if (Mathf.Abs(elevFix) > 0.03f)
                     {
-                        ssc.elevation += Mathf.Clamp(elevFix, -0.6f, 0.6f);
+                        ssc.elevation += Mathf.Clamp(elevFix, -0.3f, 0.3f);
                     }
                 }
 
                 if (trackingFlags.HasFlag(TrackingFlags.Distance))
                 {
-                    var distFix = deviation.z * ssc.targetGateWidth;
+                    var distFix = deviation.z * ssc.targetGateWidth / 2f;
                     if (Mathf.Abs(distFix) > 0.01f)
                     {
                         ssc.distance += distFix;
                     }
                 }
 
-                yield return _sim.Delay(TimeSpan.FromMilliseconds(40));
+                yield return _sim.Delay(TimeSpan.FromMilliseconds(20));
             }
 
+            _trackingProcess = false;
             yield return null;
         }
 

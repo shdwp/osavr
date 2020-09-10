@@ -1,4 +1,6 @@
-﻿namespace OsaVR.Osa.Interactor.SOC
+﻿using OsaVR.Osa.Model;
+
+namespace OsaVR.Osa.Interactor.SOC
 {
     public class SOCActiveBeamButtonController: OsaButtonController
     {
@@ -7,6 +9,7 @@
         protected override void OnPressed()
         {
             _state.SOC.activeBeam = targetBeam;
+            _state.SOC.activeBeamAutoMode = SOCState.ActiveBeamAutoMode.Disabled;
         }
 
         public void SetTargetBeamBasedOnId(string id)

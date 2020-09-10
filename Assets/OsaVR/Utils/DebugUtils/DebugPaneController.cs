@@ -42,6 +42,11 @@ namespace OsaVR.Utils.DebugUtils
 
                 _textSimRate.text = $"SimLag: {_sim.averageLag:F3}ms\nSimSleep: {_sim.averageSleep:F3}ms";
                 _textScreenDebug.text = $"{1000f / frametime:F0} ({frametime:F3}ms) / {_lastFixedFrametime:F0}ms / lag {_sim.averageLag:F3}ms / sleep {_sim.averageSleep:F3}ms";
+
+                if (SaveRT != null)
+                {
+                    _textScreenDebug.text += "\nWriting SaveRT!";
+                }
             }
             
             _frametimeStopwatch = Stopwatch.StartNew();
