@@ -122,16 +122,16 @@ namespace OsaVR.Osa.Model
                 switch (_powertraverseState)
                 {
                     case PowertraverseState.Left:
-                        newAzimuth -= 1f;
+                        newAzimuth -= 1.2f;
                         break;
                     
                     case PowertraverseState.Right:
-                        newAzimuth += 1f;
+                        newAzimuth += 1.2f;
                         break;
                 }
 
                 _azimuth = ClampAzimuth(newAzimuth);
-                yield return _sim.Delay(TimeSpan.FromMilliseconds(50));
+                yield return _sim.Delay(TimeSpan.FromMilliseconds(40));
             }
         }
 

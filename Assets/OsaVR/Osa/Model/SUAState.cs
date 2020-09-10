@@ -118,6 +118,8 @@ namespace OsaVR.Osa.Model
                 // @TODO: synchronize with radar image capturing
                 yield return _sim.Delay(TimeSpan.FromMilliseconds(20));
             }
+
+            yield return null;
         }
 
         private IEnumerator TrackingProcess()
@@ -137,7 +139,7 @@ namespace OsaVR.Osa.Model
                     var azimuthFix = deviation.x * ssc.fov;
                     if (Mathf.Abs(azimuthFix) > 0.05f)
                     {
-                        ssc.azimuth += Mathf.Clamp(-1.2f, 1.2f, azimuthFix);
+                        ssc.azimuth += Mathf.Clamp(azimuthFix, -1.2f, 1.2f);
                     }
                 }
 
@@ -146,7 +148,7 @@ namespace OsaVR.Osa.Model
                     var elevFix = deviation.y * ssc.fov;
                     if (Mathf.Abs(elevFix) > 0.01f)
                     {
-                        ssc.elevation += Mathf.Clamp(-0.6f, 0.6f, elevFix);
+                        ssc.elevation += Mathf.Clamp(elevFix, -0.6f, 0.6f);
                     }
                 }
 
@@ -161,6 +163,8 @@ namespace OsaVR.Osa.Model
 
                 yield return _sim.Delay(TimeSpan.FromMilliseconds(40));
             }
+
+            yield return null;
         }
 
     }
