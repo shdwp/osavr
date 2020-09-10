@@ -28,6 +28,9 @@
                   <e p="IndicatorShaderLib.hlsl" t="Include" />
                 </e>
               </e>
+              <e p="RotatingDial" t="Include">
+                <e p="GenericCircularDialController.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="InputControllers" t="Include">
@@ -38,6 +41,7 @@
             <e p="DisplayControllers" t="Include">
               <e p="SOCIndicators" t="Include">
                 <e p="SOCActiveBeamIndicatorController.cs" t="Include" />
+                <e p="SOCAzimuthDialController.cs" t="Include" />
                 <e p="SOCEnergyIndicatorController.cs" t="Include" />
               </e>
               <e p="SOCScope" t="Include">
@@ -53,6 +57,8 @@
                 <e p="SSCElevationScopeController.cs" t="Include" />
               </e>
               <e p="SSCIndicators" t="Include">
+                <e p="SSCDistanceDialController.cs" t="Include" />
+                <e p="SSCElevationDialController.cs" t="Include" />
                 <e p="SSCEnergyEmittingIndicatorController.cs" t="Include" />
                 <e p="SSCEnergyReadyIndicatorController.cs" t="Include" />
               </e>

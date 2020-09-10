@@ -24,7 +24,7 @@ namespace OsaVR.Osa.DisplayControllers.SUAIndicators
         {
             if (_update)
             {
-                var included = _state.Sua.trackingFlags.HasFlag(TargetFlags);
+                var included = _state.Sua.trackingFlags.HasFlag(TargetFlags); 
                 Set(0, 0, TrackFlagsIncluded ? included : !included);
                 ApplyUpdates();
                 

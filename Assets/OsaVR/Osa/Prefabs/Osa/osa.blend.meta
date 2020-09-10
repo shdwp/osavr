@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 563b0764c4ea20c48ac3b48f550d52dc
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: '@Intr:emissions_off:generic_button'
+    100002: '@Intr:emissions_on:generic_button'
+    100004: '@Intr:test_1:generic_switch'
+    100006: '@Intr:test_2:generic_switch'
+    100008: '@Skip:IntrSphere'
+    100010: '@UtilityCamera:SOC_1Beam'
+    100012: '@UtilityCamera:SOC_2Beam'
+    100014: '@UtilityCamera:SOC_3Beam'
+    100016: '@View:radar_scope:radar_scope'
+    100018: '@View:signal_scope:scope'
+    100020: Inner
+    100022: Left_Eq_Blade_0
+    100024: Left_Eq_Blade_1
+    100026: Left_Eq_Blade_2
+    100028: Left_Eq_Blade_3
+    100030: Left_Eq_Blade_4
+    100032: Left_Eq_Blade_5
+    100034: Left_Eq_Tower
+    100036: //RootNode
+    100038: Outer
+    100040: Point
+    100042: SOC
+    100044: SOC_Root
+    400000: '@Intr:emissions_off:generic_button'
+    400002: '@Intr:emissions_on:generic_button'
+    400004: '@Intr:test_1:generic_switch'
+    400006: '@Intr:test_2:generic_switch'
+    400008: '@Skip:IntrSphere'
+    400010: '@UtilityCamera:SOC_1Beam'
+    400012: '@UtilityCamera:SOC_2Beam'
+    400014: '@UtilityCamera:SOC_3Beam'
+    400016: '@View:radar_scope:radar_scope'
+    400018: '@View:signal_scope:scope'
+    400020: Inner
+    400022: Left_Eq_Blade_0
+    400024: Left_Eq_Blade_1
+    400026: Left_Eq_Blade_2
+    400028: Left_Eq_Blade_3
+    400030: Left_Eq_Blade_4
+    400032: Left_Eq_Blade_5
+    400034: Left_Eq_Tower
+    400036: //RootNode
+    400038: Outer
+    400040: Point
+    400042: SOC
+    400044: SOC_Root
+    2000000: '@UtilityCamera:SOC_1Beam'
+    2000002: '@UtilityCamera:SOC_2Beam'
+    2000004: '@UtilityCamera:SOC_3Beam'
+    2100000: No Name
+    2100002: Eq_Tower_Material
+    2100004: Eq_Blade_Mat
+    2300000: '@Intr:emissions_off:generic_button'
+    2300002: '@Intr:emissions_on:generic_button'
+    2300004: '@Intr:test_1:generic_switch'
+    2300006: '@Intr:test_2:generic_switch'
+    2300008: '@Skip:IntrSphere'
+    2300010: '@View:radar_scope:radar_scope'
+    2300012: '@View:signal_scope:scope'
+    2300014: Inner
+    2300016: Left_Eq_Blade_0
+    2300018: Left_Eq_Blade_1
+    2300020: Left_Eq_Blade_2
+    2300022: Left_Eq_Blade_3
+    2300024: Left_Eq_Blade_4
+    2300026: Left_Eq_Blade_5
+    2300028: Left_Eq_Tower
+    2300030: Outer
+    2300032: SOC
+    2300034: SOC_Root
+    3300000: '@Intr:emissions_off:generic_button'
+    3300002: '@Intr:emissions_on:generic_button'
+    3300004: '@Intr:test_1:generic_switch'
+    3300006: '@Intr:test_2:generic_switch'
+    3300008: '@Skip:IntrSphere'
+    3300010: '@View:radar_scope:radar_scope'
+    3300012: '@View:signal_scope:scope'
+    3300014: Inner
+    3300016: Left_Eq_Blade_0
+    3300018: Left_Eq_Blade_1
+    3300020: Left_Eq_Blade_2
+    3300022: Left_Eq_Blade_3
+    3300024: Left_Eq_Blade_4
+    3300026: Left_Eq_Blade_5
+    3300028: Left_Eq_Tower
+    3300030: Outer
+    3300032: SOC
+    3300034: SOC_Root
+    4300000: Outer
+    4300002: SOC
+    4300004: Inner
+    4300006: Left_Eq_Tower
+    4300008: Left_Eq_Blade_1
+    4300010: '@View:signal_scope:scope'
+    4300012: '@Intr:emissions_off:generic_button'
+    4300014: '@Intr:emissions_on:generic_button'
+    4300016: Left_Eq_Blade_0
+    4300018: Left_Eq_Blade_2
+    4300020: '@View:radar_scope:radar_scope'
+    4300022: Left_Eq_Blade_3
+    4300024: Left_Eq_Blade_4
+    4300026: '@Intr:test_1:generic_switch'
+    4300028: '@Intr:test_2:generic_switch'
+    4300030: Left_Eq_Blade_5
+    4300032: '@Skip:IntrSphere'
+    4300034: SOC_Root
+    9500000: //RootNode
+    10800000: Point
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

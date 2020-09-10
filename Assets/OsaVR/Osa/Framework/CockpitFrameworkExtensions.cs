@@ -1,6 +1,7 @@
 ﻿using OsaVR.CockpitFramework.Interactor;
 using OsaVR.CockpitFramework.ViewControllers;
 using OsaVR.CockpitFramework.ViewControllers.Indicator;
+using OsaVR.CockpitFramework.ViewControllers.RotatingDial;
 using OsaVR.Osa.Model;
 using OsaVR.World.Simulation;
 
@@ -71,6 +72,20 @@ namespace OsaVR.Osa
         {
             base.Awake();
 
+            _state = FindObjectOfType<OsaState>();
+            _sim = FindObjectOfType<SimulationController>();
+        }
+    }
+
+    public class OsaCircularDialController : GenericCircularDialController
+    {
+        protected OsaState _state;
+        protected SimulationController _sim;
+
+        protected new void Awake()
+        {
+            base.Awake();
+            
             _state = FindObjectOfType<OsaState>();
             _sim = FindObjectOfType<SimulationController>();
         }

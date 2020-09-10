@@ -19,8 +19,12 @@ namespace OsaVR.Osa.Model
             Disabled = 0,
             Azimuth = 1 << 0,
             Distance = 1 << 1,
-            Elevation = 1 << 2,
-            SemiAutomatic = 1 << 3,
+            DistanceSemiAutomatic = 1 << 2,
+            Elevation = 1 << 3,
+            TV = 1 << 4,
+            FullyAutomatic = Azimuth | Distance | Elevation,
+            FullySemiAutomatic = DistanceSemiAutomatic | TV,
+            All = FullyAutomatic | FullySemiAutomatic,
         }
 
         public enum AutoacquisitionDirection
@@ -67,10 +71,17 @@ namespace OsaVR.Osa.Model
                     _sim.PostNotification(ChangedTrackingState);
                     _trackingFlags = value;
 
-                    if (_trackingFlags != TrackingFlags.Disabled && !_trackingProcess && _lastDeviationInfo.defined)
+                    if (_trackingFlags != TrackingFlags.Disabled && !_trackingProcess)
                     {
-                        _sim.AddProcess(_TrackingProcessId, TrackingProcess());
-                        _trackingProcess = true;
+                        if (_lastDeviationInfo.defined)
+                        {
+                            _sim.AddProcess(_TrackingProcessId, TrackingProcess());
+                            _trackingProcess = true;
+                        }
+                        else
+                        {
+                            _trackingFlags = TrackingFlags.Disabled;
+                        }
                     } else if (_trackingFlags == TrackingFlags.Disabled && _trackingProcess)
                     {
                         _sim.RemoveProcess(_TrackingProcessId);
@@ -164,7 +175,7 @@ namespace OsaVR.Osa.Model
                     }
                 }
 
-                if (trackingFlags.HasFlag(TrackingFlags.Distance))
+                if (trackingFlags.HasFlag(TrackingFlags.Distance) || trackingFlags.HasFlag(TrackingFlags.DistanceSemiAutomatic))
                 {
                     var distFix = deviation.z * ssc.targetGateWidth / 2f;
                     if (Mathf.Abs(distFix) > 0.01f)

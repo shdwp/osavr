@@ -67,6 +67,10 @@ namespace OsaVR.Osa
                     o.AddComponent<SOCEnergyIndicatorController>();
                     break;
                 
+                case "soc_azimuth_dial":
+                    o.AddComponent<SOCAzimuthDialController>();
+                    break;
+                
                 case "ssc_energy_emitting_indicator":
                     o.AddComponent<SSCEnergyEmittingIndicatorController>();
                     break;
@@ -75,16 +79,16 @@ namespace OsaVR.Osa
                     o.AddComponent<SSCEnergyReadyIndicatorController>();
                     break;
                 
-                case "sua_dist_manual_indicator":
-                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(false, SUAState.TrackingFlags.Distance);
+                case "sua_disabled_indicator":
+                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(false, SUAState.TrackingFlags.All);
                     break;
                 
-                case "sua_dist_track_indicator":
-                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(true, SUAState.TrackingFlags.Distance);
+                case "sua_dist_semi_track_indicator":
+                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(true, SUAState.TrackingFlags.DistanceSemiAutomatic);
                     break;
                 
                 case "sua_tv_track_indicator":
-                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(true, SUAState.TrackingFlags.SemiAutomatic);
+                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(true, SUAState.TrackingFlags.TV);
                     break;
                 
                 case "sua_tsc_track_indicator":
@@ -99,8 +103,16 @@ namespace OsaVR.Osa
                     o.AddComponent<SUAAutoacquisitionStateIndicator>();
                     break;
                 
-                case "sua_tsc_manual_indicator":
-                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(false, SUAState.TrackingFlags.Azimuth);
+                case "sua_track_indicator":
+                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(true, SUAState.TrackingFlags.FullyAutomatic);
+                    break;
+                
+                case "ssc_elevation_dial":
+                    o.AddComponent<SSCElevationDialController>();
+                    break;
+                
+                case "ssc_distance_dial":
+                    o.AddComponent<SSCDistanceDialController>();
                     break;
                 
                 default:
@@ -121,11 +133,6 @@ namespace OsaVR.Osa
             
             switch (id)
             {
-                case "emissions_off":
-                case "emissions_on":
-                    interactorObject.AddComponent<ButtonController>();
-                    break;
-                
                 case "soc_switch_active_beam_1":
                 case "soc_switch_active_beam_2":
                 case "soc_switch_active_beam_3":
@@ -184,22 +191,23 @@ namespace OsaVR.Osa
                     interactorObject.AddComponent<SOCScopeDisplayRangeSwitchController>();
                     break;
                 
-                case "sua_dist_track":
-                    interactorObject.AddComponent<SUATrackingModeEnableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Distance);
+                case "sua_auto_acq_1":
+                case "sua_auto_acq_2":
+                    interactorObject.AddComponent<SUAAutoacquireButtonController>();
                     break;
                 
-                case "sua_dist_manual":
-                    interactorObject.AddComponent<SUATrackingModeDisableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Distance);
-                    break;
-                
-                case "sua_tsc":
+                case "sua_tsc_1":
                 case "sua_tsc_2":
                     interactorObject.AddComponent<SUATrackingModeEnableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Azimuth);
                     break;
                 
-                case "sua_tsc_manual":
-                case "sua_tsc_manual_2":
-                    interactorObject.AddComponent<SUATrackingModeDisableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Azimuth | SUAState.TrackingFlags.Elevation);
+                case "sua_dist_semi_track":
+                    interactorObject.AddComponent<SUATrackingModeEnableButtonController>().SetTargetFlags(SUAState.TrackingFlags.DistanceSemiAutomatic);
+                    break;
+                
+                case "sua_track_disable_1":
+                case "sua_track_disable_2":
+                    interactorObject.AddComponent<SUATrackingModeDisableButtonController>().SetTargetFlags(SUAState.TrackingFlags.All);
                     break;
                 
                 case "sua_tv_track":

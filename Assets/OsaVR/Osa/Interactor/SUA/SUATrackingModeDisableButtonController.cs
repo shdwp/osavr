@@ -4,16 +4,17 @@ namespace OsaVR.Osa.Interactor.SUA
 {
     public class SUATrackingModeDisableButtonController: OsaButtonController
     {
-        public SUAState.TrackingFlags TargetFlags;
+        private SUAState.TrackingFlags _targetFlags;
 
         public void SetTargetFlags(SUAState.TrackingFlags flags)
         {
-            TargetFlags = flags;
+            _targetFlags = flags;
         }
         
         protected override void OnPressed()
         {
-            _state.Sua.trackingFlags &= ~TargetFlags;
+            _state.Sua.trackingFlags &= ~_targetFlags;
+            _state.Sua.autoAcquisition = false;
         }
     }
 }
