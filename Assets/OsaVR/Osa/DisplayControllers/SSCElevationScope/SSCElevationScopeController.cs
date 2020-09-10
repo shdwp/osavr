@@ -28,7 +28,7 @@ namespace OsaVR.Osa.DisplayControllers.SSCElevationScope
 
         private void Update()
         {
-            switch (_state.SOC.activeBeam)
+            switch (_state.SSC.elevationRangeBeam)
             {
                 case 1:
                     _viewSurfaceMat.SetFloat(_shaderidElevation, Mathf.Lerp(0f, 0.53f, Mathf.InverseLerp(-1f, 5f, _state.SSC.elevation)));

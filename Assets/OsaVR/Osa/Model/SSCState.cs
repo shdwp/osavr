@@ -63,6 +63,7 @@ namespace OsaVR.Osa.Model
         }
 
         private bool _waitingToApplySOCBeamLimits = false;
+        public uint elevationRangeBeam = 2;
         public float minDistance = 0f, maxDistance = 28f;
         public float targetGateWidth = 1.5f;
 
@@ -95,7 +96,7 @@ namespace OsaVR.Osa.Model
             
             _sim.ListenNotification(SUAState.ChangedTrackingState, (_) =>
             {
-                if (_state.Sua.trackingFlags == SUAState.TrackingFlags.Disabled)
+                if (_state.Sua.trackingFlags == SUAState.TrackingFlags.Disabled && _waitingToApplySOCBeamLimits)
                 {
                     ApplySOCActiveBeamLimits();
                 }
@@ -155,6 +156,7 @@ namespace OsaVR.Osa.Model
                     break;
             }
 
+            elevationRangeBeam = _state.SOC.activeBeam;
             _waitingToApplySOCBeamLimits = false;
         }
 
