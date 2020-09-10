@@ -2,7 +2,7 @@
 
 namespace OsaVR.Osa.DisplayControllers.SAUIndicators
 {
-    public class SAUAutoacquisitionStateIndicator: OsaLightIndicatorController
+    public class SUAAutoacquisitionStateIndicator: OsaLightIndicatorController
     {
         private bool _update = true;
 

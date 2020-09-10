@@ -87,8 +87,25 @@ namespace OsaVR.Osa
                     o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(true, SUAState.TrackingFlags.SemiAutomatic);
                     break;
                 
-                //default: 
-                    //throw new NotImplementedException();
+                case "sua_tsc_track_indicator":
+                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(true, SUAState.TrackingFlags.Azimuth);
+                    break;
+                
+                case "sua_elevation_track_indicator":
+                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(true, SUAState.TrackingFlags.Elevation);
+                    break;
+                
+                case "sua_auto_acq_indicator":
+                    o.AddComponent<SUAAutoacquisitionStateIndicator>();
+                    break;
+                
+                case "sua_tsc_manual_indicator":
+                    o.AddComponent<SUATrackingStateIndicator>().SetTargetFlags(false, SUAState.TrackingFlags.Azimuth);
+                    break;
+                
+                default:
+                    Debug.LogError($"ViewController not found for {id}");
+                    break;
             }
         }
 
@@ -167,18 +184,30 @@ namespace OsaVR.Osa
                     interactorObject.AddComponent<SUATrackingModeDisableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Distance);
                     break;
                 
-                case "sua_tsc_2":
                 case "sua_tsc":
+                case "sua_tsc_2":
                     interactorObject.AddComponent<SUATrackingModeEnableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Azimuth);
                     break;
                 
                 case "sua_tsc_manual":
                 case "sua_tsc_manual_2":
-                    interactorObject.AddComponent<SUATrackingModeDisableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Azimuth);
+                    interactorObject.AddComponent<SUATrackingModeDisableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Azimuth | SUAState.TrackingFlags.Elevation);
+                    break;
+                
+                case "sua_tv_track":
+                    // @TODO
+                    break;
+                
+                case "sua_elevation_track":
+                    interactorObject.AddComponent<SUATrackingModeEnableButtonController>().SetTargetFlags(SUAState.TrackingFlags.Elevation);
+                    break;
+                
+                case "sua_auto_acq":
+                    interactorObject.AddComponent<SUAAutoacquireButtonController>();
                     break;
                 
                 default:
-                    // throw new NotImplementedException();
+                    Debug.LogError($"InteractorController not found for {id}");
                     break;
             }
         }

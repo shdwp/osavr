@@ -43,6 +43,7 @@ namespace OsaVR.Osa.Model
                         _sim.RemoveProcess(_AutoacquisitionProcessId);
                     } else if (!_autoAcquisition && value)
                     {
+                        _sim.RemoveProcess(_TrackingProcessId);
                         _sim.AddProcess(_AutoacquisitionProcessId, AutoacquisitionProcess());
                     }
                     
@@ -134,7 +135,7 @@ namespace OsaVR.Osa.Model
                 if (trackingFlags.HasFlag(TrackingFlags.Azimuth))
                 {
                     var azimuthFix = deviation.x * ssc.fov;
-                    if (azimuthFix > 0.05f)
+                    if (Mathf.Abs(azimuthFix) > 0.05f)
                     {
                         ssc.azimuth += Mathf.Clamp(-1.2f, 1.2f, azimuthFix);
                     }
@@ -143,7 +144,7 @@ namespace OsaVR.Osa.Model
                 if (trackingFlags.HasFlag(TrackingFlags.Elevation))
                 {
                     var elevFix = deviation.y * ssc.fov;
-                    if (elevFix > 0.01f)
+                    if (Mathf.Abs(elevFix) > 0.01f)
                     {
                         ssc.elevation += Mathf.Clamp(-0.6f, 0.6f, elevFix);
                     }
@@ -152,7 +153,7 @@ namespace OsaVR.Osa.Model
                 if (trackingFlags.HasFlag(TrackingFlags.Distance))
                 {
                     var distFix = deviation.z * ssc.targetGateWidth;
-                    if (distFix > 0.01f)
+                    if (Mathf.Abs(distFix) > 0.01f)
                     {
                         ssc.distance += distFix;
                     }
