@@ -79,7 +79,14 @@ namespace OsaVR.Prefabs
             var interactorPrefabName = components[1];
 
             var path = Path.Combine("Controls", interactorPrefabName, interactorPrefabName);
-            var item = Instantiate(Resources.Load<GameObject>(path), parent.transform);
+            var prefab = Resources.Load<GameObject>(path);
+            if (prefab == null)
+            {
+                Debug.LogError($"Failed to load interactor prefab - {path}!");
+                return null;
+            }
+            
+            var item = Instantiate(prefab, parent.transform);
             
             var animator = item.GetComponent<Animator>();
             if (animator != null)

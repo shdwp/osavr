@@ -128,6 +128,11 @@ namespace OsaVR.Osa
 
         public void BindInteractor(string id, GameObject interactorObject, GameObject colliderObject)
         {
+            if (id.StartsWith("@noop"))
+            {
+                return;
+            }
+            
             _interactorColliders[colliderObject] = interactorObject;
             _interactors[id] = interactorObject;
             

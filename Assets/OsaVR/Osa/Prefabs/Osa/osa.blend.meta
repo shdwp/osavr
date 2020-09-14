@@ -1,120 +1,348 @@
 fileFormatVersion: 2
 guid: 563b0764c4ea20c48ac3b48f550d52dc
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: '@Intr:emissions_off:generic_button'
-    100002: '@Intr:emissions_on:generic_button'
-    100004: '@Intr:test_1:generic_switch'
-    100006: '@Intr:test_2:generic_switch'
-    100008: '@Skip:IntrSphere'
-    100010: '@UtilityCamera:SOC_1Beam'
-    100012: '@UtilityCamera:SOC_2Beam'
-    100014: '@UtilityCamera:SOC_3Beam'
-    100016: '@View:radar_scope:radar_scope'
-    100018: '@View:signal_scope:scope'
-    100020: Inner
-    100022: Left_Eq_Blade_0
-    100024: Left_Eq_Blade_1
-    100026: Left_Eq_Blade_2
-    100028: Left_Eq_Blade_3
-    100030: Left_Eq_Blade_4
-    100032: Left_Eq_Blade_5
-    100034: Left_Eq_Tower
-    100036: //RootNode
-    100038: Outer
-    100040: Point
-    100042: SOC
-    100044: SOC_Root
-    400000: '@Intr:emissions_off:generic_button'
-    400002: '@Intr:emissions_on:generic_button'
-    400004: '@Intr:test_1:generic_switch'
-    400006: '@Intr:test_2:generic_switch'
-    400008: '@Skip:IntrSphere'
-    400010: '@UtilityCamera:SOC_1Beam'
-    400012: '@UtilityCamera:SOC_2Beam'
-    400014: '@UtilityCamera:SOC_3Beam'
-    400016: '@View:radar_scope:radar_scope'
-    400018: '@View:signal_scope:scope'
-    400020: Inner
-    400022: Left_Eq_Blade_0
-    400024: Left_Eq_Blade_1
-    400026: Left_Eq_Blade_2
-    400028: Left_Eq_Blade_3
-    400030: Left_Eq_Blade_4
-    400032: Left_Eq_Blade_5
-    400034: Left_Eq_Tower
-    400036: //RootNode
-    400038: Outer
-    400040: Point
-    400042: SOC
-    400044: SOC_Root
-    2000000: '@UtilityCamera:SOC_1Beam'
-    2000002: '@UtilityCamera:SOC_2Beam'
-    2000004: '@UtilityCamera:SOC_3Beam'
-    2100000: No Name
-    2100002: Eq_Tower_Material
-    2100004: Eq_Blade_Mat
-    2300000: '@Intr:emissions_off:generic_button'
-    2300002: '@Intr:emissions_on:generic_button'
-    2300004: '@Intr:test_1:generic_switch'
-    2300006: '@Intr:test_2:generic_switch'
-    2300008: '@Skip:IntrSphere'
-    2300010: '@View:radar_scope:radar_scope'
-    2300012: '@View:signal_scope:scope'
-    2300014: Inner
-    2300016: Left_Eq_Blade_0
-    2300018: Left_Eq_Blade_1
-    2300020: Left_Eq_Blade_2
-    2300022: Left_Eq_Blade_3
-    2300024: Left_Eq_Blade_4
-    2300026: Left_Eq_Blade_5
-    2300028: Left_Eq_Tower
-    2300030: Outer
-    2300032: SOC
-    2300034: SOC_Root
-    3300000: '@Intr:emissions_off:generic_button'
-    3300002: '@Intr:emissions_on:generic_button'
-    3300004: '@Intr:test_1:generic_switch'
-    3300006: '@Intr:test_2:generic_switch'
-    3300008: '@Skip:IntrSphere'
-    3300010: '@View:radar_scope:radar_scope'
-    3300012: '@View:signal_scope:scope'
-    3300014: Inner
-    3300016: Left_Eq_Blade_0
-    3300018: Left_Eq_Blade_1
-    3300020: Left_Eq_Blade_2
-    3300022: Left_Eq_Blade_3
-    3300024: Left_Eq_Blade_4
-    3300026: Left_Eq_Blade_5
-    3300028: Left_Eq_Tower
-    3300030: Outer
-    3300032: SOC
-    3300034: SOC_Root
-    4300000: Outer
-    4300002: SOC
-    4300004: Inner
-    4300006: Left_Eq_Tower
-    4300008: Left_Eq_Blade_1
-    4300010: '@View:signal_scope:scope'
-    4300012: '@Intr:emissions_off:generic_button'
-    4300014: '@Intr:emissions_on:generic_button'
-    4300016: Left_Eq_Blade_0
-    4300018: Left_Eq_Blade_2
-    4300020: '@View:radar_scope:radar_scope'
-    4300022: Left_Eq_Blade_3
-    4300024: Left_Eq_Blade_4
-    4300026: '@Intr:test_1:generic_switch'
-    4300028: '@Intr:test_2:generic_switch'
-    4300030: Left_Eq_Blade_5
-    4300032: '@Skip:IntrSphere'
-    4300034: SOC_Root
-    9500000: //RootNode
-    10800000: Point
-    2186277476908879412: ImportLogs
-  externalObjects: {}
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: '@Intr:emissions_off:generic_button'
+  - first:
+      1: 100002
+    second: '@Intr:emissions_on:generic_button'
+  - first:
+      1: 100004
+    second: '@Intr:test_1:generic_switch'
+  - first:
+      1: 100006
+    second: '@Intr:test_2:generic_switch'
+  - first:
+      1: 100008
+    second: '@Skip:IntrSphere'
+  - first:
+      1: 100010
+    second: '@UtilityCamera:SOC_1Beam'
+  - first:
+      1: 100012
+    second: '@UtilityCamera:SOC_2Beam'
+  - first:
+      1: 100014
+    second: '@UtilityCamera:SOC_3Beam'
+  - first:
+      1: 100016
+    second: '@View:radar_scope:radar_scope'
+  - first:
+      1: 100018
+    second: '@View:signal_scope:scope'
+  - first:
+      1: 100020
+    second: Inner
+  - first:
+      1: 100022
+    second: Left_Eq_Blade_0
+  - first:
+      1: 100024
+    second: Left_Eq_Blade_1
+  - first:
+      1: 100026
+    second: Left_Eq_Blade_2
+  - first:
+      1: 100028
+    second: Left_Eq_Blade_3
+  - first:
+      1: 100030
+    second: Left_Eq_Blade_4
+  - first:
+      1: 100032
+    second: Left_Eq_Blade_5
+  - first:
+      1: 100034
+    second: Left_Eq_Tower
+  - first:
+      1: 100036
+    second: //RootNode
+  - first:
+      1: 100038
+    second: Outer
+  - first:
+      1: 100040
+    second: Point
+  - first:
+      1: 100042
+    second: SOC
+  - first:
+      1: 100044
+    second: SOC_Root
+  - first:
+      4: 400000
+    second: '@Intr:emissions_off:generic_button'
+  - first:
+      4: 400002
+    second: '@Intr:emissions_on:generic_button'
+  - first:
+      4: 400004
+    second: '@Intr:test_1:generic_switch'
+  - first:
+      4: 400006
+    second: '@Intr:test_2:generic_switch'
+  - first:
+      4: 400008
+    second: '@Skip:IntrSphere'
+  - first:
+      4: 400010
+    second: '@UtilityCamera:SOC_1Beam'
+  - first:
+      4: 400012
+    second: '@UtilityCamera:SOC_2Beam'
+  - first:
+      4: 400014
+    second: '@UtilityCamera:SOC_3Beam'
+  - first:
+      4: 400016
+    second: '@View:radar_scope:radar_scope'
+  - first:
+      4: 400018
+    second: '@View:signal_scope:scope'
+  - first:
+      4: 400020
+    second: Inner
+  - first:
+      4: 400022
+    second: Left_Eq_Blade_0
+  - first:
+      4: 400024
+    second: Left_Eq_Blade_1
+  - first:
+      4: 400026
+    second: Left_Eq_Blade_2
+  - first:
+      4: 400028
+    second: Left_Eq_Blade_3
+  - first:
+      4: 400030
+    second: Left_Eq_Blade_4
+  - first:
+      4: 400032
+    second: Left_Eq_Blade_5
+  - first:
+      4: 400034
+    second: Left_Eq_Tower
+  - first:
+      4: 400036
+    second: //RootNode
+  - first:
+      4: 400038
+    second: Outer
+  - first:
+      4: 400040
+    second: Point
+  - first:
+      4: 400042
+    second: SOC
+  - first:
+      4: 400044
+    second: SOC_Root
+  - first:
+      20: 2000000
+    second: '@UtilityCamera:SOC_1Beam'
+  - first:
+      20: 2000002
+    second: '@UtilityCamera:SOC_2Beam'
+  - first:
+      20: 2000004
+    second: '@UtilityCamera:SOC_3Beam'
+  - first:
+      21: 2100000
+    second: No Name
+  - first:
+      21: 2100002
+    second: Eq_Tower_Material
+  - first:
+      21: 2100004
+    second: Eq_Blade_Mat
+  - first:
+      23: 2300000
+    second: '@Intr:emissions_off:generic_button'
+  - first:
+      23: 2300002
+    second: '@Intr:emissions_on:generic_button'
+  - first:
+      23: 2300004
+    second: '@Intr:test_1:generic_switch'
+  - first:
+      23: 2300006
+    second: '@Intr:test_2:generic_switch'
+  - first:
+      23: 2300008
+    second: '@Skip:IntrSphere'
+  - first:
+      23: 2300010
+    second: '@View:radar_scope:radar_scope'
+  - first:
+      23: 2300012
+    second: '@View:signal_scope:scope'
+  - first:
+      23: 2300014
+    second: Inner
+  - first:
+      23: 2300016
+    second: Left_Eq_Blade_0
+  - first:
+      23: 2300018
+    second: Left_Eq_Blade_1
+  - first:
+      23: 2300020
+    second: Left_Eq_Blade_2
+  - first:
+      23: 2300022
+    second: Left_Eq_Blade_3
+  - first:
+      23: 2300024
+    second: Left_Eq_Blade_4
+  - first:
+      23: 2300026
+    second: Left_Eq_Blade_5
+  - first:
+      23: 2300028
+    second: Left_Eq_Tower
+  - first:
+      23: 2300030
+    second: Outer
+  - first:
+      23: 2300032
+    second: SOC
+  - first:
+      23: 2300034
+    second: SOC_Root
+  - first:
+      33: 3300000
+    second: '@Intr:emissions_off:generic_button'
+  - first:
+      33: 3300002
+    second: '@Intr:emissions_on:generic_button'
+  - first:
+      33: 3300004
+    second: '@Intr:test_1:generic_switch'
+  - first:
+      33: 3300006
+    second: '@Intr:test_2:generic_switch'
+  - first:
+      33: 3300008
+    second: '@Skip:IntrSphere'
+  - first:
+      33: 3300010
+    second: '@View:radar_scope:radar_scope'
+  - first:
+      33: 3300012
+    second: '@View:signal_scope:scope'
+  - first:
+      33: 3300014
+    second: Inner
+  - first:
+      33: 3300016
+    second: Left_Eq_Blade_0
+  - first:
+      33: 3300018
+    second: Left_Eq_Blade_1
+  - first:
+      33: 3300020
+    second: Left_Eq_Blade_2
+  - first:
+      33: 3300022
+    second: Left_Eq_Blade_3
+  - first:
+      33: 3300024
+    second: Left_Eq_Blade_4
+  - first:
+      33: 3300026
+    second: Left_Eq_Blade_5
+  - first:
+      33: 3300028
+    second: Left_Eq_Tower
+  - first:
+      33: 3300030
+    second: Outer
+  - first:
+      33: 3300032
+    second: SOC
+  - first:
+      33: 3300034
+    second: SOC_Root
+  - first:
+      43: 4300000
+    second: Outer
+  - first:
+      43: 4300002
+    second: SOC
+  - first:
+      43: 4300004
+    second: Inner
+  - first:
+      43: 4300006
+    second: Left_Eq_Tower
+  - first:
+      43: 4300008
+    second: Left_Eq_Blade_1
+  - first:
+      43: 4300010
+    second: '@View:signal_scope:scope'
+  - first:
+      43: 4300012
+    second: '@Intr:emissions_off:generic_button'
+  - first:
+      43: 4300014
+    second: '@Intr:emissions_on:generic_button'
+  - first:
+      43: 4300016
+    second: Left_Eq_Blade_0
+  - first:
+      43: 4300018
+    second: Left_Eq_Blade_2
+  - first:
+      43: 4300020
+    second: '@View:radar_scope:radar_scope'
+  - first:
+      43: 4300022
+    second: Left_Eq_Blade_3
+  - first:
+      43: 4300024
+    second: Left_Eq_Blade_4
+  - first:
+      43: 4300026
+    second: '@Intr:test_1:generic_switch'
+  - first:
+      43: 4300028
+    second: '@Intr:test_2:generic_switch'
+  - first:
+      43: 4300030
+    second: Left_Eq_Blade_5
+  - first:
+      43: 4300032
+    second: '@Skip:IntrSphere'
+  - first:
+      43: 4300034
+    second: SOC_Root
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      108: 10800000
+    second: Point
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panel_Mat
+    second: {fileID: 2100000, guid: ed50c7d5e69f9dd4a890e2ffc8d40d95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower_Mat
+    second: {fileID: 2100000, guid: f79699367f5f9e34d99a62a9b07108e5, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -147,25 +375,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -174,10 +409,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -187,13 +422,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
