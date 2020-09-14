@@ -244,13 +244,13 @@ MonoBehaviour:
       maxDecalsOnScreen: 512
       maxPlanarReflectionOnScreen: 16
     hdShadowInitParams:
-      maxShadowRequests: 128
+      maxShadowRequests: 256
       directionalShadowsDepthBits: 32
       shadowFilteringQuality: 1
       punctualLightShadowAtlas:
-        shadowAtlasResolution: 4096
+        shadowAtlasResolution: 16384
         shadowAtlasDepthBits: 32
-        useDynamicViewportRescale: 1
+        useDynamicViewportRescale: 0
       areaLightShadowAtlas:
         shadowAtlasResolution: 4096
         shadowAtlasDepthBits: 32
@@ -260,7 +260,7 @@ MonoBehaviour:
         m_SchemaId:
           m_Id: With4Levels
       shadowResolutionPunctual:
-        m_Values: 00010000000200000004000000080000
+        m_Values: 00010000001000000020000000400000
         m_SchemaId:
           m_Id: With4Levels
       shadowResolutionArea:
@@ -268,7 +268,7 @@ MonoBehaviour:
         m_SchemaId:
           m_Id: With4Levels
       maxDirectionalShadowMapResolution: 2048
-      maxPunctualShadowMapResolution: 2048
+      maxPunctualShadowMapResolution: 16384
       maxAreaShadowMapResolution: 2048
       supportScreenSpaceShadows: 0
       maxScreenSpaceShadowSlots: 4
@@ -286,10 +286,10 @@ MonoBehaviour:
       enabled: 0
       maxPercentage: 100
       minPercentage: 100
-      dynResType: 1
+      dynResType: 0
       upsampleFilter: 1
       forceResolution: 0
-      forcedPercentage: 100
+      forcedPercentage: 3
     lowresTransparentSettings:
       enabled: 1
       checkerboardDepthBuffer: 1
@@ -317,7 +317,7 @@ MonoBehaviour:
       ChromaticAberrationMaxSamples: 03000000060000000c000000
     lightSettings:
       useContactShadow:
-        m_Values: 000000
+        m_Values: 000001
         m_SchemaId:
           m_Id: 
     maximumLODLevel:

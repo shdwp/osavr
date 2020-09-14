@@ -149,7 +149,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 258.26
+  m_Intensity: 200
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -204,15 +204,15 @@ MonoBehaviour:
   m_MaxDepthBias: 0.001
   m_ShadowResolution:
     m_Override: 512
-    m_UseOverride: 1
-    m_Level: 0
+    m_UseOverride: 0
+    m_Level: 3
   m_ShadowDimmer: 1
   m_VolumetricShadowDimmer: 1
   m_ShadowFadeDistance: 10000
   m_UseContactShadow:
     m_Override: 0
-    m_UseOverride: 1
-    m_Level: 0
+    m_UseOverride: 0
+    m_Level: 2
   m_RayTracedContactShadow: 0
   m_ShadowTint: {r: 0, g: 0, b: 0, a: 1}
   m_PenumbraTint: 0
@@ -1040,15 +1040,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.038
+      value: -0.043
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.217
+      value: 1.061
       objectReference: {fileID: 0}
     - target: {fileID: 400040, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.947
+      value: 1.302
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_HDR
@@ -1224,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_Intensity
-      value: 20.551678
+      value: 15.915494
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 563b0764c4ea20c48ac3b48f550d52dc, type: 3}
       propertyPath: m_LightShadowCasterMode
