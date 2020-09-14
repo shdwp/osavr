@@ -115,8 +115,10 @@
           <e p="RadarSimulation" t="Include">
             <e p="IRadarProcessingThread.cs" t="Include" />
             <e p="RadarCameraRenderingPass.cs" t="Include" />
-            <e p="RadarCameraViewShader.shader" t="Include" />
             <e p="RadarReflectible.cs" t="Include" />
+            <e p="Shader" t="Include">
+              <e p="RadarCameraViewShader.shader" t="Include" />
+            </e>
           </e>
           <e p="Utils" t="Include">
             <e p="CommonExtensions.cs" t="Include" />
