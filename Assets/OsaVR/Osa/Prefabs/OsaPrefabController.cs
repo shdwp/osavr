@@ -79,7 +79,12 @@ namespace OsaVR.Prefabs
         private void ProcessBladeObject(GameObject bladeObject, string[] components)
         {
             var rend = bladeObject.GetComponent<Renderer>();
-            rend.material.SetTexture("_Labels_Tex", Resources.Load<Texture2D>("Tex/" + components[0]));
+            var labelsTex = Resources.Load<Texture2D>("Tex/" + components[0]);
+            if (labelsTex == null)
+            {
+                Debug.LogError($"Failed to load labels texture for {components[0]}");
+            }
+            rend.material.SetTexture("_Labels_Tex", labelsTex);
         }
 
         private GameObject ProcessInteractorPlaceholder(GameObject parent, GameObject placeholder, string[] components)
