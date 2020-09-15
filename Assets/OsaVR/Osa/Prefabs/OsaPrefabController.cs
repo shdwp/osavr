@@ -34,9 +34,16 @@ namespace OsaVR.Prefabs
                 var intr_prefix = "@Intr:";
                 var view_prefix = "@View:";
                 var utility_cam_prefix = "@UtilityCamera:";
+                var blade_prefix = "@Blade:";
 
                 GameObject item = null;
-                if (name.StartsWith(intr_prefix))
+                if (name.StartsWith(blade_prefix))
+                {
+                    var description = name.Substring(blade_prefix.Length);
+                    var components = description.Split(':');
+                    ProcessBladeObject(processing, components);
+                } 
+                else if (name.StartsWith(intr_prefix))
                 {
                     var description = name.Substring(intr_prefix.Length);
                     var components = description.Split(':');
@@ -67,6 +74,12 @@ namespace OsaVR.Prefabs
 
                 ProcessChildrenOf(processing);
             }
+        }
+
+        private void ProcessBladeObject(GameObject bladeObject, string[] components)
+        {
+            var rend = bladeObject.GetComponent<Renderer>();
+            rend.material.SetTexture("_Labels_Tex", Resources.Load<Texture2D>("Tex/" + components[0]));
         }
 
         private GameObject ProcessInteractorPlaceholder(GameObject parent, GameObject placeholder, string[] components)
