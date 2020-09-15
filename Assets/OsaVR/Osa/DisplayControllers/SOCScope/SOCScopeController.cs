@@ -45,6 +45,21 @@ namespace OsaVR.Osa.ViewControllers.SOCScope
         {
             _viewSurfaceMat.SetFloat(_shaderidSOCAzimuth, _state.SOC.azimuth * Mathf.Deg2Rad);
             _viewSurfaceMat.SetFloat(_shaderidSSCAzimuth, _state.SSC.azimuth * Mathf.Deg2Rad);
+            
+            switch (_state.SOC.ScopeScopeDisplayRange)
+            {
+                case SOCState.ScopeDisplayRange.Zero_Fifteen:
+                    _viewSurfaceMat.SetFloat(_shaderidSSCDistance, Mathf.InverseLerp(0f, 15f, _state.SSC.distance));
+                    break;
+
+                case SOCState.ScopeDisplayRange.Zero_ThirtyFive:
+                    _viewSurfaceMat.SetFloat(_shaderidSSCDistance, Mathf.InverseLerp(0f, 35f, _state.SSC.distance));
+                    break;
+
+                case SOCState.ScopeDisplayRange.Ten_FortyFive:
+                    _viewSurfaceMat.SetFloat(_shaderidSSCDistance, Mathf.InverseLerp(10f, 45f, _state.SSC.distance));
+                    break;
+            }
 
             if (_update.HasFlag(UpdateFlags.DisplayRange))
             {
