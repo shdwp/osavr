@@ -112,8 +112,16 @@ namespace OsaVR.Prefabs
                 animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(path + "_animctrl");
             }
 
-            item.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            
+            if (interactorPrefabName == "generic_switch")
+            {
+                // fix for fbx assets being sideways
+                item.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+            }
+            else
+            {
+                item.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            }
+
             _controller.BindInteractor(interactorIdentifier, item, placeholder);
             return item;
         }

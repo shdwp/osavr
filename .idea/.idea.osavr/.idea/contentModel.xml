@@ -43,6 +43,7 @@
                 <e p="SOCActiveBeamIndicatorController.cs" t="Include" />
                 <e p="SOCAzimuthDialController.cs" t="Include" />
                 <e p="SOCEnergyIndicatorController.cs" t="Include" />
+                <e p="SOCIFFIndicatorController.cs" t="Include" />
               </e>
               <e p="SOCScope" t="Include">
                 <e p="Shader" t="Include">
@@ -82,6 +83,7 @@
                 <e p="SOCActiveBeamButtonController.cs" t="Include" />
                 <e p="SOCAutoActiveBeamButtonController.cs" t="Include" />
                 <e p="SOCEnergyStateButtonController.cs" t="Include" />
+                <e p="SOCIFFButtonController.cs" t="Include" />
                 <e p="SOCScopeDisplayRangeSwitchController.cs" t="Include" />
                 <e p="SOCTraverseStateButtonController.cs" t="Include" />
               </e>
@@ -102,6 +104,7 @@
               <e p="SUAState.cs" t="Include" />
             </e>
             <e p="OsaController.cs" t="Include" />
+            <e p="OsaRadioController.cs" t="Include" />
             <e p="Prefabs" t="Include">
               <e p="OsaPrefabController.cs" t="Include" />
             </e>
@@ -130,6 +133,7 @@
             <e p="ShaderLibrary.hlsl" t="Include" />
           </e>
           <e p="World" t="Include">
+            <e p="RadioBroadcastController.cs" t="Include" />
             <e p="Simulation" t="Include">
               <e p="SimulationController.cs" t="Include" />
               <e p="SimulationProcess.cs" t="Include" />

@@ -16,6 +16,9 @@ namespace OsaVR.Osa.Model
         public static readonly uint ChangedActiveBeamNotification = OsaState.SOCSimOffset + 3;
         public static readonly uint ChangedEnergyStateNotification = OsaState.SOCSimOffset + 4;
         public static readonly uint ChangedDisplayRange = OsaState.SOCSimOffset + 5;
+        
+        private static readonly uint _IFFProcess = OsaState.SOCSimOffset + 6;
+        public static readonly uint ChangedIFFState = OsaState.SOCSimOffset + 7;
 
         public enum ScopeDisplayRange
         {
@@ -31,6 +34,13 @@ namespace OsaVR.Osa.Model
             Beam1_2,
         }
 
+        public enum IFFMode
+        {
+            Off,
+            Test,
+            Request,
+        }
+
         private ScopeDisplayRange _scopeScopeDisplayRange = ScopeDisplayRange.Zero_ThirtyFive;
         public ScopeDisplayRange ScopeScopeDisplayRange
         {
@@ -43,7 +53,7 @@ namespace OsaVR.Osa.Model
         }
         
         public float azimuth;
-        public bool turning = false;
+        public bool turning = true;
 
         private bool _emitting = true;
         public bool emitting
@@ -92,6 +102,29 @@ namespace OsaVR.Osa.Model
         private float _elevation;
         public float elevation => _elevation;
 
+        private IFFMode _iffMode = IFFMode.Off;
+        public IFFMode iffMode
+        {
+            get => _iffMode;
+            set
+            {
+                if (_iffMode != value)
+                {
+                    switch (value)
+                    {
+                        case IFFMode.Test:
+                        case IFFMode.Request:
+                            _sim.RemoveProcess(_IFFProcess);
+                            _sim.AddProcess(_IFFProcess, IFFProcess());
+                            break;
+                    }
+                    
+                    _iffMode = value;
+                    _sim.PostNotification(ChangedIFFState);
+                }
+            }
+        }
+
         private SimulationController _sim;
 
         public SOCState(SimulationController sim)
@@ -101,7 +134,7 @@ namespace OsaVR.Osa.Model
             sim.AddProcess(new SimulationProcess(_SOCProcess, SimulationProcess()));
         }
         
-        public IEnumerator SimulationProcess()
+        private IEnumerator SimulationProcess()
         {
             while (true)
             {
@@ -135,6 +168,13 @@ namespace OsaVR.Osa.Model
                 
                 yield return _sim.Delay(TimeSpan.FromMilliseconds(20.13));
             }
+        }
+
+        private IEnumerator IFFProcess()
+        {
+            yield return _sim.Delay(TimeSpan.FromSeconds(3));
+            iffMode = IFFMode.Off;
+            yield return null;
         }
     }
 }

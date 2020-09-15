@@ -71,6 +71,14 @@ namespace OsaVR.Osa
                     o.AddComponent<SOCAzimuthDialController>();
                     break;
                 
+                case "soc_iff_request_indicator":
+                    o.AddComponent<SOCIFFIndicatorController>().SetTargetMode(SOCState.IFFMode.Request);
+                    break;
+                
+                case "soc_iff_test_indicator":
+                    o.AddComponent<SOCIFFIndicatorController>().SetTargetMode(SOCState.IFFMode.Test);
+                    break;
+                
                 case "ssc_energy_emitting_indicator":
                     o.AddComponent<SSCEnergyEmittingIndicatorController>();
                     break;
@@ -166,6 +174,14 @@ namespace OsaVR.Osa
                 
                 case "soc_traverse_off":
                     interactorObject.AddComponent<SOCTraverseStateButtonController>().SetTargetState(false);
+                    break;
+                
+                case "soc_iff_request":
+                    interactorObject.AddComponent<SOCIFFButtonController>().SetTargetMode(SOCState.IFFMode.Request);
+                    break;
+                
+                case "soc_iff_test":
+                    interactorObject.AddComponent<SOCIFFButtonController>().SetTargetMode(SOCState.IFFMode.Test);
                     break;
                 
                 case "ssc_emission_on":

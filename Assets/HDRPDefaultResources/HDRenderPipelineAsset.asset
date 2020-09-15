@@ -248,7 +248,7 @@ MonoBehaviour:
       directionalShadowsDepthBits: 32
       shadowFilteringQuality: 1
       punctualLightShadowAtlas:
-        shadowAtlasResolution: 16384
+        shadowAtlasResolution: 8192
         shadowAtlasDepthBits: 32
         useDynamicViewportRescale: 0
       areaLightShadowAtlas:
@@ -260,7 +260,7 @@ MonoBehaviour:
         m_SchemaId:
           m_Id: With4Levels
       shadowResolutionPunctual:
-        m_Values: 00010000001000000020000000400000
+        m_Values: 00010000000800000010000000200000
         m_SchemaId:
           m_Id: With4Levels
       shadowResolutionArea:
@@ -268,7 +268,7 @@ MonoBehaviour:
         m_SchemaId:
           m_Id: With4Levels
       maxDirectionalShadowMapResolution: 2048
-      maxPunctualShadowMapResolution: 16384
+      maxPunctualShadowMapResolution: 8192
       maxAreaShadowMapResolution: 2048
       supportScreenSpaceShadows: 0
       maxScreenSpaceShadowSlots: 4

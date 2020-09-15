@@ -39,7 +39,7 @@ namespace OsaVR.Osa.Model
         }
         public float fov = 2f;
         
-        private float _azimuth;
+        private float _azimuth = 45f;
         public float azimuth
         {
             get => _azimuth;
