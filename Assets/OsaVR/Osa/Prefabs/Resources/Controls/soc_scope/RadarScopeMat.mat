@@ -187,6 +187,8 @@ Material:
     - _HeightPoMAmplitude: 2
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
+    - _IFFTestMode: 0
+    - _IFF_Test_Mode: 0
     - _InvTilingScale: 1
     - _Ior: 1.5
     - _IridescenceMask: 1
@@ -205,11 +207,11 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
-    - _SOC_Azimuth: 1.2566371
+    - _SOC_Azimuth: 0.7679449
     - _SOC_RangeMarker_Count: 7
     - _SOC_RangeMarker_Margin: 0.14285715
-    - _SSC_Azimuth: -0.00027890527
-    - _SSC_Distance: 0.14362565
+    - _SSC_Azimuth: -0.0003996021
+    - _SSC_Distance: 0.4302295
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
