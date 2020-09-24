@@ -1,5 +1,5 @@
 ## What's this?
-__9K33M2 Оса__ simulator built in Unity, currently in early stages of development. [Short demonstration](https://youtu.be/q2nNWoEEIiA):
+__9K33M2 Оса__ simulator built in Unity, currently in early stages of development. [Short demonstration on Youtube](https://youtu.be/q2nNWoEEIiA):
 
 [![Osa](https://img.youtube.com/vi/q2nNWoEEIiA/0.jpg)](https://youtu.be/q2nNWoEEIiA)
 
